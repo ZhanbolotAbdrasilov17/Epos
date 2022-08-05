@@ -3519,6 +3519,5 @@ button[type='submit']:disabled {
   background: #555;
 }
 .custom-header nav ul li:hover a {
-  transition: 0.3s;
   color: #fff;
 }

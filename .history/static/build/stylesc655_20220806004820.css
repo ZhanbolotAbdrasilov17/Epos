@@ -3494,7 +3494,7 @@ button[type='submit']:disabled {
   row-gap: 3px;
   align-items: center;
   -moz-column-gap: 30px;
-  column-gap: 30px;
+       column-gap: 30px;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
@@ -3516,9 +3516,7 @@ button[type='submit']:disabled {
 }
 .custom-header nav ul li:hover {
   transition: 0.3s;
-  background: #555;
-}
-.custom-header nav ul li:hover a {
-  transition: 0.3s;
   color: #fff;
+  background: #333;
+  border: none
 }
