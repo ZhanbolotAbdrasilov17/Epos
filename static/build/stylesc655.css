@@ -2107,7 +2107,7 @@ progress::-moz-progress-bar {
 }
 #d-footer {
   height: 100px;
-  margin: -100px auto 0;
+  margin: 100px auto 0;
   position: relative;
   z-index: 2;
 }
