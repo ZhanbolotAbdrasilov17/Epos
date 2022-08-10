@@ -1,138 +1,427 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block page %}
-<style>
-#d-header{
-   display: none;
-   }
-.d-bgd{
-    transform: translate(0)
-}
-    .tab-container {
-    margin: 20px 0 0;
-        position: relative;
-    z-index: 7;
-  width: 100%;
-  min-height: 300px;
-  background: rgba(0, 0, 0, 0.4)
-}
+    <header id="d-header">
+        <div class="d-moon d-moon-0 d-hide-pc"></div>
+        <div class="d-grid d-animbox">
+            <!-- <div class="d-h-logo">
+                <img src="img/logo.png" alt="aic + qsoft alliance" title="aic + qsoft alliance" />
+                <a id="aic-link" href="http://aic.ru/" target="_blank" title="aic" alt="aic"></a>
+                <a id="qsoft-link" href="https://qsoft.ru/" target="_blank" title="qsoft" alt="qsoft"></a>
+            </div> -->
+            <img src="{% static 'img/logo.png' %}" class="d-h-logo" width="277" height="72" alt="aic + qsoft alliance" title="aic + qsoft alliance"/>
+            <div class="d-swipe-note d-hide-pc d-cb">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px" viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
+                        <g i:extraneous="self">
+                            <g>
+                                <polygon points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"></polygon>
+                                <g>
+                                    <path d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"></path>
+                                    <path d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </switch></svg>
+                <div>Смахните пальцем влево, чтобы узнать больше</div>
+            </div>
+            <div class="honors d-grid">
+                <ul class="honors--list d-row d-animate d-fade">
+                    <li class="honors--item d-col d-col-3">
+                        <div class="honors--title "></div>
+                        <div class="honors--position">Актуальная информация</div>
 
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center
-}
-.tabs button {
-  width: 100%;
-  padding: 10px 20px;
-  border: 1px solid #fc7904;
-  cursor: pointer;
-  text-transform: uppercase;
-  background-color: #fc7904;
-  color: #fff;
-  font-size: 18px;
-  opacity: 0.9;
-}
-.tabs button:hover {
-  opacity: 1;
-}
-.tabs .non-active {
-  opacity: 0.6;
-}
+                    </li>
+                    <li class="honors--item d-col d-col-3">
+                        <div class="honors--title--2 "></div>
+                        <div class="honors--position">Лучший путеводитель</div>
 
-.tab-content {
-  padding: 10px 20px;
-}
-.tab-content h2{
-    color: #fff;
-    font-size: 28px
-}
-.tab-content p, .tab-content ol, .tab-content ul{
-    color: #fff;
-    font-size: 18px
-}
+                    </li>
+                    <li class="honors--item d-col d-col-3">
+                        <div class="honors--title "></div>
+                        <div class="honors--position">Ежегодные премии</div>
 
-.hidden {
-  display: none;
-}
-</style>
-<div class="tab-container">
-    <!--  Tab Buttons  -->
-    <div class="tabs">
-      <button class="tab active">Подать статью</button>
-      <button class="tab non-active">Руководство для авторов</button>
-      <button class="tab non-active">Процесс рецензирования</button>
-      <button class="tab non-active">Заявление о конфиденциальности</button>
-    </div>
-    <!-- Tab Content  -->
-    <div class="tab-content">
-      <h2>Подать статью</h2>
-      <p>Контрольный список подготовки материала к отправке
-В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала всем следующим пунктам, материалы могут быть возвращены авторам, если они не соответствуют этим требованиям.
-Эта статья не была раньше опубликована, а также не представлена для рассмотрения и публикации в другом журнале (иначе объясните это в примечаниях для редактора).
-Отправляемый материал представлен в формате OpenOffice, Microsoft Word или RTF.
-Список литературы представлен в двух вариантах (на языке оригинала и в References), оформлен в соответствии с требованиями журнала. Ссылки на электронные публикации содержат все необходимые сведения об источнике.
-Текст набран с одинарным межстрочным интервалом, шрифт Times New Roman, 14 pt; для выделения используется курсив, а не подчеркивание (за исключением URL-адресов); все иллюстрации, графики и таблицы расположены в соответствующих местах в тексте, а не в конце документа.
-Текст соответствует стилистическим и библиографческим требованиям, описанным в Руководстве для авторов, и принципам редакционной политики журнала.
-Комплект материалов содержит оформленный в соответствии с требованиями текст рукописи, заполненную и подписанную заявку на публикацию, иллюстрации, список подписей к иллюстрациям, сведения об авторе/авторов, фотографию автора/авторов.</p>
-    </div>
-    <div class="tab-content hidden">
-      <h2>Руководство для авторов</h2>
-      <ol>
-        <li>Порядок приема и подготовки рукописи к публикации
+                    </li>
+                    <li class="honors--item d-col d-col-3">
+                        <div class="honors--title--4"></div>
+                        <div class="honors--position">Лучший сайт для авторов</div>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="d-bgd d-bgd-0"></div>
+        <div class="d-bgd d-bgd-1">
+            <div class="d-bgd-inv d-bgd-1-i d-px-box-m-2"></div>
+        </div>
+        <div class="d-stars d-stars-0"></div>
+        <div class="d-stars d-stars-1"></div>
+    </header>
+
+    <div id="d-content">
+
+        <section class="d-section-0 d-dark d-animbox" id="d-section-0">
+            <div class="mask1"></div>
+            <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>
+                <div></div>
+            </div>
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-col d-col-4 d-col-xs-12">
+                        <div class="h2 d-ttu d-animate d-fade">аналитика, проектирование разработка&nbsp;дизайна и&nbsp;контроль
+                            эффективности
+                        </div>
+                        <div class="d-circle d-circle-0 d-ttu d-animate d-fade">
+                            <span class="d-crcl-sm-0"><b class="d-animate d-fade d-delay-2"><i
+                                        class="d-hover">analytics</i></b></span>
+                            <span class="d-crcl-sm-1"><b class="d-animate d-fade d-delay-2"><i class="d-hover">user experience</i></b></span>
+                            <span class="d-crcl-sm-2"><b class="d-animate d-fade d-delay-2"><i
+                                        class="d-hover">design</i></b></span>
+                            <span class="d-crcl-sm-3"><b class="d-animate d-fade d-delay-2"><i class="d-hover">conversion</i></b></span>
+                            <div class="d-crcl-sm-4"><b class="d-animate d-fade d-delay-2"><i class="d-hover">AIC &gt;&gt;</i></b></div>
+                        </div>
+                        <div class="d-circle d-circle-1 d-animate d-fade"></div>
+                    </div>
+                </div>
+
+        </section>
+        <section class="d-section-2 d-dark d-animbox" id="d-section-2">
+            <div class="d-moon d-moon-q2a d-hide-pc"><b></b><i></i>
+                <div></div>
+            </div>
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-col d-col-9 d-hide-xs"></div>
+                    <div class="d-col d-col-3 d-col-xs-12">
+                        <div class="h2 d-ttu d-fade d-animate">проектирование,<br/>разработка,<br/>техническая поддержка<br/>и
+                            развитие
+                        </div>
+                        <div class="d-circle d-circle-0 d-animate d-fade">
+                            <div class="d-crcl-lg-3 d-pink d-s d-ttu d-animate d-fade d-delay-2 test">qsoft &gt;&gt;</div>
+                        </div>
+                        <div class="d-circle d-circle-1 d-l d-ttu d-animate d-fade">
+                            <span class="d-crcl-lg-0"><b class="d-animate d-fade d-delay-2"><i class="d-hover">front-end development</i></b></span>
+                            <span class="d-crcl-lg-1"><b class="d-animate d-fade d-delay-2"><i class="d-hover">back-end development</i></b></span>
+                            <span class="d-crcl-lg-2"><b class="d-animate d-fade d-delay-2"><i class="d-hover">hi-load programming</i></b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-stars d-stars-2"></div>
+        </section>
+        <section class="d-section-4 d-dark d-animbox" id="d-section-4">
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-col d-col-12">
+                        <div class="d-circle d-circle-bg d-circle-0 d-hb"></div>
+                        <div class="d-circle d-circle-bg d-circle-1 d-hb"></div>
+                        <div class="d-moon d-moon-aq d-hide-pc"><b></b><i></i>
+                            <div></div>
+                        </div>
+                        <div class="h2 d-ttu d-animate d-fade">максимально эффективное<br/>управление компетенциями
+                        </div>
+                        <div class="h1 d-ttu d-white d-rise d-animate">проектный цикл<br/><span
+                                class="d-blue d-ha d-arr d-arr-pink">aic</span><span
+                                class="d-pink d-hb d-arr d-arr-blue">qsoft</span></div>
+                        <div class='d-swipe-note d-hide-pc d-cb d-xl'>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
+                                 viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
+                                    <g i:extraneous="self">
+                                        <g>
+                                            <polygon
+                                                points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
+                                            <g>
+                                                <path
+                                                    d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
+                                                <path
+                                                    d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </switch></svg>
+                            <div>Смахните пальцем влево, чтобы узнать больше</div>
+                        </div>
+                        <div class="d-scroll-wrap">
+                            <div class="d-scroll">
+                                <div class="d-cycle d-ttu d-xs">
+                                    <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">информационная<br/>архитектура</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">интерактивные<br/>прототипы</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">контент-стратегия</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">дизайн</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">тестирование<br/>и аналитика</i></span>
+                                        <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2">aic &gt;&gt;</div>
+                                    </div>
+                                    <div class="d-cycle-m d-animate d-fade d-delay-3">
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                    </div>
+                                    <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">техническая<br/>архитектура</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">функциональная<br/>спецификация</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">front-end</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">back-end</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">нi-load<br/>тестирование</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">техническая<br/>поддержка</i></span>
+                                        <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2">qsoft &gt;&gt;</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-stars d-stars-3"></div>
+        </section>
+        <section class="d-section-6 d-dark d-animbox" id="d-section-6">
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-moon d-moon-a d-hide-pc"><b></b><i></i>
+                        <div></div>
+                    </div>
+                    <div class="d-col d-col-12">
+                        <div class="h1 d-ttu d-white d-animate d-rise">Технологии<br/>ведения проектов</div>
+                        <div class="h2 h0 d-ib d-ttu d-animate d-fade d-delay-1">Рабочая группа специалистов на
+                            проекте
+                        </div>
+                        <nav class="d-nav-charts d-nav-tabs d-ib h3 d-ttu d-animate d-fade d-delay-1">
+                            <ul>
+                                <li class="d-current">aic</li>
+                                <li>qsoft</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12">
+                        <div class="d-section-descr d-dark d-xl d-animate d-fade">Среднее соотношение<br/>общего и&nbsp;затраченного<br/>времени
+                            на&nbsp;специалистов<br/>на&nbsp;проекте
+                        </div>
+                        <div class="d-counter-a d-animate d-fadein">
+                            <div class="d-count d-font d-counted2" data-count="684">0</div>
+                            <div class="d-count d-fl d-font d-counted2" data-count="1165">0</div>
+                            <div class="d-white d-xl">часов</div>
+                        </div>
+                        <div class="d-counter-q d-animate2 d-fadeout">
+                            <div class="d-count d-font d-counted2" data-count="1385">0</div>
+                            <div class="d-count d-fl d-font d-counted2" data-count="1750">0</div>
+                            <div class="d-white d-xl">часов</div>
+                        </div>
+                    </div>
+                    <div class="d-ccharts" id="d-ccharts">
+                        <div class="d-cchart d-cchart-a d-animate">
+                            <nav class="d-nav-employees d-tar d-ttu d-xs d-animate d-fade d-delay-1">
+                                <ul>
+                                    <li><i class="d-hover">Руководитель проекта</i></li>
+                                    <li><i class="d-hover">Аналитик</i></li>
+                                    <li><i class="d-hover">Проектировщик</i></li>
+                                    <li><i class="d-hover">Арт-директор</i></li>
+                                    <li><i class="d-hover">Дизайнер</i></li>
+                                </ul>
+                            </nav>
+                            <div class="d-cchart-i d-cchart-i-0" id="d-cchart-a-0"></div>
+                            <div class="d-cchart-i d-cchart-i-1" id="d-cchart-a-1"></div>
+                            <div class="d-cchart-i d-cchart-i-2" id="d-cchart-a-2"></div>
+                            <div class="d-cchart-i d-cchart-i-3" id="d-cchart-a-3"></div>
+                            <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
+                            <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
+                            <div class="d-cchart-i d-cchart-i-0 d-cchart-i-o" id="d-cchart-a-5"></div>
+                            <div class="d-cchart-i d-cchart-i-1 d-cchart-i-o" id="d-cchart-a-6"></div>
+                            <div class="d-cchart-i d-cchart-i-2 d-cchart-i-o" id="d-cchart-a-7"></div>
+                            <div class="d-cchart-i d-cchart-i-3 d-cchart-i-o" id="d-cchart-a-8"></div>
+                            <div class="d-cchart-i d-cchart-i-4 d-cchart-i-o" id="d-cchart-a-9"></div>
+                        </div>
+                        <div class="d-cchart d-cchart-q d-animate">
+                            <nav class="d-nav-employees d-tar d-ttu d-xs d-animate2 d-fade d-delay-1">
+                                <ul>
+                                    <li><i class="d-hover">Системный аналитик</i></li>
+                                    <li><i class="d-hover">Ведущий программист</i></li>
+                                    <li><i class="d-hover">Front-end разработчик</i></li>
+                                    <li><i class="d-hover">Тех. Директор</i></li>
+                                    <li><i class="d-hover">Системный Архитектор</i></li>
+                                </ul>
+                            </nav>
+                            <div class="d-cchart-i d-cchart-i-0" id="d-cchart-q-0"></div>
+                            <div class="d-cchart-i d-cchart-i-1" id="d-cchart-q-1"></div>
+                            <div class="d-cchart-i d-cchart-i-2" id="d-cchart-q-2"></div>
+                            <div class="d-cchart-i d-cchart-i-3" id="d-cchart-q-3"></div>
+                            <div class="d-cchart-i d-cchart-i-4" id="d-cchart-q-4"></div>
+                            <div class="d-cchart-i d-cchart-i-0 d-cchart-i-o" id="d-cchart-q-5"></div>
+                            <div class="d-cchart-i d-cchart-i-1 d-cchart-i-o" id="d-cchart-q-6"></div>
+                            <div class="d-cchart-i d-cchart-i-2 d-cchart-i-o" id="d-cchart-q-7"></div>
+                            <div class="d-cchart-i d-cchart-i-3 d-cchart-i-o" id="d-cchart-q-8"></div>
+                            <div class="d-cchart-i d-cchart-i-4 d-cchart-i-o" id="d-cchart-q-9"></div>
+                        </div>
+                    </div><!-- /d-ccharts -->
+                </div>
+            </div>
+        </section>
+
+        <section class="d-section-7 d-animbox" id="d-section-7">
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-col d-col-12">
+                        <div class="h2 d-dark d-ttu d-animate d-fade">Постоянный контроль<br/>и&nbsp;снижение рисков на&nbsp;больших
+                            проектах
+                        </div>
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-05">
+                        <p class="d-l d-ttu d-white">Выделенные рабочие группы</p>
+                        Для&nbsp;каждого проекта формируется команда специалистов, способных наилучшим образом
+                        обеспечить достижение поставленных целей.
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-1">
+                        <p class="d-l d-ttu d-white">Отчетность 24/7</p>
+                        Современные инструменты управления проектами дают доступ к&nbsp;отчетной информации в
+                        круглосуточном режиме.
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-15">
+                        <p class="d-l d-ttu d-white">Agile / T&M методологии</p>
+                        Постоянное взаимодействие рабочей группы и&nbsp;команды заказчиков позволяет гибко реагировать
+                        на&nbsp;изменения требований в&nbsp;ходе разработки.
+                    </div>
+                    <div class="d-col d-col-4 d-hide-xs"></div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-2">
+                        <p class="d-l d-ttu d-white">Единый проектный офис</p>
+                        Общие для&nbsp;двух компаний стандарты бизнес-процессов обеспечивают эффективность планирования
+                        и&nbsp;качество выполнения проектов.
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-25">
+                        <p class="d-l d-ttu d-white">Task tracking</p>
+                        Для управления задачами и&nbsp;организации совместной работы используются инструменты, дающие
+                        контроль за&nbsp;этапами производства.
+                    </div>
+                    <div class="d-col d-col-8 d-hide-xs"></div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-3">
+                        <p class="d-l d-ttu d-white">SLA</p>
+                        Высокое качество оказываемых услуг гарантируется в&nbsp;сервисном контракте.
+                    </div>
+                </div>
+            </div>
+            <div class="d-bgd d-bgd-5"></div>
+            <div class="d-stars d-stars-5"></div>
+        </section>
+
+        <section class="d-section-8 d-dark d-animbox" id="d-section-8">
+            <div class="d-grid">
+                <div class="d-row">
+                    <div class="d-col d-col-6 d-col-xs-12">
+                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">Отрасли присутствия</div>
+                    </div>
+                    <div class="d-col d-col-4 d-col-xs-12 d-vab">
+                        <div class="h2 h0 d-ttu d-animate d-fade">Средний и крупный российский бизнес</div>
+                    </div>
+                    <div class="d-col d-col-12 d-animate d-fade d-delay-05">
+                        <div class='d-swipe-note d-hide-pc d-cb d-xl'>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
+                                 viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
+                                    <g i:extraneous="self">
+                                        <g>
+                                            <polygon
+                                                points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
+                                            <g>
+                                                <path
+                                                    d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
+                                                <path
+                                                    d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </switch></svg>
+                            <div>Смахните пальцем влево, чтобы узнать больше</div>
+                        </div>
+                        <div class="d-scroll-wrap">
+                            <div class="d-scroll">
+                                <nav class="d-nav-logos d-nav-tabs h3 d-ttu">
+                                    <ul>
+                                        <li class="d-current" data-tab="d-tab-0">Подать статью</li>
+                                        <li data-tab="d-tab-1">Руководство для авторов</li>
+                                        <li data-tab="d-tab-2">Процесс рецензирования</li>
+                                        <li data-tab="d-tab-3">Заявление конфиденциальности</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
+                        <div class="d-tab-logos d-tab-0">
+                            <h2 class="d-section-title">Подать статью</h2>
+                            <p class="d-section-descr">
+                                Контрольный список подготовки материала к отправке В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала всем следующим пунктам, материалы могут быть возвращены авторам, если они не соответствуют этим требованиям. Эта статья не была раньше опубликована, а также не представлена для рассмотрения и публикации в другом журнале (иначе объясните это в примечаниях для редактора). Отправляемый материал представлен в формате OpenOffice, Microsoft Word или RTF. Список литературы представлен в двух вариантах (на языке оригинала и в References), оформлен в соответствии с требованиями журнала. Ссылки на электронные публикации содержат все необходимые сведения об источнике. Текст набран с одинарным межстрочным интервалом, шрифт Times New Roman, 14 pt; для выделения используется курсив, а не подчеркивание (за исключением URL-адресов); все иллюстрации, графики и таблицы расположены в соответствующих местах в тексте, а не в конце документа. Текст соответствует стилистическим и библиографческим требованиям, описанным в Руководстве для авторов, и принципам редакционной политики журнала. Комплект материалов содержит оформленный в соответствии с требованиями текст рукописи, заполненную и подписанную заявку на публикацию, иллюстрации, список подписей к иллюстрациям, сведения об авторе/авторов, фотографию автора/авторов.
+                            </p>
+                        </div>
+                        <div class="d-tab-logos d-hidden d-tab-1">
+                            <h2 class="d-section-title">Руководство для авторов</h2>
+                                <p class="d-section-descr">
+                           Порядок приема и подготовки рукописи к публикации
 Журнал круглогодично принимает рукописи на русском и английском языках, оформленные по следующим правилам.
 
 Принимаются к рассмотрению только не публиковавшиеся ранее научные статьи, аналитические обзоры выставок, специализированных конкурсов и форумов, результаты теоретических и прикладных исследований, материалы научно-образовательного характера, соответствующие тематике журнала: теории и истории искусства, архитектуры, дизайна.
 
 Описание рубрик журнала см. в разделе Темы и рубрики.
+                        </p>
+                        </div>
+                        <div class="d-tab-logos d-hidden d-tab-2">
+                            <h2 class="d-section-title">Процесс рецензирования</h2>
+                                <p class="d-section-descr">
+                            Рецензирование является обязательным этапом в оценке статей и принятии решения об их публикации. Все рукописи проходят следующие этапы обработки: На этапе формальной экспертизы выпускающий редактор рассматривает рукопись и оценивает ее соответствие тематике и общим требованиям журнала (наличие сопроводительных документов, необходимых метаданных, корректность оформления рукописи, качество иллюстративного материала). На этом этапе все статьи проверяются на наличие некорректных заимствований и самоцитирования с помощью ресурса Антиплагиат. На этапе содержательной экспертизы все статьи проходят обязательное «двойное слепое» рецензирование (рецензентам не раскрывается имя автора, а автору не сообщаются имена рецензентов). Редактор направляет статью на рецензирование специалистам по профилю исследования. При необходимости редколлегия обращается к сторонним специалистам, обладающим знаниями в соответствующей области.
+                        </p>
+                        </div>
+                        <div class="d-tab-logos d-hidden d-tab-3">
+                         <h2 class="d-section-title">Заявление о конфиденциальности</h2>
+                            <p class="d-section-descr">Имена и адреса, указанные Вами при регистрации на этом сайте, будут использованы исключительно для технических целей: контакта с Вами или с рецензентами (редакторами) в процессе подготовки Вашей статьи к публикации. Они ни в коем случае не будут предоставляться другим лицам и организациям. При приеме статьи к публикации Вы даете право на использование ограниченных личных сведений в рубрике «Об авторах».</p>
+                        </div>
+                    </div>
+                    <div class="d-carousel-logos d-col d-col-12 d-hide-pc">
+                        <div class="d-section-descr d-tab-logos d-tab-0">
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-00.jpg" width="125" height="100" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-sb.jpg" width="128" height="91" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-mtsb.jpg" width="177" height="40" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-trust.jpg" width="166" height="36" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-psb.jpg" width="245" height="40" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-vtb24.jpg" width="146" height="40" alt="" title=""/></div>
+                        </div>
+                        <div class="d-section-descr d-tab-logos d-tab-1">
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-rtk.jpg" width="95" height="82" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-yota.jpg" width="83" height="83" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-mts.jpg" width="117" height="58" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-onlime.jpg" width="126" height="94" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-mastertel.jpg" width="179" height="55" alt="" title=""/></div>
+                        </div>
+                        <div class="d-section-descr d-tab-logos d-tab-2">
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-1c.jpg" width="113" height="57" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-bitrix.jpg" width="128" height="69" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-amo.jpg" width="192" height="38" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-tserv.jpg" width="165" height="52" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-lanit.jpg" width="65" height="83" alt="" title=""/></div>
+                        </div>
+                        <div class="d-section-descr d-tab-logos d-tab-3">
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-eldorado.jpg" width="181" height="38" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-svyaznoy.jpg" width="169" height="39" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-sapato.jpg" width="135" height="70" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-ff.jpg" width="178" height="31" alt="" title=""/></div>
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="upload/logo-mts.jpg" width="117" height="58" alt="" title=""/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-bgd d-bgd-inv d-bgd-6"></div>
+            <div class="d-bgd d-bgd-7"></div>
+            <div class="d-bgd d-bgd-8"></div>
+        </section>
 
-</li>
-      </ol>
-    </div>
-    <div class="tab-content hidden">
-      <h2>Процесс рецензирования</h2>
-      <ol>
-        <li>Рецензирование является обязательным этапом в оценке статей и принятии решения об их публикации. Все рукописи проходят следующие этапы обработки:
+    </div><!-- /#d-content -->
 
-На этапе формальной экспертизы выпускающий редактор рассматривает рукопись и оценивает ее соответствие тематике и общим требованиям журнала (наличие сопроводительных документов, необходимых метаданных, корректность оформления рукописи, качество иллюстративного материала). На этом этапе все статьи проверяются на наличие некорректных заимствований и самоцитирования с помощью ресурса Антиплагиат.
-На этапе содержательной экспертизы все статьи проходят обязательное «двойное слепое» рецензирование (рецензентам не раскрывается имя автора, а автору не сообщаются имена рецензентов). Редактор направляет статью на рецензирование специалистам по профилю исследования. При необходимости редколлегия обращается к сторонним специалистам, обладающим знаниями в соответствующей области.
-</li>
-      </ol>
-    </div>
-    <div class="tab-content hidden">
-      <h2>Заявление о конфиденциальности</h2>
-        <p>Имена и адреса, указанные Вами при регистрации на этом сайте, будут использованы исключительно для технических целей: контакта с Вами или с рецензентами (редакторами) в процессе подготовки Вашей статьи к публикации. Они ни в коем случае не будут предоставляться другим лицам и организациям. При приеме статьи к публикации Вы даете право на использование ограниченных личных сведений в рубрике «Об авторах».</p>
-    </div>
-  </div>
-<script type="text/javascript">
-    const tabs = document.querySelectorAll(".tab");
-const tabContent = document.querySelectorAll(".tab-content");
-
-let tabNo = 0;
-let contentNo = 0;
-
-tabs.forEach((tab) => {
-  tab.dataset.id = tabNo;
-  tabNo++;
-  tab.addEventListener("click", function () {
-    tabs.forEach((tab) => {
-      tab.classList.remove("active");
-      tab.classList.add("non-active");
-    });
-    this.classList.remove("non-active");
-    this.classList.add("active");
-    tabContent.forEach((content) => {
-      content.classList.add("hidden");
-      if (content.dataset.id === tab.dataset.id) {
-          content.classList.remove("hidden");
-      }
-    });
-  });
-});
-
-tabContent.forEach((content) => {
-  content.dataset.id = contentNo;
-  contentNo++;
-});
-</script>
+</div><!-- /#d-wrap -->
 {% endblock %}
