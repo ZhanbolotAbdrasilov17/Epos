@@ -34,6 +34,9 @@
     url(../fonts/unisanssemibold.ttf) format('truetype'),
     url(../fonts/unisanssemibold.svg#uni_sanssemibold) format('svg');
 }
+*{
+    scroll-behavior: smooth
+}
 .fa {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2114,7 +2117,7 @@ progress::-moz-progress-bar {
 }
 #d-footer article {
   float: left;
-  margin-right: 100px;
+  margin-right: 50px;
 }
 #d-footer article:last-child {
   float: right;
@@ -3490,7 +3493,7 @@ button[type='submit']:disabled {
 .custom-header {
   background: #fff;
   position: relative;
-  z-index: 3;
+  z-index: 100;
   margin-bottom: -15px;
   height: 100%;
 }

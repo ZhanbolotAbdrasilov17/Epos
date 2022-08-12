@@ -25,31 +25,6 @@
                     </switch></svg>
                 <div>Смахните пальцем влево, чтобы узнать больше</div>
             </div>
-            <div class="honors d-grid">
-                <ul class="honors--list d-row d-animate d-fade">
-                    <li class="honors--item d-col d-col-3">
-                        <div class="honors--title "></div>
-                        <div class="honors--position">Первое место</div>
-                        <div class="honors--description">Digital design & creative<br>2016</div>
-                    </li>
-                    <li class="honors--item d-col d-col-3">
-                        <div class="honors--title--2 "></div>
-                        <div class="honors--position">Лучший веб-разработчик</div>
-                        <div class="honors--description">Премия “Золотой сайт”<br>2015, 2017</div>
-                    </li>
-                    <li class="honors--item d-col d-col-3">
-                        <div class="honors--title "></div>
-                        <div class="honors--position">Первое место</div>
-                        <div class="honors--description"> Единый рейтинг веб студий<br>2016, 2017, 2018</div>
-                    </li>
-                    <li class="honors--item d-col d-col-3">
-                        <div class="honors--title--4"></div>
-                        <div class="honors--position">Лучший разработчик сайтов</div>
-                        <div class="honors--description">Рейтинг Рунета<br>2016, 2017, 2018</div>
-                    </li>
-                </ul>
-
-            </div>
         </div>
         <div class="d-bgd d-bgd-0"></div>
         <div class="d-bgd d-bgd-1">
@@ -93,7 +68,7 @@
                     <div class="d-col d-col-4 d-col-xs-12">
                         <div class="h1 d-ttu d-white d-animate d-rise">aic</div>
                         <div class="d-section-descr d-dark d-xl d-animate d-fade">Лидер большинства<br/>профессиональных
-                            рейтингов<br/>компаний российского рынка<br/>интерактивных коммуникаций
+                            рейтингов<br/>СМИ Кыргызстана<br/>
                         </div>
                         <nav class="d-nav-view d-blue h3 d-ttu d-animate d-fade">
                             <ul>
@@ -185,18 +160,14 @@
                         <div class="d-circle d-circle-0 d-animate d-fade">
                             <div class="d-crcl-lg-3 d-pink d-s d-ttu d-animate d-fade d-delay-2 test">qsoft &gt;&gt;</div>
                         </div>
-                        <div class="d-circle d-circle-1 d-l d-ttu d-animate d-fade">
-                            <span class="d-crcl-lg-0"><b class="d-animate d-fade d-delay-2"><i class="d-hover">front-end development</i></b></span>
-                            <span class="d-crcl-lg-1"><b class="d-animate d-fade d-delay-2"><i class="d-hover">back-end development</i></b></span>
-                            <span class="d-crcl-lg-2"><b class="d-animate d-fade d-delay-2"><i class="d-hover">hi-load programming</i></b></span>
-                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="d-stars d-stars-2"></div>
         </section>
 
-        <section class="d-section-3 d-animbox" id="d-section-3">
+        <section class="d-section-3 d-animbox" id="d-section-3" style="display: none">
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-col d-col-4 d-col-xs-12">
@@ -289,7 +260,7 @@
                         <div class="d-moon d-moon-aq d-hide-pc"><b></b><i></i>
                             <div></div>
                         </div>
-                        <div class="h2 d-ttu d-animate d-fade">максимально эффективное<br/>управление компетенциями
+                        <div class="h2 d-ttu d-animate d-fade">максимально эффективное<br/>управление статьями
                         </div>
                         <div class="h1 d-ttu d-white d-rise d-animate">проектный цикл<br/><span
                                 class="d-blue d-ha d-arr d-arr-pink">aic</span><span
@@ -378,7 +349,7 @@
             <div class="d-stars d-stars-4"></div>
         </section>
 
-        <section class="d-section-6 d-dark d-animbox" id="d-section-6">
+        <section class="d-section-6 d-dark d-animbox" id="d-section-6" style="display: none">
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-moon d-moon-a d-hide-pc"><b></b><i></i>
@@ -460,13 +431,10 @@
             </div>
         </section>
 
-        <section class="d-section-7 d-animbox" id="d-section-7">
+        <section class="d-section-7 d-animbox" style="display:none" id="d-section-7">
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-col d-col-12">
-                        <div class="h2 d-dark d-ttu d-animate d-fade">Постоянный контроль<br/>и&nbsp;снижение рисков на&nbsp;больших
-                            проектах
-                        </div>
                     </div>
                     <div class="d-col d-col-4 d-col-xs-12 d-animate d-fade d-delay-05">
                         <p class="d-l d-ttu d-white">Выделенные рабочие группы</p>
@@ -663,42 +631,31 @@
                     </div>
                     <div class="d-persons d-animate d-fade">
                         <article class="d-animate d-fade">
-                            <div class="d-person-img"><img class="lazy" data-src="upload/person1.png" width="248" height="222" alt="" title=""/></div>
+                            <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}" width="248" height="222" alt="" title=""/></div>
                             <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue">Генеральный директор<br/>«1С-Битрикс»</span>
+                                <p class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue">Сотрудник<br/></span>
                                 </p>
-                                Редкий и&nbsp;очень интересный альянс на&nbsp;рынке. На&nbsp;самом деле именно о&nbsp;таком
-                                и мечтают клиенты: крутой дизайн + отличные технологии. А еще, вы можете быть уверены,
-                                что эти ребята умеют договариваться между собой, а значит и&nbsp;вам с&nbsp;ними будет
-                                легко работать :)
+                               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
                         </article>
                         <article class="d-animate d-fade d-delay-05">
-                            <div class="d-person-img"><img class="lazy" data-src="upload/person3.png" width="248" height="222" alt="" title=""/></div>
+                            <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}" width="248" height="222" alt="" title=""/></div>
                             <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Андрей Анищенко<br/><span class="d-blue">CEO, Grape</span>
+                                <p class="d-l d-white d-ttu">Андрей Анищенко<br/><span class="d-blue">Сотрудник</span>
                                 </p>
-                                В&nbsp;настоящее время конкуренция на&nbsp;рынке требует от&nbsp;компаний двух
-                                взаимно-противоположных вещей &#151; узкую специализацию и&nbsp;умение браться за
-                                комплексные задачи. Альянс AIC и&nbsp;QSOFT &#151; уникальный пример, когда ребята
-                                смогли договориться и вывести единый интегрированный продукт, не&nbsp;потеряв
-                                корпоративной культуры и&nbsp;подхода, который делает их успешными в&nbsp;своих
-                                категориях.
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
                         </article>
                         <article class="d-animate d-fade d-delay-1">
-                            <div class="d-person-img"><img class="lazy" data-src="upload/person0.png" width="248" height="222" alt="" title=""/></div>
+                            <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}" width="248" height="222" alt="" title=""/></div>
                             <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Михаил Токовинин<br/><span class="d-pink">Основатель «AmoCRM», Управляющий&nbsp;партнер&nbsp;«QSOFT»</span>
+                                <p class="d-l d-white d-ttu">Михаил Токовинин<br/><span class="d-pink">Сотрудник</span>
                                 </p>
-                                Это работает и&nbsp;работает круто. Мы теперь можем поставлять самую сильную на&nbsp;рынке
-                                техническую компетенцию и&nbsp;упаковывать ее в, на мой взгляд, самую сильную
-                                графическую оболочку. Я даже не&nbsp;знаю, кто сегодня в&nbsp;России может обеспечить
-                                такой уровень, как QSOFT+AIC.
+                               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
                         </article>
                         <article class="d-animate d-fade d-delay-1.5">
-                            <div class="d-person-img"><img class="lazy" data-src="upload/person2.png" width="248" height="222" alt="" title=""/></div>
+                            <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}" width="248" height="222" alt="" title=""/></div>
                             <div class="d-person-txt">
                                 <p class="d-l d-white d-ttu">Анатолий Денисов<br/><span
                                         class="d-blue">Главный редактор<br/>«CMS Magazine»</span></p>
