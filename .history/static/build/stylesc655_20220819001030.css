@@ -3551,15 +3551,8 @@ button[type='submit']:disabled {
   right: 30px;
   cursor: pointer;
 }
-#burger svg {
-  fill: #0087a2;
-  border-radius: 3px;
-}
 
 @media (max-width: 800px) {
-  #burger {
-    z-index: 1001;
-  }
   .custom-header > .custom-header-fixed.active {
     left: 0;
   }
@@ -3569,8 +3562,7 @@ button[type='submit']:disabled {
     width: 30%;
     transition: 0.7s;
     min-width: 320px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 50px;
   }
   .custom-header nav ul {
     height: 318px;

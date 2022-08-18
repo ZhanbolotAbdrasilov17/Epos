@@ -3553,7 +3553,8 @@ button[type='submit']:disabled {
 }
 #burger svg {
   fill: #0087a2;
-  border-radius: 3px;
+  background: #fff;
+  border-radius: 10px;
 }
 
 @media (max-width: 800px) {

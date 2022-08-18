@@ -3552,8 +3552,7 @@ button[type='submit']:disabled {
   cursor: pointer;
 }
 #burger svg {
-  fill: #0087a2;
-  border-radius: 3px;
+  fill: #00aae7;
 }
 
 @media (max-width: 800px) {
@@ -3569,8 +3568,7 @@ button[type='submit']:disabled {
     width: 30%;
     transition: 0.7s;
     min-width: 320px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 50px;
   }
   .custom-header nav ul {
     height: 318px;

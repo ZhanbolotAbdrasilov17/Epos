@@ -3547,35 +3547,5 @@ button[type='submit']:disabled {
   width: fit-content;
   position: fixed;
   z-index: 3;
-  top: 30px;
-  right: 30px;
-  cursor: pointer;
-}
-#burger svg {
-  fill: #0087a2;
-  border-radius: 3px;
-}
-
-@media (max-width: 800px) {
-  #burger {
-    z-index: 1001;
-  }
-  .custom-header > .custom-header-fixed.active {
-    left: 0;
-  }
-  .custom-header > .custom-header-fixed {
-    left: -100%;
-    transform: unset;
-    width: 30%;
-    transition: 0.7s;
-    min-width: 320px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  .custom-header nav ul {
-    height: 318px;
-    transition: 0.7s;
-    flex-direction: column;
-    padding: 20px 0;
-  }
+  right: 0;
 }
