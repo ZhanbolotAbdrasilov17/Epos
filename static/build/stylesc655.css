@@ -34,8 +34,8 @@
     url(../fonts/unisanssemibold.ttf) format('truetype'),
     url(../fonts/unisanssemibold.svg#uni_sanssemibold) format('svg');
 }
-*{
-    scroll-behavior: smooth
+* {
+  scroll-behavior: smooth;
 }
 .fa {
   -webkit-font-smoothing: antialiased;
@@ -631,7 +631,7 @@ ol {
 ul {
   list-style: disc;
   margin-left: 1em;
-  text-align: center
+  text-align: center;
 }
 li {
   margin-bottom: 0.75em;
@@ -2570,9 +2570,9 @@ progress::-moz-progress-bar {
     padding-top: 2em;
     width: 160px;
   }
-  .d-h-logo-text{
-  margin-top: 40px;
-  margin-bottom: 0;
+  .d-h-logo-text {
+    margin-top: 40px;
+    margin-bottom: 0;
   }
   #d-header .d-moon {
     left: 17em;
@@ -3005,7 +3005,7 @@ progress::-moz-progress-bar {
     width: auto;
   }
   .soc {
-    width: 35px!important;
+    width: 35px !important;
   }
   .d-crcl-sm-0 {
     transform: translate(-98px, -98px);
@@ -3495,11 +3495,18 @@ button[type='submit']:disabled {
 }
 
 .custom-header {
-  background: #fff;
-  position: relative;
-  z-index: 100;
+  width: 100%;
   margin-bottom: -15px;
-  height: 100%;
+  min-height: 70px;
+}
+.custom-header > .custom-header-fixed {
+  position: fixed;
+  z-index: 100;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 .custom-header nav ul {
   display: flex;
@@ -3533,4 +3540,42 @@ button[type='submit']:disabled {
 .custom-header nav ul li:hover a {
   transition: 0.3s;
   color: #fff;
+}
+#burger {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+#burger svg {
+  fill: #0087a2;
+  border-radius: 3px;
+}
+
+@media (max-width: 800px) {
+  #burger {
+    z-index: 1001;
+  }
+  .custom-header > .custom-header-fixed.active {
+    left: 0;
+  }
+  .custom-header > .custom-header-fixed {
+    left: -100%;
+    transform: unset;
+    width: 30%;
+    transition: 0.7s;
+    min-width: 320px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .custom-header nav ul {
+    height: 318px;
+    transition: 0.7s;
+    flex-direction: column;
+    padding: 20px 0;
+  }
 }
