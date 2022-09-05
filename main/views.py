@@ -18,3 +18,6 @@ def article_releases(request):
 
 def for_authors(request):
     return render(request, "for_authors.html", )
+
+def article_article_releases(request):
+    return render(request, "article-releases-detail.html", )
