@@ -13,12 +13,41 @@ class Statistic(models.Model):
         verbose_name_plural = 'Главная - Статистика'
         verbose_name = 'Главная - Статистика'
 
-class Articles(models.Model):
+
+
+
+class Categories(models.Model):
+    category_name = models.CharField(max_length=200, verbose_name='Название категории')
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        verbose_name_plural = 'Категории'
+        verbose_name = 'категория'
+
+
+class ArticlesArchive(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название статьи')
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
-    banner = models.ImageField(upload_to='project-banner', blank=True, null=True, verbose_name='Банер')
+
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Архивные Статьи'
+        verbose_name = 'Архивная Статья'
+
+class Articles(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Название статьи')
+    category_name = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name="Категории")
+    date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
+    text = models.TextField(verbose_name="Текст")
+    image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
+
 
     def __str__(self):
         return self.title
@@ -28,27 +57,12 @@ class Articles(models.Model):
         verbose_name = 'Статья'
 
 
-class ArticlesArchive(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Название статьи')
-    date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
-    text = models.TextField(verbose_name="Текст")
-    image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
-    banner = models.ImageField(upload_to='project-banner', blank=True, null=True, verbose_name='Банер')
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Архивные Статьи'
-        verbose_name = 'Архивная Статья'
-
-
 class News(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название новости')
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания новости')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение на показ')
-    banner = models.ImageField(upload_to='project-banner', blank=True, null=True, verbose_name='Банер')
+
 
     def __str__(self):
         return self.title

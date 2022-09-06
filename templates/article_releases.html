@@ -18,52 +18,27 @@
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-persons d-animate d-fade owl-carousel owl-theme owl-loaded owl-text-select-on">
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1386.67px;"><div class="owl-item active" style="width: 346.667px; margin-right: 0px;"><article class="d-animate d-fade">
-                            <div class="d-person-img"><img class=" lazyloaded" data-src="upload/person1.png" width="248" height="222" alt="" title="" src="{% static 'img/example.jpeg' %}"></div>
+                    <div class="owl-stage"
+                        style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1386.67px;">
+
+                        {% for article in articles %}
+                        <div class="owl-item">
+                            <article class="d-animate d-fade">
+                                <div class="d-person-img"><img class=" lazyloaded"
+                                                               data-src="upload/person1.png" width="248"
+                                                               height="222" alt="" title=""
+                                                               src="{% static 'img/example.jpeg' %}">
+                                </div>
                             <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Новость<br><span class="d-blue"><br></span>
-                                </p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                <a href="{% url 'article' article.pk %}"><p class="d-l d-white d-ttu">{{article.title}}<br><span class="d-blue"><br></span>
 
-
+                                </p></a>
+                                {{article.text|truncatechars:200}}
                             </div>
-                        </article></div><div class="owl-item active" style="width: 346.667px; margin-right: 0px;"><article class="d-animate d-fade d-delay-05">
-                            <div class="d-person-img"><img class=" lazyloaded" data-src="upload/person3.png" width="248" height="222" alt="" title="" src="{% static 'img/example.jpeg' %}"></div>
-                            <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Новость<br><span class="d-blue"></span>
-                                </p>
-                               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-
-                            </div>
-                        </article></div><div class="owl-item active" style="width: 346.667px; margin-right: 0px;"><article class="d-animate d-fade d-delay-1">
-                            <div class="d-person-img"><img class=" lazyloaded" data-src="upload/person0.png" width="248" height="222" alt="" title="" src="{% static 'img/example.jpeg' %}"></div>
-                            <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Новость<br><span class="d-pink"></span>
-                                </p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-.
-                            </div>
-                        </article></div><div class="owl-item active" style="width: 346.667px; margin-right: 0px;"><article class="d-animate d-fade d-delay-1">
-                            <div class="d-person-img"><img class=" lazyloaded" data-src="upload/person0.png" width="248" height="222" alt="" title="" src="{% static 'img/example.jpeg' %}"></div>
-                            <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Новость<br><span class="d-pink"></span>
-                                </p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-.
-                            </div>
-
-                        </article></div><div class="owl-item" style="width: 346.667px; margin-right: 0px; opacity: 0;"><article class="d-animate d-fade d-delay-1.5">
-                            <div class="d-person-img"><img class=" lazyloaded" data-src="upload/person2.png" width="248" height="222" alt="" title="" src="{% static 'img/example.jpeg' %}"></div>
-                            <div class="d-person-txt">
-                                <p class="d-l d-white d-ttu">Новость<br><span class="d-blue"><br></span></p>
-                                В&nbsp;редкой компании на&nbsp;рынке можно найти такое как у альянса AIC и QSOFT
-                                сочетание сильнейших дизайн и технологических компетенций.
-                            </div>
-                        </article></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev disabled" style="">prev</div><div class="owl-next" style="">next</div></div><div class="owl-dots" style="display: none;"></div></div></div>
-                </div>
+                        </article>
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
         </div>
             <div class="mask1"></div>

@@ -10,7 +10,7 @@
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-col d-col-6 d-col-xs-12">
-                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">Ознакомаление для авторов</div>
+                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">{{ articles.title}}</div>
                     </div>
                     <div class="d-col d-col-12 d-animate d-fade d-delay-05">
                         <div class='d-swipe-note d-hide-pc d-cb d-xl'>
@@ -36,8 +36,8 @@
                     </div>
                     <div>
                             <h2 class="d-section-title">20 сентября 2022г</h2>
-                                <p class="d-section-descr" style="letter-spacing:2px">
-                                    <img style="width:30%; float:left; margin:0 15px 15px 0" src="{% static 'img/example.jpeg' %}">
+                                <p class="d-section-descr" style="letter-spacing:2px;color:black;">
+                                    <img style="width:30%; float:left; margin:0 15px 15px 0" src="{{ articles.image.url }}">
                            Порядок приема и подготовки рукописи к публикации
 Журнал круглогодично принимает рукописи на русском и английском языках, оформленные по следующим правилам.
 
