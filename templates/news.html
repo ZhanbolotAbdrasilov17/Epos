@@ -25,10 +25,10 @@
                                         <div class="d-person-img"><img class=" lazyloaded"
                                                                        data-src="upload/person3.png" width="248"
                                                                        height="222" alt="" title=""
-                                                                       src="{% static 'img/example.jpeg' %}">
+                                                                       src="{{ new.image.url }}">
                                         </div>
                                         <div class="d-person-txt">
-                                            <a href=""><p class="d-l d-white d-ttu">Новость<br><span
+                                            <a href="{% url 'news' new.pk %}"><p class="d-l d-white d-ttu">Новость<br><span
                                                     class="d-blue"></span>
                                             </p></a>
                                             {{new.text|truncatechars:200}}

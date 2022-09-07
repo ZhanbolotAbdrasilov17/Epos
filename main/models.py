@@ -3,8 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Statistic(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Название статистики')
-    statistic = models.CharField(max_length=100, verbose_name='Статистика')
+    title = models.CharField(max_length=100, verbose_name='Название статистики', blank=True, null=True)
+    statistic = models.CharField(max_length=100, verbose_name='Статистика', blank=True, null=True)
+    lower = models.CharField(max_length=100, verbose_name='Нижняя цифра', blank=True, null=True)
+    comments = models.CharField(max_length=100, verbose_name='Комментарий', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -26,9 +28,21 @@ class Categories(models.Model):
         verbose_name_plural = 'Категории'
         verbose_name = 'категория'
 
+class CategoriesForArchieved(models.Model):
+    category_name = models.CharField(max_length=200, verbose_name='Название категории')
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        verbose_name_plural = 'Категории для архивных статей'
+        verbose_name = 'Категория для архивной статьи'
+
+
 
 class ArticlesArchive(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название статьи')
+    category_name = models.ForeignKey(CategoriesForArchieved, on_delete=models.CASCADE, related_name="Категории")
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
@@ -72,12 +86,25 @@ class News(models.Model):
         verbose_name = 'Новость'
 
 
+class PartnerCategory(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Название категории',)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Категории партнёров'
+        verbose_name = 'Кетегория партнёра'
+
 class Partner(models.Model):
+    category = models.ForeignKey(PartnerCategory, on_delete=models.CASCADE, verbose_name='Категория партнера',
+                                 related_name='category_partners')
+    title = models.CharField(max_length=200, verbose_name='Название партнёра')
     image = models.ImageField(upload_to='partner-image', blank=True, null=True, verbose_name='Логотип партнера')
     link = models.CharField(max_length=200, blank=True, null=True, verbose_name='Ссылка на сайт партнера')
 
     def __str__(self):
-        return 'Онлайн журнал'
+        return self.title
 
     class Meta:
         verbose_name_plural = 'Партнёры'
