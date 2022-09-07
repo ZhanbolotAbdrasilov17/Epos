@@ -4,8 +4,16 @@ from .models import *
 # Create your views here.
 
 
-def about(request):
-    return render(request, "about.html", )
+def about_journal(request):
+    statistic_1 = Statistic.objects.get(id=1)
+    statistic_2 = Statistic.objects.get(id=2)
+    statistic_3 = Statistic.objects.get(id=3)
+    context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,}
+
+    return render(request, "about_journal.html", context)
+
+def contacts(request):
+    return render(request, "contacts.html", )
 
 def news(request):
     news = News.objects.all()
@@ -25,13 +33,11 @@ class NewsDetail(DetailView):
 
 
 def home(request):
-    statistic_1 = Statistic.objects.get(id=1)
-    statistic_2 = Statistic.objects.get(id=2)
-    statistic_3 = Statistic.objects.get(id=3)
+
     partners = Partner.objects.all()
     category = PartnerCategory.objects.all()
 
-    context = {"statistic_1":statistic_1, "statistic_2":statistic_2, "statistic_3":statistic_3, "partners":partners,
+    context = {"partners":partners,
                "category":category}
     return render(request, "home.html", context)
 
