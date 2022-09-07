@@ -40,7 +40,7 @@
 
 <div id="d-content">
 
-    <section style="display:none" class="d-section-0 d-dark d-animbox" id="d-section-0">
+    <section class="d-section-0 d-dark d-animbox" id="d-section-0">
         <div class="mask1"></div>
         <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>
             <div></div>
@@ -67,7 +67,7 @@
 
     </section>
 
-    <section style="display:none;" class="d-section-1 d-animbox" id="d-section-1">
+    <section class="d-section-1 d-animbox" id="d-section-1">
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
@@ -77,7 +77,7 @@
                     </div>
                     <nav class="d-nav-view d-blue h3 d-ttu d-animate d-fade">
                         <ul>
-                            <li><a href=""
+                            <li><a href="{% url 'about'%}"
                                    onclick="trackOutboundLink('http://www.aic.ru/showreel/'); return false;"
                                    target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>Подробнее</a>
                             </li>
@@ -514,22 +514,24 @@
 
                 <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
                     {% for c in category%}
-                        <div class="d-row d-tab-logos d-tab-{{c.id}}">
-                            {% for p in c.category_partners.all %}
-                            <div class="d-col d-col-4">
-                                <img data-src="{{p.image.url}}" width="177"
-                                    height="80%" alt="" title="" class="d-hover lazy"/>
-                            </div>
-                            {% endfor %}
+                    <div class="d-row d-tab-logos d-tab-{{c.id}}">
+                        {% for p in c.category_partners.all %}
+                        <div class="d-col d-col-4">
+                            <img data-src="{{p.image.url}}" width="177"
+                                                        height="80%" alt="" title="" class="d-hover lazy"/>
                         </div>
+                        {% endfor %}
+
+                    </div>
                     {% endfor %}
-                        <div class="d-row d-tab-logos d-tab-0">
-                            {% for p in partners %}
-                            <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177"
-                                height="80%" alt="" title="" class="d-hover lazy"/>
-                            </div>
-                            {% endfor %}
+                    <div class="d-row d-tab-logos d-tab-0">
+                        {% for p in partners %}
+                        <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177"
+                            height="80%" alt="" title="" class="d-hover lazy"/>
                         </div>
+                        {% endfor %}
+
+                    </div>
                 </div>
 
 
@@ -635,13 +637,13 @@
                 <div class="d-col d-col-12 video-wrap">
                     <div class="owl-carousel">
                         <div class="item">
-                            <img style="width: 100%" src="{% static 'img/bg0.jpg' %}" alt="slide-image">
+                            <img src="{% static 'img/bg0.jpg' %}" alt="slide-image">
                         </div>
                         <div class="item">
-                            <img style="width: 100%" src="{% static 'img/bg0.jpg' %}" alt="slide-image">
+                            <img src="{% static 'img/bg0.jpg' %}" alt="slide-image">
                         </div>
                         <div class="item">
-                            <img style="width: 100%" src="{% static 'img/bg0.jpg' %}" alt="slide-image">
+                            <img src="{% static 'img/bg0.jpg' %}" alt="slide-image">
                         </div>
                     </div>
                 </div>

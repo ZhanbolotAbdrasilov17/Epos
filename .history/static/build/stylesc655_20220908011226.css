@@ -3564,16 +3564,16 @@ button[type='submit']:disabled {
     left: 0;
   }
   .custom-header > .custom-header-fixed {
-    left: -1000%;
+    left: -100%;
     transform: unset;
     width: 100%;
     transition: 0.7s;
-    min-width: 400px;
+    min-width: 320px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
   }
   .custom-header nav ul {
-    height: 400px;
+    height: 318px;
     transition: 0.7s;
     flex-direction: column;
     padding: 60px 0;
@@ -3585,7 +3585,6 @@ button[type='submit']:disabled {
 }
 .languages-switcher form select {
   background: transparent;
-  width: 100px;
   outline: none;
   border: none;
   color: #111;
