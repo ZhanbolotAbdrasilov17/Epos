@@ -5,7 +5,7 @@ from .models import *
 
 
 def about_journal(request):
-    statistic_1 = Statistic.objects.get(id=1)
+    statistic_1 = Statistic.objects.get(id=4)
     statistic_2 = Statistic.objects.get(id=2)
     statistic_3 = Statistic.objects.get(id=3)
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,}
@@ -36,9 +36,13 @@ def home(request):
 
     partners = Partner.objects.all()
     category = PartnerCategory.objects.all()
+    category_1 = PartnerCategory.objects.get(id=1)
+    category_2 = PartnerCategory.objects.get(id=2)
+    category_3 = PartnerCategory.objects.get(id=3)
 
-    context = {"partners":partners,
-               "category":category}
+
+    context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
+               'category':category}
     return render(request, "home.html", context)
 
 def article_releases(request):
@@ -70,7 +74,9 @@ class ArticleArchivedDetail(DetailView):
         return context
 
 def for_authors(request):
-    return render(request, "for_authors.html", )
+    authors = Authors.objects.all()
+    context = {"authors": authors}
+    return render(request, "for_authors.html", context )
 
 def article_article_releases(request):
     return render(request, "article-releases-detail.html", )

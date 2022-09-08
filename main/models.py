@@ -9,7 +9,7 @@ class Statistic(models.Model):
     comments = models.CharField(max_length=100, verbose_name='Комментарий', blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return f'{self.id}  {self.title} '
 
     class Meta:
         verbose_name_plural = 'Главная - Статистика'
@@ -146,3 +146,25 @@ class Partners(models.Model):
 
     class Meta:
         verbose_name = 'Партнёры'
+
+
+class Authors(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Оглавление')
+    text = models.TextField(verbose_name="Текст")
+
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Для авторов'
+
+class ImagesContent(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Картинка", blank=True, null=True)
+    file = models.ImageField(null=True, blank=True, upload_to="work_images")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Галерея_Контент'
