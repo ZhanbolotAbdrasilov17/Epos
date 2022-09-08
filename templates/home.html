@@ -517,34 +517,54 @@
     </section>
     <section class="d-section-9 d-animbox" id="d-section-9">
         <div class="d-grid">
-            <div class="d-row">
-                <div class="d-col d-col-11 d-col-xs-12">
-                    <div class="h1 d-ttu d-tar d-white d-animate d-rise">Мнения<br/>экспертов рынка</div>
-                    <div class='d-swipe-note d-hide-pc d-cb d-xl'>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
-                             viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
-                                    <g i:extraneous="self">
+            <div class="d-col d-col-11 d-col-xs-12">
+                <div class="h1 d-ttu d-tar d-white d-animate d-rise">Мнения<br/>экспертов рынка</div>
+                <div class='d-swipe-note d-hide-pc d-cb d-xl'>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
+                         viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
+                                <g i:extraneous="self">
+                                    <g>
+                                        <polygon
+                                                points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
                                         <g>
-                                            <polygon
-                                                    points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
-                                            <g>
-                                                <path
-                                                        d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
-                                                <path
-                                                        d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
-                                            </g>
+                                            <path
+                                                    d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
+                                            <path
+                                                    d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
                                         </g>
                                     </g>
-                                </switch></svg>
-                    </div>
+                                </g>
+                            </switch></svg>
                 </div>
-                <div class="d-persons d-animate d-fade">
-                    <article class="d-animate d-fade">
-                        <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}"
-                                                       width="248" height="222" alt="" title=""/></div>
-                        <div class="d-person-txt">
-                            <p class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue">Сотрудник<br/></span>
+            </div>
+            <div class="container swiper-container2">
+                <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    {% for article in articles %}
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
+                                    </div>
+                                    <div class="d-person-txt" style="padding: 0 5px">
+                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                            {{article.title}}
+                                        </p></a>
+                                        {{article.text|truncatechars:200}}
+                                    </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div><div class="container swiper-container2">
+                <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                        </div>
+                        <div class="d-person-txt" style="padding: 0 5px">
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
                             </p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -555,11 +575,14 @@
                             versions of Lorem Ipsum.
                         </div>
                     </article>
-                    <article class="d-animate d-fade d-delay-05">
-                        <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}"
-                                                       width="248" height="222" alt="" title=""/></div>
-                        <div class="d-person-txt">
-                            <p class="d-l d-white d-ttu">Андрей Анищенко<br/><span class="d-blue">Сотрудник</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                        </div>
+                        <div class="d-person-txt" style="padding: 0 5px">
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
                             </p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -570,11 +593,14 @@
                             versions of Lorem Ipsum.
                         </div>
                     </article>
-                    <article class="d-animate d-fade d-delay-1">
-                        <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}"
-                                                       width="248" height="222" alt="" title=""/></div>
-                        <div class="d-person-txt">
-                            <p class="d-l d-white d-ttu">Михаил Токовинин<br/><span class="d-pink">Сотрудник</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                        </div>
+                        <div class="d-person-txt" style="padding: 0 5px">
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
                             </p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -585,16 +611,43 @@
                             versions of Lorem Ipsum.
                         </div>
                     </article>
-                    <article class="d-animate d-fade d-delay-1.5">
-                        <div class="d-person-img"><img class="lazy" data-src="{% static 'img/example.jpeg' %}"
-                                                       width="248" height="222" alt="" title=""/></div>
-                        <div class="d-person-txt">
-                            <p class="d-l d-white d-ttu">Анатолий Денисов<br/><span
-                                    class="d-blue">Главный редактор<br/>«CMS Magazine»</span></p>
-                            В&nbsp;редкой компании на&nbsp;рынке можно найти такое как у альянса AIC и QSOFT
-                            сочетание сильнейших дизайн и технологических компетенций.
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                        </div>
+                        <div class="d-person-txt" style="padding: 0 5px">
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
+                            </p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
                         </div>
                     </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                        <div style="border: 1px solid #fff; margin-bottom: 1em;" class="d-person-img">
+                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                        </div>
+                        <div class="d-person-txt" style="padding: 0 5px">
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
+                            </p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </div>
+                    </article>
+                    </div>
                 </div>
             </div>
         </div>
