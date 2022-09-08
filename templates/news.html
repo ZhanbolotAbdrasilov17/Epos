@@ -13,41 +13,25 @@
 
 
             <div class="d-grid">
-                <div class="d-row">
-                    <div class="d-persons d-animate d-fade owl-carousel owl-theme owl-loaded owl-text-select-on">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1386.67px;">
-
-                                {% for new in news %}
-                                <div class="owl-item">
-                                    <article class="d-animate d-fade">
-                                        <div class="d-person-img"><img class=" lazyloaded"
-                                                                       data-src="upload/person3.png" width="248"
-                                                                       height="222" alt="" title=""
-                                                                       src="{{ new.image.url }}">
-                                        </div>
-                                        <div class="d-person-txt">
-                                            <a href="{% url 'news' new.pk %}"><p class="d-l d-white d-ttu">Новость<br><span
-                                                    class="d-blue"></span>
-                                            </p></a>
-                                            {{new.text|truncatechars:200}}
-
-                                        </div>
-                                    </article>
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <div class="owl-controls">
-                                <div class="owl-nav">
-                                    <div class="owl-prev disabled" style="">prev</div>
-                                    <div class="owl-next" style="">next</div>
-                                </div>
-                                <div class="owl-dots" style="display: none;"></div>
-                            </div>
-                        </div>
+                <div class="container swiper-container3">
+                <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    {% for article in news %}
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
+                                    </div>
+                                    <div class="d-person-txt" style="padding: 0 5px">
+                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                            {{article.title}}
+                                        </p></a>
+                                        {{article.text|truncatechars:200}}
+                                    </div>
+                        </article>
                     </div>
+                    {% endfor %}
                 </div>
+            </div>
             </div>
             <div class="mask1"></div>
             <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>

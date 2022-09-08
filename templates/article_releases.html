@@ -7,40 +7,27 @@
 
     <section class="d-section-0 d-dark d-animbox" style="padding-top: 30px" id="d-section-0">
         <div class="d-grid d-animbox">
-            <!-- <div class="d-h-logo">
-                <img src="img/logo.png" alt="aic + qsoft alliance" title="aic + qsoft alliance" />
-                <a id="aic-link" href="http://aic.ru/" target="_blank" title="aic" alt="aic"></a>
-                <a id="qsoft-link" href="https://qsoft.ru/" target="_blank" title="qsoft" alt="qsoft"></a>
-            </div> -->
 
-
-            <div class="d-grid">
-                <div class="d-row">
-                    <div class="d-persons d-animate d-fade owl-carousel owl-theme owl-loaded owl-text-select-on">
-                        <div class="owl-stage"
-                             style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1386.67px;">
-
-                            {% for article in articles %}
-                            <div class="owl-item">
-                                <article class="d-animate d-fade">
-                                    <div class="d-person-img"><img class=" lazyloaded"
-                                                                   data-src="upload/person1.png" width="248"
-                                                                   height="222" alt="" title=""
-                                                                   src="{{ article.image.url }}">
+            <div class="container swiper-container">
+                <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    {% for article in articles %}
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
                                     </div>
-                                    <div class="d-person-txt">
-                                        <a href="{% url 'article' article.pk %}"><p class="d-l d-white d-ttu">
-                                            {{article.title}}<br><span class="d-blue"><br></span>
-
+                                    <div class="d-person-txt" style="padding: 0 5px">
+                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                            {{article.title}}
                                         </p></a>
                                         {{article.text|truncatechars:200}}
                                     </div>
-                                </article>
-                            </div>
-                            {% endfor %}
-                        </div>
+                        </article>
                     </div>
+                    {% endfor %}
                 </div>
+            </div>
+        </div>
                 <div class="mask1"></div>
                 <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>
                     <div></div>
@@ -244,63 +231,23 @@
 
     <section class="d-section-7 d-animbox" id="d-section-7">
         <div class="d-grid">
-            <div class="d-row">
-                <div class="d-col d-col-6 d-col-xs-12" style="text-align: right; color: #fff">
-                    <div class="h1 d-ttu h0 d-light2 d-animate d-rise">Архив</div>
-                </div>
-                <div class="d-persons d-animate d-fade owl-carousel owl-theme owl-loaded owl-text-select-on owl-center">
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage"
-                             style="transition: all 0s ease 0s; width: 2080px; transform: translate3d(0px, 0px, 0px);">
-                            <div class="owl-item active center" style="width: 1040px; margin-right: 0px;">
-                                <div class="owl-stage-outer">
-                                    <div class="owl-stage"
-                                         style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1386.67px;">
-
-                                        {% for arts in articles_archived %}
-
-                                        <div class="owl-item" style="width: 346.667px; margin-right: 0px;">
-                                            <article class="d-animate d-fade">
-                                                <div class="d-person-img"><img class=" lazyloaded"
-                                                                               data-src="{% static 'img/example.jpeg' %}"
-                                                                               width="248" height="222" alt="" title=""
-                                                                               src="{% static 'img/example.jpeg' %}">
-                                                </div>
-                                                <div class="d-person-txt">
-                                                    <a href="{% url 'article_archived' arts.pk %}"><p class="d-l d-white d-ttu">{{arts.title}}<span class="d-blue"><br></span>
-                                                    </p>
-                                                    {{ arts.text|truncatechars:200}}
-                                                </div>
-                                            </article>
-                                        </div>
-                                        {% endfor %}
-
-
-
+            <div class="container swiper-container2">
+                <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    {% for article in articles %}
+                    <div class="swiper-slide">
+                        <article class="d-animate d-fade">
+                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 1040px; margin-right: 0px;">
-                                <div class="owl-controls">
-                                    <div class="owl-nav">
-                                        <div class="owl-prev disabled" style="">prev</div>
-                                        <div class="owl-next" style="">next</div>
+                                    <div class="d-person-txt" style="padding: 0 5px">
+                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                            {{article.title}}
+                                        </p></a>
+                                        {{article.text|truncatechars:200}}
                                     </div>
-                                    <div class="owl-dots" style="display: none;"></div>
-                                </div>
-                            </div>
-                        </div>
+                        </article>
                     </div>
-                    <div class="owl-controls">
-                        <div class="owl-nav">
-                            <div class="owl-prev" style="display: none;">prev</div>
-                            <div class="owl-next" style="display: none;">next</div>
-                        </div>
-                        <div class="owl-dots" style="">
-                            <div class="owl-dot active"><span></span></div>
-                            <div class="owl-dot"><span></span></div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
