@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n%}
 {% block page %}
 <header id="d-header">
     <div class="d-moon d-moon-0 d-hide-pc"></div>
@@ -11,7 +12,7 @@
         </div> -->
         <img src="{% static 'img/logo.png' %}" class="d-h-logo" width="277" height="72" alt="aic + qsoft alliance"
              title="aic + qsoft alliance"/>
-        <div class="d-slogan h1 d-ttu d-white d-animate d-rise">Креатив<br/>в каждой статье<br/>для удовольствия</div>
+        <div class="d-slogan h1 d-ttu d-white d-animate d-rise">{% trans 'Креатив в каждой статье для удовольствия' %}</div>
         <div class="d-swipe-note d-hide-pc d-cb">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                  y="0px" width="55px" height="37px" viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30"
@@ -47,18 +48,17 @@
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
-                    <div class="h2 d-ttu d-animate d-fade">аналитика и&nbsp;контроль
-                        информации на достоверность
+                    <div class="h2 d-ttu d-animate d-fade">{% trans 'аналитика и&nbsp;контроль информации на достоверность' %}
                     </div>
                     <div class="d-circle d-circle-0 d-ttu d-animate d-fade">
                             <span class="d-crcl-sm-0"><b class="d-animate d-fade d-delay-2"><i
-                                    class="d-hover">сотрудничество</i></b></span>
+                                    class="d-hover">{% trans 'сотрудничество' %}</i></b></span>
                         <span class="d-crcl-sm-1"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">заказы статей</i></b></span>
+                                class="d-hover">{% trans 'заказы статей' %}</i></b></span>
                         <span class="d-crcl-sm-2"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">заявки</i></b></span>
+                                class="d-hover">{% trans 'заявки' %}</i></b></span>
                         <span class="d-crcl-sm-3"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">специальности</i></b></span>
+                                class="d-hover">{% trans 'специальности' %}</i></b></span>
                     </div>
                     <div class="d-circle d-circle-1 d-animate d-fade"></div>
                 </div>
@@ -71,19 +71,18 @@
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
                     <div class="h1 d-ttu d-white d-animate d-rise"></div>
-                    <div class="d-section-descr d-dark d-xl d-animate d-fade">Лидер большинства<br/>профессиональных
-                        рейтингов<br/>СМИ Кыргызстана<br/>
+                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{% trans 'Лидер большинства профессиональных рейтингов СМИ Кыргызстана' %}<br/>
                     </div>
                     <nav class="d-nav-view d-blue h3 d-ttu d-animate d-fade">
                         <ul>
                             <li><a href=""
                                    onclick="trackOutboundLink('http://www.aic.ru/showreel/'); return false;"
-                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>Подробнее</a>
+                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans 'Подробнее' %}</a>
                             </li>
                             <li><a href="http://www.aic.ru/work/site/"
                                    onclick="trackOutboundLink('http://www.aic.ru/work/site/'); return false;"
                                    target="_blank" class="d-hover"><i
-                                    class="fa fa-external-link d-hover"></i>Академия</a>
+                                    class="fa fa-external-link d-hover"></i>{% trans 'Академия' %}</a>
                             </li>
                         </ul>
                     </nav>
@@ -155,8 +154,7 @@
             <div class="d-row">
                 <div class="d-col d-col-9 d-hide-xs"></div>
                 <div class="d-col d-col-3 d-col-xs-12">
-                    <div class="h2 d-ttu d-fade d-animate">гарантия<br/>качество статей<br/>поддержка<br/>и
-                        развитие
+                    <div class="h2 d-ttu d-fade d-animate">{% trans 'гарантия качество статей поддержка и развитие' %}
                     </div>
                     <div class="d-circle d-circle-0 d-animate d-fade">
                         <div class="d-crcl-lg-3 d-pink d-s d-ttu d-animate d-fade d-delay-2 test"></div>
@@ -173,18 +171,17 @@
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
                     <div class="h1 d-ttu d-white d-rise d-animate">QSOFT</div>
-                    <div class="d-section-descr d-dark d-xl d-fade d-animate">Лидер в&nbsp;разработке<br/>интегрированных<br/>и
-                        высоконагруженных<br/>интернет-решений
+                    <div class="d-section-descr d-dark d-xl d-fade d-animate">{% trans 'Лидер в&nbsp;разработке интегрированных и высоконагруженных интернет-решений' %}
                     </div>
                     <nav class="d-nav-view d-pink h3 d-ttu d-animate d-fade">
                         <ul>
                             <li><a href="../qsoft.ru/presentation/Presentation_full.html"
                                    onclick="trackOutboundLink('../qsoft.ru/presentation/Presentation_full.html'); return false;"
-                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>презентация</a>
+                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans 'презентация' %}</a>
                             </li>
                             <li><a href="https://qsoft.ru/project/"
                                    onclick="trackOutboundLink('https://qsoft.ru/project/'); return false;"
-                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>портфолио</a>
+                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans 'портфолио' %}</a>
                             </li>
                         </ul>
                     </nav>
@@ -212,35 +209,32 @@
                         <div class="d-feats d-cb d-animate d-fade">
                             <article>
                                 <div class="d-count d-pink d-font d-counted" data-count="80">0</div>
-                                <div class="d-count-descr">сотрудников</div>
+                                <div class="d-count-descr">{% trans 'сотрудников' %}</div>
                                 <div class="d-feat-pos d-feat-pos-pink d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
                                                                    data-count="1">0</span></div>
                                 </div>
-                                <div class="d-feat-pos-descr">Лучшее в&nbsp;России портфолио крупных
-                                    интернет-магазинов
+                                <div class="d-feat-pos-descr">{% trans 'Лучшее в&nbsp;Кыргызстане портфолио крупных статей' %}
                                 </div>
                             </article>
                             <article>
                                 <div class="d-count d-pink d-font d-counted" data-count="10">0</div>
-                                <div class="d-count-descr">лет опыта</div>
+                                <div class="d-count-descr">{% trans 'лет опыта' %}</div>
                                 <div class="d-feat-pos d-feat-pos-pink d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
                                                                    data-count="2">0</span></div>
                                 </div>
-                                <div class="d-feat-pos-descr">Один из&nbsp;опытнейших в&nbsp;России разработчиков
-                                    корпоративных порталов
+                                <div class="d-feat-pos-descr">{% trans 'Один из&nbsp;опытнейших в&nbsp;Кыргызстане разработчиков корпоративных порталов' %}
                                 </div>
                             </article>
                             <article>
                                 <div class="d-count d-pink d-ha d-font d-counted" data-count="100">0</div>
-                                <div class="d-count-descr">реализованных<br/>проектов</div>
+                                <div class="d-count-descr">{% trans 'реализованных проектов' %}</div>
                                 <div class="d-feat-pos d-feat-pos-pink d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
                                                                    data-count="3">0</span></div>
                                 </div>
-                                <div class="d-feat-pos-descr">Входит в&nbsp;Top-10 Saas провайдеров России по&nbsp;версии
-                                    CNEWS
+                                <div class="d-feat-pos-descr">{% trans 'Входит в&nbsp;Top-10 журналов Кыргызстана' %}
                                 </div>
                             </article>
                         </div>
@@ -260,7 +254,7 @@
                     <div class="d-moon d-moon-aq d-hide-pc"><b></b><i></i>
                         <div></div>
                     </div>
-                    <div class="h2 d-ttu d-animate d-fade">максимально эффективное<br/>управление статьями
+                    <div class="h2 d-ttu d-animate d-fade">{% trans 'максимально эффективное управление статьями' %}
                     </div>
                     <div class="h1 d-ttu d-white d-rise d-animate"><br/><span
                             class="d-blue d-ha d-arr d-arr-pink">epos</span><span
@@ -335,9 +329,7 @@
                             class="d-hb d-arr d-arr-blue">Manas</span></div>
                 </div>
                 <div class="d-col d-col-7 d-col-xs-12 d-animate d-fade">
-                    <div class="h1 d-ttu d-white">Альянс<br/>идей и&nbsp;решений</div>
-                    Благодаря объединению наш жунрнал выходит на&nbsp;новый уровень, гарантируя
-                    максимально эффективное управление статьями от лучших специалистов.
+                    <div class="h1 d-ttu d-white">{% trans 'Альянс' %}</div>
                 </div>
             </div>
         </div>
@@ -518,7 +510,7 @@
     <section class="d-section-9 d-animbox" id="d-section-9">
         <div class="d-grid">
             <div class="d-col d-col-11 d-col-xs-12">
-                <div class="h1 d-ttu d-tar d-white d-animate d-rise">Мнения<br/>экспертов рынка</div>
+                <div class="h1 d-ttu d-tar d-white d-animate d-rise">{% trans 'Мнения экспертов рынка' %}</div>
                 <div class='d-swipe-note d-hide-pc d-cb d-xl'>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
@@ -653,12 +645,12 @@
         </div>
         <div class="d-bgd d-bgd-9"></div>
     </section>
-
+<!--{% for i in gallery%} url({{i.file.url}}) {% endfor %}-->
     <section class="d-section-11 d-animbox d-animated" id="d-section-11">
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-12">
-                    <div class="h1 d-ttu d-white d-animate d-rise">Галерея</div>
+                    <div class="h1 d-ttu d-white d-animate d-rise">{% trans 'Галерея' %}</div>
                 </div>
                 <div class="d-col d-col-12 video-wrap">
                     <div class="owl-carousel">

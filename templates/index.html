@@ -92,12 +92,12 @@
             <div class="d-grid">
             <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
                 <li><a href="{% url 'about_journal' %}">{% trans 'О журнале' %}</a></li>
                 <li><a href="{% url 'for_authors'%}">{% trans 'Авторам' %}</a></li>
-                <li><a href="{% url 'article_releases' %}">Выпуски</a></li>
+                <li><a href="{% url 'article_releases' %}">{% trans 'Выпуски' %}</a></li>
                 <li><a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
-                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
                 <li><div class="languages-switcher">
 									<i class="ri-global-line"></i>
 									<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
@@ -137,7 +137,7 @@
     <div class="d-grid d-white d-l">
         <article>
             <span class="cpy-text"
-                      >2022. Все права защищены. Дизайнер
+                      >{% trans '2022. Все права защищены. Дизайнер' %}
                       <a href="https://asoi.kg/" class="font-weight-500">ASOI </a
                       ></span
                     >

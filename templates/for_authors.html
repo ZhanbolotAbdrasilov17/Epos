@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n%}
 {% block page %}
 
 
@@ -10,7 +11,7 @@
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-col d-col-6 d-col-xs-12">
-                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">Ознакомаление для авторов</div>
+                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">{% trans 'Ознакомаление для авторов' %}</div>
                     </div>
                     <div class="d-col d-col-12 d-animate d-fade d-delay-05">
                         <div class='d-swipe-note d-hide-pc d-cb d-xl'>
@@ -30,15 +31,14 @@
                                         </g>
                                     </g>
                                 </switch></svg>
-                            <div>Смахните пальцем влево, чтобы узнать больше</div>
                         </div>
                         <div class="d-scroll-wrap">
                             <div class="d-scroll">
                                 <nav class="d-nav-logos d-nav-tabs h3 d-ttu">
                                     <ul>
-                                        <li class="d-current" data-tab="d-tab-0">Подать статью</li>
-                                        <li data-tab="d-tab-1">Руководство для авторов</li>
-                                        <li data-tab="d-tab-2">Процесс рецензирования</li>
+                                        <li class="d-current" data-tab="d-tab-0">{% trans 'Подать статью' %}</li>
+                                        <li data-tab="d-tab-1">{% trans 'Руководство для авторов' %}</li>
+                                        <li data-tab="d-tab-2">{% trans 'Процесс рецензирования' %}</li>
 
                                     </ul>
                                 </nav>

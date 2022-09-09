@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n%}
 {% block page %}
 
 
@@ -167,28 +168,28 @@
                     </nav>
                 </div>
                 <div class="d-col d-col-4 d-col-xs-12">
-                    <div class="d-section-descr d-dark d-xl d-animate d-fade">Направления публикаций<br/><br/><br/>
+                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{% trans 'Направления публикаций' %}<br/><br/><br/>
                     </div>
                     <div class="d-counter-a d-animate d-fadein">
                         <div class="d-count d-font d-counted2" data-count="684">0</div>
                         <div class="d-count d-fl d-font d-counted2" data-count="1165">0</div>
-                        <div class="d-white d-xl">часов</div>
+                        <div class="d-white d-xl">{% trans 'часов' %}</div>
                     </div>
                     <div class="d-counter-q d-animate2 d-fadeout">
                         <div class="d-count d-font d-counted2" data-count="1385">0</div>
                         <div class="d-count d-fl d-font d-counted2" data-count="1750">0</div>
-                        <div class="d-white d-xl">часов</div>
+                        <div class="d-white d-xl">{% trans 'часов' %}</div>
                     </div>
                 </div>
                 <div class="d-ccharts" id="d-ccharts">
                     <div class="d-cchart d-cchart-a d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate d-fade d-delay-1">
                             <ul>
-                                <li><i class="d-hover">Передовая статья</i></li>
-                                <li><i class="d-hover">Научная статья</i></li>
-                                <li><i class="d-hover">Информационная статья</i></li>
-                                <li><i class="d-hover">Общеисследовательская статья</i></li>
-                                <li><i class="d-hover"> Практико-аналитическая статья</i></li>
+                                <li><i class="d-hover">{% trans 'Передовая статья' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Научная статья' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Информационная статья' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Общеисследовательская статья' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Практико-аналитическая статья' %}</i></li>
                             </ul>
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-a-0"></div>
@@ -206,11 +207,11 @@
                     <div class="d-cchart d-cchart-q d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate2 d-fade d-delay-1">
                             <ul>
-                                <li><i class="d-hover">Системная информация</i></li>
-                                <li><i class="d-hover">Ведущий рынок новостей</i></li>
-                                <li><i class="d-hover">Главный повестник</i></li>
-                                <li><i class="d-hover">Технический апгрейд</i></li>
-                                <li><i class="d-hover">Архитектор познаний</i></li>
+                                <li><i class="d-hover">{% trans 'Системная информация' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Ведущий рынок новостей' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Главный повестник' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Технический апгрейд' %}</i></li>
+                                <li><i class="d-hover">{% trans 'Архитектор познаний' %}</i></li>
                             </ul>
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-q-0"></div>
@@ -233,14 +234,14 @@
         <div class="d-grid">
             <div class="container swiper-container2">
                 <div class="swiper-wrapper" style="position:relative; z-index:334;">
-                    {% for article in articles %}
+                    {% for article in articles_archived %}
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                                     <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
                                         <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
                                     </div>
                                     <div class="d-person-txt" style="padding: 0 5px">
-                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                        <a href="{% url 'article_archived' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
                                             {{article.title}}
                                         </p></a>
                                         {{article.text|truncatechars:200}}
