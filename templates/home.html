@@ -530,25 +530,7 @@
                             </switch></svg>
                 </div>
             </div>
-            <div class="container swiper-container2">
-                <div class="swiper-wrapper" style="position:relative; z-index:334;">
-                    {% for article in articles %}
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
-                                    </div>
-                                    <div class="d-person-txt" style="padding: 0 5px">
-                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
-                                            {{article.title}}
-                                        </p></a>
-                                        {{article.text|truncatechars:200}}
-                                    </div>
-                        </article>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div><div class="container swiper-container2">
+            <div class="container swiper-container2" style="overflow: hidden">
                 <div class="swiper-wrapper" style="position:relative; z-index:334;">
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
@@ -641,6 +623,8 @@
                     </article>
                     </div>
                 </div>
+               <div style="z-index: 335" class="swiper-button-next swiper-button-white"></div>
+                <div style="z-index: 335" class="swiper-button-prev swiper-button-white"></div>
             </div>
         </div>
         <div class="d-bgd d-bgd-9"></div>

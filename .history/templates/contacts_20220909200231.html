@@ -1,0 +1,210 @@
+{% extends 'index.html' %} {% load static %} {% block page %}
+
+<section
+  class="d-section-10 d-animbox d-animated"
+  id="d-section-10"
+  style="margin-top: 70px"
+>
+  <div class="d-grid">
+    <div class="d-row">
+      <div class="d-col d-col-12">
+        <div class="h1 d-ttu d-white d-rise d-animate">
+          Готовы к&nbsp;сотрудничеству?<br />Напишите нам
+        </div>
+      </div>
+      <div class="d-col d-col-12">
+        <form class="d-frm-contacts d-white" id="form" novalidate="novalidate">
+          <input type="file" name="" value="" class="d-hidden" multiple="" />
+          <fieldset class="d-frm-contacts-info drop-area">
+            <ul>
+              <li>
+                <textarea
+                  name="text"
+                  rows="3"
+                  placeholder="ВАШ ВОПРОС ИЛИ СООБЩЕНИЕ"
+                ></textarea>
+              </li>
+              <li
+                class="d-frm-contacts-files d-frm-contacts-uploads d-bsbb d-tac"
+                id="upload-result"
+                style="display: none"
+              ></li>
+              <li
+                class="d-frm-contacts-files d-bsbb d-tac d-hide-xs"
+                id="drop-zone"
+              >
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="513.1 399.6 17 17"
+                  enable-background="new 513.1 399.6 17 17"
+                  xml:space="preserve"
+                  width="16px"
+                  height="16px"
+                >
+                  <g>
+                    <path
+                      d="M517.4,410.9c0.2,0,0.3-0.1,0.4-0.2l0,0l5.2-5.2c0.3-0.3,0.6-0.4,1-0.4c0.5,0,0.9,0.4,0.9,1.1c0,0.4-0.2,0.8-0.4,1l-6,6c-0.5,0.5-1.1,0.8-1.6,0.8c-0.6,0-1.2-0.2-1.6-0.7c-0.5-0.5-0.7-1.1-0.7-1.8c0-0.7,0.3-1.3,0.7-1.8l7.5-7.5c1.4-1.4,3.7-1.4,5.1,0c0.7,0.7,1,1.6,1,2.5c0,1-0.4,1.9-1,2.5l-7.8,7.8l0,0c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.4,0.3,0.7,0.7,0.7c0.3,0,0.5-0.2,0.5-0.2l7.8-7.8c0.9-0.9,1.4-2.2,1.4-3.5c0-1.3-0.5-2.5-1.4-3.5c-1.9-1.9-5-1.9-6.9,0l-7.5,7.5c-0.7,0.7-1.1,1.7-1.1,2.7c0,1,0.4,2,1.1,2.7c1.5,1.5,3.6,1.4,5.1-0.1l6-6c0.5-0.5,0.8-1.2,0.8-2v0c0-0.7-0.2-1.3-0.6-1.8c-0.4-0.4-1-0.7-1.6-0.7c-0.8,0-1.4,0.2-2,0.8l-5.1,5.2l0,0c-0.1,0.1-0.2,0.3-0.2,0.4C516.7,410.6,517,410.9,517.4,410.9z"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="d-frm-contacts-txt"
+                  >Если хотите добавить к сообщению файлы, перетащите их сюда
+                  или загрузите со</span
+                >
+                <a href="javascript:" class="d-frm-upload"
+                  >своего компьютера.</a
+                >
+              </li>
+              <script type="text/template" id="upload-init-template">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="513.1 399.6 17 17" enable-background="new 513.1 399.6 17 17"
+                     xml:space="preserve" width="16px" height="16px"><g>
+                            <path
+                                    d="M517.4,410.9c0.2,0,0.3-0.1,0.4-0.2l0,0l5.2-5.2c0.3-0.3,0.6-0.4,1-0.4c0.5,0,0.9,0.4,0.9,1.1c0,0.4-0.2,0.8-0.4,1l-6,6c-0.5,0.5-1.1,0.8-1.6,0.8c-0.6,0-1.2-0.2-1.6-0.7c-0.5-0.5-0.7-1.1-0.7-1.8c0-0.7,0.3-1.3,0.7-1.8l7.5-7.5c1.4-1.4,3.7-1.4,5.1,0c0.7,0.7,1,1.6,1,2.5c0,1-0.4,1.9-1,2.5l-7.8,7.8l0,0c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.4,0.3,0.7,0.7,0.7c0.3,0,0.5-0.2,0.5-0.2l7.8-7.8c0.9-0.9,1.4-2.2,1.4-3.5c0-1.3-0.5-2.5-1.4-3.5c-1.9-1.9-5-1.9-6.9,0l-7.5,7.5c-0.7,0.7-1.1,1.7-1.1,2.7c0,1,0.4,2,1.1,2.7c1.5,1.5,3.6,1.4,5.1-0.1l6-6c0.5-0.5,0.8-1.2,0.8-2v0c0-0.7-0.2-1.3-0.6-1.8c-0.4-0.4-1-0.7-1.6-0.7c-0.8,0-1.4,0.2-2,0.8l-5.1,5.2l0,0c-0.1,0.1-0.2,0.3-0.2,0.4C516.7,410.6,517,410.9,517.4,410.9z"/>
+                        </g></svg>
+                <span class='d-frm-contacts-txt'><%=text%></span> <a href='javascript:'
+                                                                     class='d-frm-upload'><%=device%></a>
+              </script>
+              <script type="text/template" id="upload-file-template">
+                <div class="d-upload d-ib">
+                    <progress value="0" max="100"></progress>
+                    <span class="d-frm-contacts-txt"><%=name%></span>
+                    <span class="cancel"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                                  y="0px" viewBox="473.5 432.1 17 17"
+                                                  enable-background="new 473.5 432.1 17 17"
+                                                  xml:space="preserve" width="20px" height="20px"
+                                                  class="d-remove"><path
+                                    d="M485,437.6c-0.2-0.2-0.5-0.2-0.8,0l-2.3,2.3l-2.3-2.3c-0.2-0.2-0.5-0.2-0.8,0c-0.2,0.2-0.2,0.5,0,0.8l2.3,2.3l-2.3,2.3c-0.2,0.2-0.2,0.5,0,0.8c0.2,0.2,0.5,0.2,0.8,0l2.3-2.3l2.3,2.3c0.2,0.2,0.5,0.2,0.8,0c0.2-0.2,0.2-0.5,0-0.8l-2.3-2.3l2.3-2.3C485.2,438.2,485.2,437.8,485,437.6z M482,432.1c-4.7,0-8.5,3.8-8.5,8.5c0,4.7,3.8,8.5,8.5,8.5c4.7,0,8.5-3.8,8.5-8.5S486.7,432.1,482,432.1z M482,448.1c-4.1,0-7.4-3.3-7.4-7.4s3.3-7.4,7.4-7.4c4.1,0,7.4,3.3,7.4,7.4S486.1,448.1,482,448.1z"/></svg></span>
+                </div>
+              </script>
+              <script type="text/template" id="upload-error-template">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
+                     height="20px" viewBox="473.5 400 17 17"
+                     enable-background="new 473.5 400 17 17" xml:space="preserve"><g>
+                            <path
+                                    d="M482,400c-4.7,0-8.5,3.8-8.5,8.5s3.8,8.5,8.5,8.5c4.7,0,8.5-3.8,8.5-8.5C490.5,403.8,486.7,400,482,400z M482,416c-4.1,0-7.4-3.3-7.4-7.4c0-4.1,3.3-7.4,7.4-7.4c4.1,0,7.4,3.3,7.4,7.4C489.4,412.6,486.1,416,482,416z"/>
+                            <path
+                                    d="M482,406.4c-0.3,0-0.5,0.2-0.5,0.5v3.2v1.6c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5v-1.6v-3.2C482.5,406.6,482.3,406.4,482,406.4z"/>
+                            <circle cx="482" cy="405.3" r="0.5"/>
+                        </g></svg>
+                <span class='d-frm-contacts-txt'><%=text%>, </span> <a href='javascript:'
+                                                                       class='d-frm-upload'>загрузите
+                    другой файл</a>
+              </script>
+            </ul>
+          </fieldset>
+          <fieldset class="d-frm-contacts-data" id="form-fields">
+            <ul>
+              <li class="d-fl">
+                <input
+                  type="text"
+                  name="name"
+                  value=""
+                  maxlength="50"
+                  placeholder="Имя"
+                />
+              </li>
+              <li class="d-fl">
+                <input
+                  type="text"
+                  name="email"
+                  value=""
+                  maxlength="50"
+                  placeholder="E-mail"
+                />
+              </li>
+              <li class="d-fl">
+                <input
+                  type="text"
+                  name="phone"
+                  value=""
+                  maxlength="20"
+                  placeholder="Введите телефон"
+                />
+              </li>
+              <li class="d-fr">
+                <button type="submit" disabled="" name="">
+                  <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    width="45px"
+                    height="29px"
+                    viewBox="473.5 326.1 50 32"
+                    enable-background="new 473.5 326.1 50 32"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M473.5,326.1v32h50v-32H473.5z M519.4,328.3l-20.9,17.4l-20.9-17.4H519.4z M475.7,356v-26.5l22.8,19l22.8-19V356L475.7,356L475.7,356z"
+                    ></path>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+        <div
+          class="d-frm-contacts-response"
+          id="form-success"
+          style="display: none"
+        >
+          <div class="d-ib d-hb">
+            <div class="h2 d-ttu">Ваше сообщение отправлено</div>
+            <div class="d-frm-contacts-txt">
+              Мы ответим вам в&nbsp;течении 10 минут.
+              <a href="javascript:" class="form-repeat">Отправить еще одно</a>.
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-frm-contacts-response d-frm-contacts-failed"
+          id="form-failure"
+          style="display: none"
+        >
+          <div class="d-ib d-hb">
+            <div class="h2 d-ttu">Ваше сообщение не отправлено</div>
+            <div class="d-frm-contacts-txt">
+              Что-то пошло не&nbsp;так :(
+              <a href="javascript:" class="form-repeat">Попробовать еще раз</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-col d-col-12">
+        <div class="d-grid d-white d-l">
+          <article>
+            <span class="cpy-text"
+              >г. Бишкек, ул. Разакова 8/1,8/2
+              <br />
+              720040, Кыргызская Республика
+            </span>
+          </article>
+          <article>
+            <span class="cpy-text">
+              <a href="tel:+996312301020"> Приёмная: +996 (312) 30-10-20 </a>
+              <br />
+              <a href="tel:+996312301020"> Факс: +996 (312) 30-10-20 </a>
+            </span>
+          </article>
+          <article>
+            <span class="cpy-text"
+              >2022. Все права защищены. Дизайнер
+              <a href="https://asoi.kg/" class="font-weight-500">ASOI </a></span
+            >
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
