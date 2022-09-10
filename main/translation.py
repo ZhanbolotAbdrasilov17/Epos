@@ -32,3 +32,7 @@ class PartnerCategoryTranslation(TranslationOptions):
 @register(Partner)
 class PartnerTranslation(TranslationOptions):
     fields = ('title',)
+
+@register(MainTagline)
+class MainTaglineTranslation(TranslationOptions):
+    fields = ('title',)

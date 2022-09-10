@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from .views import *
 
@@ -11,6 +13,7 @@ urlpatterns = [
     path('article/<int:article_id>/', ArticleDetail.as_view(), name='article'),
     path('article_archived/<int:article_archived_id>/', ArticleArchivedDetail.as_view(), name='article_archived'),
     path('for_authors/', for_authors, name='for_authors'),
+    path('appeal/', appeal, name='appeal'),
 
 
 

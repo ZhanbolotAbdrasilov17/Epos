@@ -61,6 +61,8 @@ class Articles(models.Model):
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
+    pdf = models.FileField()
+    word = models.FileField()
 
 
     def __str__(self):
@@ -168,3 +170,23 @@ class ImagesContent(models.Model):
 
     class Meta:
         verbose_name = 'Галерея_Контент'
+
+class MainTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Галерея Слоган'
+        verbose_name = 'Галерея Слоган'
+
+class FirstTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Первый слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Первый слоган'
+        verbose_name = 'Первый слоган'
