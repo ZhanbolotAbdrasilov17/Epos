@@ -46,6 +46,8 @@ class ArticlesArchive(models.Model):
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
+    pdf = models.FileField()
+    word = models.FileField()
 
 
     def __str__(self):
@@ -190,3 +192,27 @@ class FirstTagline(models.Model):
     class Meta:
         verbose_name_plural = 'Первый слоган'
         verbose_name = 'Первый слоган'
+
+class Employees(models.Model):
+    name = models.CharField(max_length=200, verbose_name='ФИО')
+    text = models.TextField(verbose_name="Текст")
+    image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Сотрудники'
+        verbose_name = 'Сотрудник'
+
+class VideoContent(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Название_видео", blank=True, null=True)
+    file = models.FileField(upload_to="video", verbose_name="видео")
+    image = models.ImageField(null=True, blank=True, upload_to="content")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Видео_Контент'
+        ordering = ['title']

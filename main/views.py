@@ -20,11 +20,12 @@ def home(request):
     firstline = MainTagline.objects.all()[1]
     secondline = MainTagline.objects.all()[2]
     thirdline = MainTagline.objects.all()[3]
+    employees = Employees.objects.all()
 
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                'category':category, "gallery":gallery, "tagline":tagline, "firstline":firstline,
-               "secondline":secondline, "thirdline":thirdline }
+               "secondline":secondline, "thirdline":thirdline, "employees":employees, }
     return render(request, "home.html", context)
 
 def appeal(request):
@@ -45,10 +46,14 @@ def about_journal(request):
     sixthline = MainTagline.objects.all()[6]
     seventhline = MainTagline.objects.all()[7]
     eightline = MainTagline.objects.all()[8]
+    nineteenthline = MainTagline.objects.all()[9]
+    twentythline = MainTagline.objects.all()[10]
+    twentyonethline = MainTagline.objects.all()[11]
 
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
                "fourthline": fourthline, "fifthline": fifthline, "sixthline":sixthline,
-               "seventhline":seventhline, "eightline":eightline}
+               "seventhline":seventhline, "eightline":eightline, "nineteenthline":nineteenthline,
+               "twentythline":twentythline, "twentyonethline":twentyonethline }
 
     return render(request, "about_journal.html", context)
 
@@ -75,29 +80,30 @@ class NewsDetail(DetailView):
 def article_releases(request):
     articles = Articles.objects.all()
     articles_archived = ArticlesArchive.objects.all()
-    ninethline = MainTagline.objects.all()[9]
-    tenthline = MainTagline.objects.all()[10]
-    eleventhline = MainTagline.objects.all()[11]
-    twelvethine = MainTagline.objects.all()[12]
-    thirteenthline = MainTagline.objects.all()[13]
-    fourteenthline = MainTagline.objects.all()[14]
-    fifthteenthline = MainTagline.objects.all()[15]
-    sixthteenthline = MainTagline.objects.all()[16]
-    seventeenthline = MainTagline.objects.all()[17]
-    eighteenthline = MainTagline.objects.all()[18]
-    number1 = MainTagline.objects.all()[19]
-    number2 = MainTagline.objects.all()[20]
-    number3 = MainTagline.objects.all()[21]
-    number4 = MainTagline.objects.all()[22]
-    text1 = MainTagline.objects.all()[23]
-    text2 = MainTagline.objects.all()[24]
+    ninethline = MainTagline.objects.all()[12]
+    tenthline = MainTagline.objects.all()[13]
+    eleventhline = MainTagline.objects.all()[14]
+    twelvethine = MainTagline.objects.all()[15]
+    thirteenthline = MainTagline.objects.all()[16]
+    fourteenthline = MainTagline.objects.all()[17]
+    fifthteenthline = MainTagline.objects.all()[18]
+    sixthteenthline = MainTagline.objects.all()[19]
+    seventeenthline = MainTagline.objects.all()[20]
+    eighteenthline = MainTagline.objects.all()[21]
+    number1 = MainTagline.objects.all()[22]
+    number2 = MainTagline.objects.all()[23]
+    number3 = MainTagline.objects.all()[24]
+    number4 = MainTagline.objects.all()[25]
+    text1 = MainTagline.objects.all()[26]
+    text2 = MainTagline.objects.all()[27]
+    video = VideoContent.objects.all()
     context = {"articles":articles, "articles_archived":articles_archived, "ninethline":ninethline,
                "tenthline":tenthline, "eleventhline":eleventhline, "twelvethine":twelvethine,
                "thirteenthline":thirteenthline, "fourteenthline":fourteenthline,
                "fifthteenthline":fifthteenthline, "sixthteenthline":sixthteenthline,
                "seventeenthline":seventeenthline, "eighteenthline":eighteenthline,
                 "number1":number1, "number2":number2, "number3":number3, "number4":number4,
-               "text1":text1, "text2":text2, }
+               "text1":text1, "text2":text2, "video":video, }
     return render(request, "article_releases.html", context )
 
 class ArticleDetail(DetailView):

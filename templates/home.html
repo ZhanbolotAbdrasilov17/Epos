@@ -532,96 +532,20 @@
             </div>
             <div class="container swiper-container2" style="overflow: hidden">
                 <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                    {% for e in employees %}
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                         <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
+                            <img class="lazy" src="{{e.image.url}}" width="100%" alt="12"/>
                         </div>
                         <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
+                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">{{ e.name }}<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
                             </p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                            {{ e.text}}
                         </div>
                     </article>
                     </div>
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
-                        </div>
-                        <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
-                            </p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </div>
-                    </article>
-                    </div>
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
-                        </div>
-                        <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
-                            </p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </div>
-                    </article>
-                    </div>
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
-                        </div>
-                        <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
-                            </p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </div>
-                    </article>
-                    </div>
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                        <div style="border: 1px solid #fff; margin-bottom: 1em;" class="d-person-img">
-                            <img class="lazy" src="{% static 'img/example.jpeg' %}" width="100%" alt="12"/>
-                        </div>
-                        <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">Сергей Рыжиков<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
-                            </p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </div>
-                    </article>
-                    </div>
+                   {% endfor%}
                 </div>
                <div style="z-index: 335" class="swiper-button-next swiper-button-white"></div>
                 <div style="z-index: 335" class="swiper-button-prev swiper-button-white"></div>

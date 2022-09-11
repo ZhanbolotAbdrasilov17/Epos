@@ -36,3 +36,8 @@ class PartnerTranslation(TranslationOptions):
 @register(MainTagline)
 class MainTaglineTranslation(TranslationOptions):
     fields = ('title',)
+
+@register(Employees)
+class EmployeesTranslation(TranslationOptions):
+    fields = ('name', 'text')
+

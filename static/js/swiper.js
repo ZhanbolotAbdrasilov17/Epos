@@ -64,7 +64,6 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 
 var mySwiper2 = new Swiper('.swiper-container2', {
-  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -90,7 +89,6 @@ var mySwiper2 = new Swiper('.swiper-container2', {
 });
 
 var mySwiper2 = new Swiper('.swiper-container3', {
-  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
