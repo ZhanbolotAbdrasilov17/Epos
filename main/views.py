@@ -15,17 +15,17 @@ def home(request):
     category_1 = PartnerCategory.objects.get(id=1)
     category_2 = PartnerCategory.objects.get(id=2)
     category_3 = PartnerCategory.objects.get(id=3)
-    gallery = ImagesContent.objects.all()
     tagline = MainTagline.objects.all()[0]
     firstline = MainTagline.objects.all()[1]
     secondline = MainTagline.objects.all()[2]
     thirdline = MainTagline.objects.all()[3]
     employees = Employees.objects.all()
+    video = VideoContent.objects.all()
 
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-               'category':category, "gallery":gallery, "tagline":tagline, "firstline":firstline,
-               "secondline":secondline, "thirdline":thirdline, "employees":employees, }
+               'category':category, "video":video, "tagline":tagline, "firstline":firstline,
+               "secondline":secondline, "thirdline":thirdline, "employees":employees }
     return render(request, "home.html", context)
 
 def appeal(request):
@@ -96,14 +96,14 @@ def article_releases(request):
     number4 = MainTagline.objects.all()[25]
     text1 = MainTagline.objects.all()[26]
     text2 = MainTagline.objects.all()[27]
-    video = VideoContent.objects.all()
+    gallery = ImagesContent.objects.all()
     context = {"articles":articles, "articles_archived":articles_archived, "ninethline":ninethline,
                "tenthline":tenthline, "eleventhline":eleventhline, "twelvethine":twelvethine,
                "thirteenthline":thirteenthline, "fourteenthline":fourteenthline,
                "fifthteenthline":fifthteenthline, "sixthteenthline":sixthteenthline,
                "seventeenthline":seventeenthline, "eighteenthline":eighteenthline,
                 "number1":number1, "number2":number2, "number3":number3, "number4":number4,
-               "text1":text1, "text2":text2, "video":video, }
+               "text1":text1, "text2":text2, "gallery":gallery,}
     return render(request, "article_releases.html", context )
 
 class ArticleDetail(DetailView):

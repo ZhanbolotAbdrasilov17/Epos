@@ -1,3 +1,5 @@
+
+
 {% extends 'index.html' %}
 {% load static %}
 {% load i18n%}
@@ -258,41 +260,20 @@
         <div class="d-stars d-stars-5"></div>
     </section>
 
-    <section class="d-section-11 d-animbox d-animated" id="d-section-11">
+  <section class="d-section-11 d-animbox d-animated" id="d-section-11">
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-12">
-                    <div class="h1 d-ttu d-white d-animate d-rise">Видео</div>
+                    <div class="h1 d-ttu d-white d-animate d-rise">{% trans 'Галерея' %}</div>
                 </div>
                 <div class="d-col d-col-12 video-wrap">
                     <div class="owl-carousel">
+                        {% for g in gallery %}
                         <div class="item">
-                            <div
-                                    class="youtube lazy"
-                                    id="mIROSc9FTFA"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
-                                    style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
-                            </div>
-                            <p class="video--title">Автоматизация управления проектами</p>
+                            <img style="width: 100%; height: auto" src="{{ g.file.url }}" alt="slide-image">
                         </div>
-                        <div class="item">
-                            <div
-                                    class="youtube lazy"
-                                    id="SACHTA8XPKo"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
-                                    style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
-                            </div>
-                            <p class="video--title">Как построить веб-студию, работающую без собственника</p>
-                        </div>
-                        <div class="item">
-                            <div
-                                    class="youtube lazy"
-                                    id="Yaj10VjGtAA"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
-                                    style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
-                            </div>
-                            <p class="video--title">Как организовать продажи веб-студии</p>
-                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>

@@ -206,13 +206,13 @@ class Employees(models.Model):
         verbose_name = 'Сотрудник'
 
 class VideoContent(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Название_видео", blank=True, null=True)
-    file = models.FileField(upload_to="video", verbose_name="видео")
+    name = models.CharField(max_length=100, verbose_name="Название_видео", blank=True, null=True)
+    link = models.CharField(max_length=100, verbose_name="Ссылка", blank=True, null=True)
     image = models.ImageField(null=True, blank=True, upload_to="content")
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         verbose_name = 'Видео_Контент'
-        ordering = ['title']
+        ordering = ['name']
