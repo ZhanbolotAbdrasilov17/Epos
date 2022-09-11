@@ -41,8 +41,14 @@ def about_journal(request):
     statistic_2 = Statistic.objects.get(id=2)
     statistic_3 = Statistic.objects.get(id=3)
     fourthline = MainTagline.objects.all()[4]
+    fifthline = MainTagline.objects.all()[5]
+    sixthline = MainTagline.objects.all()[6]
+    seventhline = MainTagline.objects.all()[7]
+    eightline = MainTagline.objects.all()[8]
+
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
-               "fourthline": fourthline, }
+               "fourthline": fourthline, "fifthline": fifthline, "sixthline":sixthline,
+               "seventhline":seventhline, "eightline":eightline}
 
     return render(request, "about_journal.html", context)
 
@@ -69,7 +75,29 @@ class NewsDetail(DetailView):
 def article_releases(request):
     articles = Articles.objects.all()
     articles_archived = ArticlesArchive.objects.all()
-    context = {"articles":articles, "articles_archived":articles_archived}
+    ninethline = MainTagline.objects.all()[9]
+    tenthline = MainTagline.objects.all()[10]
+    eleventhline = MainTagline.objects.all()[11]
+    twelvethine = MainTagline.objects.all()[12]
+    thirteenthline = MainTagline.objects.all()[13]
+    fourteenthline = MainTagline.objects.all()[14]
+    fifthteenthline = MainTagline.objects.all()[15]
+    sixthteenthline = MainTagline.objects.all()[16]
+    seventeenthline = MainTagline.objects.all()[17]
+    eighteenthline = MainTagline.objects.all()[18]
+    number1 = MainTagline.objects.all()[19]
+    number2 = MainTagline.objects.all()[20]
+    number3 = MainTagline.objects.all()[21]
+    number4 = MainTagline.objects.all()[22]
+    text1 = MainTagline.objects.all()[23]
+    text2 = MainTagline.objects.all()[24]
+    context = {"articles":articles, "articles_archived":articles_archived, "ninethline":ninethline,
+               "tenthline":tenthline, "eleventhline":eleventhline, "twelvethine":twelvethine,
+               "thirteenthline":thirteenthline, "fourteenthline":fourteenthline,
+               "fifthteenthline":fifthteenthline, "sixthteenthline":sixthteenthline,
+               "seventeenthline":seventeenthline, "eighteenthline":eighteenthline,
+                "number1":number1, "number2":number2, "number3":number3, "number4":number4,
+               "text1":text1, "text2":text2, }
     return render(request, "article_releases.html", context )
 
 class ArticleDetail(DetailView):
