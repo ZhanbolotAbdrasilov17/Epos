@@ -564,7 +564,9 @@
                     <div class="owl-carousel">
                         {% for g in gallery %}
                         <div class="item">
-                            <img style="width: 100%; height: auto" src="{{ g.file.url }}" alt="slide-image">
+                            <a data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=NQYXoO9V-2Q" data-width="940" data-height="560">
+                                <img style="width: 100%; height: auto" src="{{ g.file.url }}" alt="slide-image">
+                            </a>
                         </div>
                         {% endfor %}
 
