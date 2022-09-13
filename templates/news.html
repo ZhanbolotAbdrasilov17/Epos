@@ -15,17 +15,18 @@
             <div class="d-grid">
                 <div class="container swiper-container3" style="overflow: hidden">
                 <div class="swiper-wrapper" style="position:relative; z-index:334;">
-                    {% for article in news %}
+                    {% for n in news %}
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                                     <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                                        <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
+                                        <img class=" lazyloaded" width="100%" alt="{{n.title}}" src="{{ n.image.url }}">
+                                        <a href="{% url 'news' n.pk %}">
                                     </div>
                                     <div class="d-person-txt" style="padding: 0 5px">
-                                        <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
-                                            {{article.title}}
+                                        <a href="{% url 'news' n.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
+                                            {{n.title}}
                                         </p></a>
-                                        {{article.text|truncatechars:200}}
+                                        {{n.text|truncatechars:200}}
                                     </div>
                         </article>
                     </div>

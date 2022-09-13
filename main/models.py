@@ -183,6 +183,7 @@ class MainTagline(models.Model):
         verbose_name_plural = 'Галерея Слоган'
         verbose_name = 'Галерея Слоган'
 
+
 class FirstTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Первый слоган', blank=True, null=True)
 

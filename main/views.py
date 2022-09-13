@@ -73,7 +73,7 @@ def news(request):
     return render(request, "news.html", context)
 
 class NewsDetail(DetailView):
-    model = Articles
+    model = News
     template_name = "news-detail.html"
     context_object_name = 'news'
     pk_url_kwarg = 'news_id'
