@@ -17,6 +17,7 @@
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                                     <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <a href="{% url 'article' article.pk %}">
                                         <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
                                     </div>
                                     <div class="d-person-txt" style="padding: 0 5px">
@@ -240,6 +241,7 @@
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                                     <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                        <a href="{% url 'article_archived' article.pk %}">
                                         <img class=" lazyloaded" width="100%" alt="{{article.title}}" src="{{ article.image.url }}">
                                     </div>
                                     <div class="d-person-txt" style="padding: 0 5px">

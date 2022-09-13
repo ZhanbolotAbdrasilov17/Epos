@@ -58,7 +58,14 @@ def about_journal(request):
     return render(request, "about_journal.html", context)
 
 def contacts(request):
-    return render(request, "contacts.html", )
+    firstline = ContactLine.objects.all()[0]
+    secondline = ContactLine.objects.all()[1]
+    thirdline = ContactLine.objects.all()[2]
+    fouthtline = ContactLine.objects.all()[3]
+    fifthline = ContactLine.objects.all()[4]
+    context = {"firstline":firstline, "secondline":secondline, "thirdline":thirdline, "fouthtline":fouthtline,
+              "fifthline":fifthline,  }
+    return render(request, "contacts.html", context )
 
 def news(request):
     news = News.objects.all()

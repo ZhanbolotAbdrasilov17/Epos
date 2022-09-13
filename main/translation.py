@@ -41,3 +41,8 @@ class MainTaglineTranslation(TranslationOptions):
 class EmployeesTranslation(TranslationOptions):
     fields = ('name', 'text')
 
+@register(ContactLine)
+class ContactLineTranslation(TranslationOptions):
+    fields = ('title',)
+
+

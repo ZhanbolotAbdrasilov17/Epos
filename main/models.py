@@ -216,3 +216,13 @@ class VideoContent(models.Model):
     class Meta:
         verbose_name = 'Видео_Контент'
         ordering = ['name']
+
+class ContactLine(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Текст', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Контакты'
+        verbose_name = 'Контакты'
