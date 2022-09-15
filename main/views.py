@@ -7,7 +7,7 @@ from django.views.generic import DetailView
 from django.conf import settings
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
-# Create your views here.
+
 
 def home(request):
     partners = Partner.objects.all()
@@ -21,29 +21,31 @@ def home(request):
     thirdline = MainTagline.objects.all()[3]
     employees = Employees.objects.all()
     content = Content.objects.all()
-
+    social_media = SocialMedia.objects.all()
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                'category':category, "content":content, "tagline":tagline, "firstline":firstline,
-               "secondline":secondline, "thirdline":thirdline, "employees":employees }
+               "secondline":secondline, "thirdline":thirdline, "employees":employees, 'social_media': social_media,
+               }
     return render(request, "home.html", context)
+
 
 def appeal(request):
     if request.method == 'POST':
         data = request.POST
-
         msg = f'Файл {data["file"]} \n Имя {data["name"]}\n' \
               f' Текст {data["message"]} \n Почта {data["email"]} \n Телефон {data["phone"]}'
         send_mail('Образец', msg, settings.EMAIL_HOST_USER, ['zhanbolot19971997@gmail.com'])
     return HttpResponseRedirect(redirect_to=reverse('home'))
 
+
 def about_journal(request):
     statistic_1 = Statistic.objects.get(id=4)
     statistic_2 = Statistic.objects.get(id=2)
     statistic_3 = Statistic.objects.get(id=3)
-    fourthline = JournalTagline.objects.all()[0]
-    fifthline = JournalTagline.objects.all()[1]
-    sixthline = JournalTagline.objects.all()[2]
+    fourthline = MainTagline.objects.all()[4]
+    fifthline = MainTagline.objects.all()[5]
+    sixthline = MainTagline.objects.all()[6]
     seventhline = MainTagline.objects.all()[7]
     eightline = MainTagline.objects.all()[8]
     nineteenthline = MainTagline.objects.all()[9]
@@ -57,15 +59,10 @@ def about_journal(request):
 
     return render(request, "about_journal.html", context)
 
+
 def contacts(request):
-    firstline = ContactLine.objects.all()[0]
-    secondline = ContactLine.objects.all()[1]
-    thirdline = ContactLine.objects.all()[2]
-    fouthtline = ContactLine.objects.all()[3]
-    fifthline = ContactLine.objects.all()[4]
-    context = {"firstline":firstline, "secondline":secondline, "thirdline":thirdline, "fouthtline":fouthtline,
-              "fifthline":fifthline,  }
-    return render(request, "contacts.html", context )
+    return render(request, "contacts.html", )
+
 
 def news(request):
     news = News.objects.all()
@@ -73,14 +70,14 @@ def news(request):
     return render(request, "news.html", context)
 
 class NewsDetail(DetailView):
-    model = News
+    model = Articles
     template_name = "news-detail.html"
     context_object_name = 'news'
     pk_url_kwarg = 'news_id'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-
+        context['social_media'] = SocialMedia.objects.all()
         return context
 
 
@@ -113,16 +110,13 @@ def article_releases(request):
                "text1":text1, "text2":text2, "gallery":gallery,}
     return render(request, "article_releases.html", context )
 
+
 class ArticleDetail(DetailView):
     model = Articles
     template_name = "article-releases-detail.html"
     context_object_name = 'articles'
     pk_url_kwarg = 'article_id'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-
-        return context
 
 class ArticleArchivedDetail(DetailView):
     model = ArticlesArchive
@@ -130,15 +124,13 @@ class ArticleArchivedDetail(DetailView):
     context_object_name = 'articles_archived'
     pk_url_kwarg = 'article_archived_id'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-
-        return context
 
 def for_authors(request):
+    category = AuthorCategory.objects.all()
     authors = Authors.objects.all()
-    context = {"authors": authors}
-    return render(request, "for_authors.html", context )
+    context = {"authors": authors, 'category': category}
+    return render(request, "for_authors.html", context)
+
 
 def article_article_releases(request):
     return render(request, "article-releases-detail.html", )

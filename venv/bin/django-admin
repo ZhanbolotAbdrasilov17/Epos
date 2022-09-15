@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/dzhanbolot/Рабочий стол/Pycharm_Projects/Epos/venv/bin/python3.10" "$0" "$@"
+'''exec' "/home/dzhanbolot/Рабочий стол/Pycharm_Projects/Epos/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

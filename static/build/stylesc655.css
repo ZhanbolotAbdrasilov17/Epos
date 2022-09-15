@@ -3633,4 +3633,14 @@ button[type='submit']:disabled {
   .d-section-descr-content {
     width: 100%;
   }
+    .news-slider .swiper-button-prev, .news-slider .swiper-button-next {
+    top: 50% !important;
+     transform: scale(2)
+     }
+
 }
+
+
+
+.news-slider .swiper-button-prev, .news-slider .swiper-button-next {
+top: 120px; }
