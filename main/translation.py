@@ -37,6 +37,17 @@ class PartnerTranslation(TranslationOptions):
 class MainTaglineTranslation(TranslationOptions):
     fields = ('title',)
 
+@register(JournalTagline)
+class JournalTaglineTranslation(TranslationOptions):
+    fields = ('title',)
+
+@register(ArticlesTagline)
+class ArticlesTaglineTranslation(TranslationOptions):
+    fields = ('title',)
+
+@register(NewsTagline)
+class NewsTaglineTranslation(TranslationOptions):
+    fields = ('title',)
 @register(Employees)
 class EmployeesTranslation(TranslationOptions):
     fields = ('name', 'text')

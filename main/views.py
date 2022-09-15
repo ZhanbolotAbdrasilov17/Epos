@@ -20,11 +20,11 @@ def home(request):
     secondline = MainTagline.objects.all()[2]
     thirdline = MainTagline.objects.all()[3]
     employees = Employees.objects.all()
-    video = VideoContent.objects.all()
+    content = Content.objects.all()
 
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-               'category':category, "video":video, "tagline":tagline, "firstline":firstline,
+               'category':category, "content":content, "tagline":tagline, "firstline":firstline,
                "secondline":secondline, "thirdline":thirdline, "employees":employees }
     return render(request, "home.html", context)
 
@@ -41,9 +41,9 @@ def about_journal(request):
     statistic_1 = Statistic.objects.get(id=4)
     statistic_2 = Statistic.objects.get(id=2)
     statistic_3 = Statistic.objects.get(id=3)
-    fourthline = MainTagline.objects.all()[4]
-    fifthline = MainTagline.objects.all()[5]
-    sixthline = MainTagline.objects.all()[6]
+    fourthline = JournalTagline.objects.all()[0]
+    fifthline = JournalTagline.objects.all()[1]
+    sixthline = JournalTagline.objects.all()[2]
     seventhline = MainTagline.objects.all()[7]
     eightline = MainTagline.objects.all()[8]
     nineteenthline = MainTagline.objects.all()[9]

@@ -5,11 +5,7 @@
 <header id="d-header">
     <div class="d-moon d-moon-0 d-hide-pc"></div>
     <div class="d-grid d-animbox">
-        <!-- <div class="d-h-logo">
-            <img src="img/logo.png" alt="aic + qsoft alliance" title="aic + qsoft alliance" />
-            <a id="aic-link" href="http://aic.ru/" target="_blank" title="aic" alt="aic"></a>
-            <a id="qsoft-link" href="https://qsoft.ru/" target="_blank" title="qsoft" alt="qsoft"></a>
-        </div> -->
+
         <img src="{% static 'img/logo.png' %}" class="d-h-logo" width="277" height="72" alt="aic + qsoft alliance"
              title="aic + qsoft alliance"/>
         <div class="d-slogan h1 d-ttu d-white d-animate d-rise">{{ tagline.title }}</div>
@@ -278,43 +274,43 @@
                                 </switch></svg>
                     </div>
                     <div class="d-scroll-wrap">
-                        <div class="d-scroll">
-                            <div class="d-cycle d-ttu d-xs">
-                                <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
+                            <div class="d-scroll">
+                                <div class="d-cycle d-ttu d-xs">
+                                    <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
                                         <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover"><br/></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"><br/></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover"></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"><br/></i></span>
-                                    <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2"></div>
-                                </div>
-                                <div class="d-cycle-m d-animate d-fade d-delay-3">
-                                    <div class="d-ha d-hb"></div>
-                                    <div class="d-ha d-hb"></div>
-                                    <div class="d-ha d-hb"></div>
-                                    <div class="d-ha d-hb"></div>
-                                </div>
-                                <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
+                                                class="d-hover">информационная<br/>архитектура</i></span>
                                         <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover"><br/></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"><br/></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover"><br/></i></span>
-                                    <span class="d-hb d-animate d-fade d-delay-2"><i
-                                            class="d-hover"><br/></i></span>
-                                    <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2"></div>
+                                                class="d-hover">интерактивные<br/>прототипы</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">контент-стратегия</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">дизайн</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">тестирование<br/>и аналитика</i></span>
+                                        <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2">aic &gt;&gt;</div>
+                                    </div>
+                                    <div class="d-cycle-m d-animate d-fade d-delay-3">
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                        <div class="d-ha d-hb"></div>
+                                    </div>
+                                    <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">техническая<br/>архитектура</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">функциональная<br/>спецификация</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">front-end</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">back-end</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">нi-load<br/>тестирование</i></span>
+                                        <span class="d-hb d-animate d-fade d-delay-2"><i
+                                                class="d-hover">техническая<br/>поддержка</i></span>
+                                        <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2">qsoft &gt;&gt;</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -497,8 +493,30 @@
                             </nav>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                    <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
+                                                {% for c in category %}
+                        <div style="display: none" class="d-row d-tab-logos d-tab-{{c.id}}">
+                            {% for p in c.category_partners.all %}
+                            <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177" height="40" alt="" title="" class="d-hover lazy"/>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                                        {% endfor %}
+
+                        <div class="d-row d-tab-logos d-tab-0">
+                            {% for p in partners %}
+                            <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177" height="40" alt="" title="" class="d-hover lazy"/>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+
+
+                    </div>
 
 
             </div>
@@ -509,7 +527,7 @@
     </section>
     <section class="d-section-9 d-animbox" id="d-section-9">
         <div class="d-grid">
-            <div class="d-col d-col-11 d-col-xs-12">
+            <div class="d-col d-col-12 d-col-xs-12">
                 <div class="h1 d-ttu d-tar d-white d-animate d-rise" style="font-size:50px;">{% trans 'Мнения экспертов рынка' %}</div>
                 <div class='d-swipe-note d-hide-pc d-cb d-xl'>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -553,18 +571,18 @@
         </div>
         <div class="d-bgd d-bgd-9"></div>
     </section>
-
+<!--{% for i in gallery%} url({{i.file.url}}) {% endfor %}-->
     <section class="d-section-11 d-animbox d-animated" id="d-section-11">
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-12">
-                    <div class="h1 d-ttu d-white d-animate d-rise">{% trans 'Видео' %}</div>
+                    <div class="h1 d-ttu d-white d-animate d-rise">{% trans 'Галерея' %}</div>
                 </div>
                 <div class="d-col d-col-12 video-wrap">
                     <div class="owl-carousel">
-                        {% for v in video %}
+                        {% for v in content %}
                         <div class="item">
-                            <a data-fancybox="video-gallery" href="{{v.link}}" data-width="940" data-height="560">
+                            <a data-fancybox="video-gallery" href="{{v.image.url}}" data-width="940" data-height="560">
                                 <img style="width: 100%; height: auto" src="{{ v.image.url }}" alt="slide-image">
                             </a>
                         </div>

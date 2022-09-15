@@ -180,8 +180,43 @@ class MainTagline(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Галерея Слоган'
-        verbose_name = 'Галерея Слоган'
+        verbose_name_plural = 'Слоганы в главной странице'
+        verbose_name = 'Слоганы в главной странице'
+
+class JournalTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слоганы о журнале'
+        verbose_name = 'Слоганы о журнале'
+
+
+class NewsTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слоганы в новостях'
+        verbose_name = 'Слоганы о журнале'
+
+
+
+class ArticlesTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слоганы в вупусках'
+        verbose_name = 'Слоганы в вупусках'
+
+
 
 
 class FirstTagline(models.Model):
@@ -206,16 +241,16 @@ class Employees(models.Model):
         verbose_name_plural = 'Сотрудники'
         verbose_name = 'Сотрудник'
 
-class VideoContent(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Название_видео", blank=True, null=True)
-    link = models.CharField(max_length=100, verbose_name="Ссылка", blank=True, null=True)
+class Content(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Название", blank=True, null=True)
     image = models.ImageField(null=True, blank=True, upload_to="content")
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'Видео_Контент'
+        verbose_name_plural = 'Контенты'
+        verbose_name = 'Контент'
         ordering = ['name']
 
 class ContactLine(models.Model):

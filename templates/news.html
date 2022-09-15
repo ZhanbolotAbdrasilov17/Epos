@@ -12,29 +12,30 @@
             </div> -->
 
 
-            <div class="d-grid">
+            <div class="d-grid news-slider">
                 <div class="container swiper-container3" style="overflow: hidden">
-                <div class="swiper-wrapper" style="position:relative; z-index:334;">
-                    {% for n in news %}
-                    <div class="swiper-slide">
-                        <article class="d-animate d-fade">
-                                    <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                                        <img class=" lazyloaded" width="100%" alt="{{n.title}}" src="{{ n.image.url }}">
-                                        <a href="{% url 'news' n.pk %}">
-                                    </div>
-                                    <div class="d-person-txt" style="padding: 0 5px">
-                                        <a href="{% url 'news' n.pk %}"><p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">
-                                            {{n.title}}
-                                        </p></a>
-                                        {{n.text|truncatechars:200}}
-                                    </div>
-                        </article>
+                    <div class="swiper-wrapper" style="position:relative; z-index:334;">
+                        {% for article in news %}
+                        <div class="swiper-slide">
+                            <article class="d-animate d-fade">
+                                <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                    <img class=" lazyloaded" width="100%" alt="{{article.title}}"
+                                         src="{{ article.image.url }}">
+                                </div>
+                                <div class="d-person-txt" style="padding: 0 5px">
+                                    <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;"
+                                                                                class="d-l d-white d-ttu">
+                                        {{article.title}}
+                                    </p></a>
+                                    {{article.text|truncatechars:200}}
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+                    <div style="z-index: 335" class="swiper-button-next swiper-button-white"></div>
+                    <div style="z-index: 335" class="swiper-button-prev swiper-button-white"></div>
                 </div>
-                <div style="z-index: 335" class="swiper-button-next swiper-button-white"></div>
-                <div style="z-index: 335" class="swiper-button-prev swiper-button-white"></div>
-            </div>
             </div>
             <div class="mask1"></div>
             <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>
@@ -56,7 +57,8 @@
                         <div class="d-circle d-circle-1 d-animate d-fade"></div>
                     </div>
                 </div>
-
+            </div>
+        </div>
     </section>
     <section class="d-section-2 d-dark d-animbox" id="d-section-2">
         <div class="d-moon d-moon-q2a d-hide-pc"><b></b><i></i>
@@ -189,7 +191,7 @@
                         <div class="d-cchart-i d-cchart-i-2" id="d-cchart-a-2"></div>
                         <div class="d-cchart-i d-cchart-i-3" id="d-cchart-a-3"></div>
                         <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
-                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
+                        <!--                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>-->
                         <div class="d-cchart-i d-cchart-i-0 d-cchart-i-o" id="d-cchart-a-5"></div>
                         <div class="d-cchart-i d-cchart-i-1 d-cchart-i-o" id="d-cchart-a-6"></div>
                         <div class="d-cchart-i d-cchart-i-2 d-cchart-i-o" id="d-cchart-a-7"></div>
