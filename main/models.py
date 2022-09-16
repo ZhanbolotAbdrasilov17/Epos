@@ -206,6 +206,48 @@ class MainTagline(models.Model):
         verbose_name_plural = 'Галерея Слоган'
         verbose_name = 'Галерея Слоган'
 
+class BlueTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Синие поля главной страницы'
+        verbose_name = 'Синие поля главной страницы'
+
+
+class RedTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Красные поля главной страницы'
+        verbose_name = 'Красные поля главной страницы'
+
+
+class NewsCircleTaglineOne(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Слово', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Круг1 в выпусках'
+        verbose_name = 'Круг1 в выпусках'
+
+class NewsCircleTaglineTwo(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Слово', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Круг2 в выпусках'
+        verbose_name = 'Круг2 в выпусках'
+
 
 class FirstTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Первый слоган', blank=True, null=True)

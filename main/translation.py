@@ -37,6 +37,28 @@ class PartnerTranslation(TranslationOptions):
 class MainTaglineTranslation(TranslationOptions):
     fields = ('title',)
 
+@register(NewsCircleTaglineOne)
+class NewsCircleTaglineOneTranslation(TranslationOptions):
+    fields = ('title',)
+
+@register(NewsCircleTaglineTwo)
+class NewsCircleTaglineTwoTranslation(TranslationOptions):
+    fields = ('title',)
+
+
+
+@register(BlueTagline)
+class BlueTaglineTranslation(TranslationOptions):
+    fields = ('title',)
+
+
+@register(RedTagline)
+class RedTaglineTranslation(TranslationOptions):
+    fields = ('title',)
+
+
+
+
 @register(Employees)
 class EmployeesTranslation(TranslationOptions):
     fields = ('name', 'text')

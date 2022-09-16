@@ -277,15 +277,10 @@
                             <div class="d-scroll">
                                 <div class="d-cycle d-ttu d-xs">
                                     <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
+                                        {% for b in bluelines %}
                                         <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">информационная<br/>архитектура</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">интерактивные<br/>прототипы</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">контент-стратегия</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">дизайн</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">тестирование<br/>и аналитика</i></span>
+                                                class="d-hover">{{ b.title }}</i></span>
+                                        {% endfor%}
                                         <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2">aic &gt;&gt;</div>
                                     </div>
                                     <div class="d-cycle-m d-animate d-fade d-delay-3">
@@ -295,17 +290,11 @@
                                         <div class="d-ha d-hb"></div>
                                     </div>
                                     <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
+                                        {% for r in redlines %}
+
                                         <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">техническая<br/>архитектура</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">функциональная<br/>спецификация</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">front-end</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">back-end</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i class="d-hover">нi-load<br/>тестирование</i></span>
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">техническая<br/>поддержка</i></span>
+                                                class="d-hover">{{r.title}}</i></span>
+                                        {% endfor%}
                                         <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2">qsoft &gt;&gt;</div>
                                     </div>
                                 </div>

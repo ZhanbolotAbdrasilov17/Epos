@@ -188,13 +188,12 @@
                 <div class="d-ccharts" id="d-ccharts">
                     <div class="d-cchart d-cchart-a d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate d-fade d-delay-1">
+                            {% for c in circle1%}
                             <ul>
-                                <li><i class="d-hover">{{ ninethline.title }}</i></li>
-                                <li><i class="d-hover">{{ tenthline.title }}</i></li>
-                                <li><i class="d-hover">{{ eleventhline.title }}</i></li>
-                                <li><i class="d-hover">{{ twelvethine.title }}</i></li>
-                                <li><i class="d-hover">{{ thirteenthline.title }}</i></li>
+                                <li><i class="d-hover">{{ c.title }}</i></li>
+
                             </ul>
+                            {% endfor %}
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-a-0"></div>
                         <div class="d-cchart-i d-cchart-i-1" id="d-cchart-a-1"></div>
@@ -210,13 +209,12 @@
                     </div>
                     <div class="d-cchart d-cchart-q d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate2 d-fade d-delay-1">
+                            {% for c in circle2%}
                             <ul>
-                                <li><i class="d-hover">{{ fourteenthline.title }}</i></li>
-                                <li><i class="d-hover">{{ fifthteenthline.title }}</i></li>
-                                <li><i class="d-hover">{{ sixthteenthline.title }}</i></li>
-                                <li><i class="d-hover">{{ seventeenthline.title }}</i></li>
-                                <li><i class="d-hover">{{ eighteenthline.title }}</i></li>
+                                <li><i class="d-hover">{{ c.title }}</i></li>
+
                             </ul>
+                            {% endfor %}
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-q-0"></div>
                         <div class="d-cchart-i d-cchart-i-1" id="d-cchart-q-1"></div>

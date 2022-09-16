@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 
 
@@ -21,3 +22,20 @@ admin.site.register(Employees)
 admin.site.register(Content)
 admin.site.register(Lizer)
 admin.site.register(LizerCategory)
+
+@admin.register(NewsCircleTaglineOne)
+class NewsCircleTaglineOneAdminList(TranslationAdmin):
+    pass
+
+@admin.register(NewsCircleTaglineTwo)
+class NewsCircleTaglineTwoAdminList(TranslationAdmin):
+    pass
+
+
+@admin.register(BlueTagline)
+class BlueTaglineAdminList(TranslationAdmin):
+    pass
+
+@admin.register(RedTagline)
+class RedTaglineAdminList(TranslationAdmin):
+    pass

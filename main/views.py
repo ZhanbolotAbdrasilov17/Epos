@@ -22,10 +22,13 @@ def home(request):
     employees = Employees.objects.all()
     content = Content.objects.all()
     social_media = SocialMedia.objects.all()
+    bluelines = BlueTagline.objects.all()
+    redlines = RedTagline.objects.all()
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                'category':category, "content":content, "tagline":tagline, "firstline":firstline,
                "secondline":secondline, "thirdline":thirdline, "employees":employees, 'social_media': social_media,
+               "bluelines":bluelines, "redlines":redlines,
                }
     return render(request, "home.html", context)
 
@@ -84,30 +87,18 @@ class NewsDetail(DetailView):
 def article_releases(request):
     articles = Articles.objects.all()
     articles_archived = ArticlesArchive.objects.all()
-    ninethline = MainTagline.objects.all()[12]
-    tenthline = MainTagline.objects.all()[13]
-    eleventhline = MainTagline.objects.all()[14]
-    twelvethine = MainTagline.objects.all()[15]
-    thirteenthline = MainTagline.objects.all()[16]
-    fourteenthline = MainTagline.objects.all()[17]
-    fifthteenthline = MainTagline.objects.all()[18]
-    sixthteenthline = MainTagline.objects.all()[19]
-    seventeenthline = MainTagline.objects.all()[20]
-    eighteenthline = MainTagline.objects.all()[21]
     number1 = MainTagline.objects.all()[22]
     number2 = MainTagline.objects.all()[23]
     number3 = MainTagline.objects.all()[24]
     number4 = MainTagline.objects.all()[25]
     text1 = MainTagline.objects.all()[26]
     text2 = MainTagline.objects.all()[27]
+    circle1 = NewsCircleTaglineOne.objects.all()
+    circle2 = NewsCircleTaglineTwo.objects.all()
     gallery = ImagesContent.objects.all()
-    context = {"articles":articles, "articles_archived":articles_archived, "ninethline":ninethline,
-               "tenthline":tenthline, "eleventhline":eleventhline, "twelvethine":twelvethine,
-               "thirteenthline":thirteenthline, "fourteenthline":fourteenthline,
-               "fifthteenthline":fifthteenthline, "sixthteenthline":sixthteenthline,
-               "seventeenthline":seventeenthline, "eighteenthline":eighteenthline,
+    context = {"articles":articles, "articles_archived":articles_archived,
                 "number1":number1, "number2":number2, "number3":number3, "number4":number4,
-               "text1":text1, "text2":text2, "gallery":gallery,}
+               "text1":text1, "text2":text2, "gallery":gallery, "circle1":circle1, "circle2":circle2,}
     return render(request, "article_releases.html", context )
 
 
