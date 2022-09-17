@@ -11,8 +11,11 @@
             <div class="d-grid">
                 <div class="d-row">
                     <div class="d-col d-col-6 d-col-xs-12">
-                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">{% trans 'Ознакомаление для авторов' %}</div>
+                        {% for t in title %}
+                        <div class="h1 d-ttu h0 d-dark2 d-animate d-rise">{{ t.title }}</div>
+                          {% endfor %}
                     </div>
+
                     <div class="d-col d-col-12 d-animate d-fade d-delay-05">
                         <div class='d-swipe-note d-hide-pc d-cb d-xl'>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -35,50 +38,32 @@
                         <div class="d-scroll-wrap">
                             <div class="d-scroll">
                                 <nav class="d-nav-logos d-nav-tabs h3 d-ttu">
-                                    <ul>
-                                        <li class="d-current" data-tab="d-tab-0">{% trans 'Подать статью' %}</li>
-                                        <li data-tab="d-tab-1">{% trans 'Руководство для авторов' %}</li>
-                                        <li data-tab="d-tab-2">{% trans 'Процесс рецензирования' %}</li>
-
-                                    </ul>
+                                <ul>
+                                    <li class="d-current" data-tab="d-tab-{{first_category.id}}">{{first_category.title}}</li>
+                                        {% for c in category %}
+                                    <li data-tab="d-tab-{{c.id}}">{{ c.title}}</li>
+                                    {% endfor %}
+                                </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
                     <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
-                        <div class="d-tab-logos d-tab-0">
-                            <h2 class="d-section-title">Подать статью</h2>
-                            <p class="d-section-descr">
-                                Контрольный список подготовки материала к отправке В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала всем следующим пунктам, материалы могут быть возвращены авторам, если они не соответствуют этим требованиям. Эта статья не была раньше опубликована, а также не представлена для рассмотрения и публикации в другом журнале (иначе объясните это в примечаниях для редактора). Отправляемый материал представлен в формате OpenOffice, Microsoft Word или RTF. Список литературы представлен в двух вариантах (на языке оригинала и в References), оформлен в соответствии с требованиями журнала. Ссылки на электронные публикации содержат все необходимые сведения об источнике. Текст набран с одинарным межстрочным интервалом, шрифт Times New Roman, 14 pt; для выделения используется курсив, а не подчеркивание (за исключением URL-адресов); все иллюстрации, графики и таблицы расположены в соответствующих местах в тексте, а не в конце документа. Текст соответствует стилистическим и библиографческим требованиям, описанным в Руководстве для авторов, и принципам редакционной политики журнала. Комплект материалов содержит оформленный в соответствии с требованиями текст рукописи, заполненную и подписанную заявку на публикацию, иллюстрации, список подписей к иллюстрациям, сведения об авторе/авторов, фотографию автора/авторов.
-                            </p>
+                        {% for c in category_authors %}
+                        <div style="display: none" class="d-tab-logos d-tab-{{c.id}}">
+                            {% for pa in c.author_category.all %}
+                            <h2 class="d-section-title">{{pa.title}}</h2>
+                                {{pa.text|safe}}
+                            {% endfor %}
                         </div>
-                        <div class="d-tab-logos d-hidden d-tab-1">
-                            <h2 class="d-section-title">Руководство для авторов</h2>
-                                <p class="d-section-descr">
-                                    Порядок приема и подготовки рукописи к публикации
-                                    Журнал круглогодично принимает рукописи на русском и английском языках, оформленные по следующим правилам.
-                                    Принимаются к рассмотрению только не публиковавшиеся ранее научные статьи, аналитические обзоры выставок, специализированных конкурсов и форумов, результаты теоретических и прикладных исследований, материалы научно-образовательного характера, соответствующие тематике журнала: теории и истории искусства, архитектуры, дизайна.
-                                    Описание рубрик журнала см. в разделе Темы и рубрики.
-                                </p>
-                            <div class="d-section-descr-content">
-                            <a class="pdf" href="#"
-                               style="width:fit-content; display: flex; align-items: center; column-gap: 10px">
-                                <img style="height:22px; filter: grayscale(0); opacity: 1;"
-                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAC0klEQVRoge2ZTUhUURiGnxnHwsZsNLOckhiVodCgv0WhKynKjRCEoRTRJugH3SRZQasW2kaKijQihAiUCtJ2GSaUYEGCVBKWVvQjESakqc3PbfExDDXk6L3neCeYd3O+Odxz3u+Z7957DudCUklZkiPeBca+fEOLs0Gjo3243uo0ThW5zFdGVi44OGlU5jdYncsWgFDtZYzlXiUQtgCQuZJQzSUlEPYAgDII+wBACYS9AGAZwn4AsASRGABgGiJxAMAURGIBQAxEvMtdC5FTjGlNibK5Eq8C81QSwG7pAdhQCk1dcGMAKg5rsYhID8CRRsj1QZobquoga5UWG9ABkO6JJvyqDxxO8BUpt4lIPcD0JIRDEmdkKZ/+b6kHCAbgw2uJVxdIOzaq3CYiPc9A731pHU4IheDzsBYb0AXQ3Q6BGYnfvYSZKS02oAvgx3d40StxKAiOuIcfpqUHwJkCvmKJ/ZthR5UWG9AFULQdPCvkgQaoroecPC1WegBKK6TtbIFnD2RBO90Ky7KVW6nfTi/NhG3lshY8bIOpCVmV1xRCXTO0NYE3H7w+cC2CcBiGnsOTDnlj2Q6w+yAsXgL93fDtE+T5YbBPAAo3wpnW2DE7q6G4BK6cmLedWoA0N+w6ILHbAxcf/XnvBwPgSo3+/jIifXl+qZqtAK5U2FsreyEA/yZpP76RavR3w1A/lB+CPccENtcXHT/41JSt9dNphxPKKiWpbK/0TU1Cbyd03YKRl7Fj0j2wpQzWrpfn4P0gPO6AmZ+x07cNz5qjtQp4C+Doebm3I3o7AOf2C8S/NDEOPXctWUdkHmDdVqi7Bu6MaF8wAM31syevWObWAWcKHG+S5Me/ghGW/tsXojvRBZK5CrhSZaUF8ORI23MH7l1VlNbcZa4Cv6bh+ln598dG4WYDtJwCQ8/XqNlk3zeyOSreWyh5rGK3kgB2678HSCopi/oNdqPUmdYNR/YAAAAASUVORK5CYII=">
-                                <span>Загрузить в PDF</span></a>
-                            <a class="word" href="#"
-                               style="margin-top: 10px; width:fit-content; display: flex; align-items: center; column-gap: 10px">
-                                <img style="height:22px; filter: grayscale(0); opacity: 1;"
-                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADl0lEQVRoge2ZS28bVRiGnzMZk5sncdy00LjkYpdmcBq3ZlqJmwQLUBdUldggsSFrKrFkifgJsCmsgoQESLBgw4askFBAbGJHqAjVbhN6y8L4QmKncexkDotxbCf2UBvHmbaaZ+PxfMdn3vd85ztnZgwuLi4uTiK61fHAm/NjPcJjCEUaUmIARn5hbuywr6N23MPrP6ne3tvTChimVAxFyLCEKHAMJFJ2LvK/aMvA6JV5bbvkOYdphiXKjFCkgbxjgOiTgBCSLuttwNbA8Ftfj5i7uzNCSkOCAdLY3hY6SAUhEEiOXG0TbA2YOztZqNfYeblMfZb/v5Z/Wb2qvdosoHSg5yh5xS7wuBiwxTXgNJ3vA22w8r63rfbBzwsPbfPkZyAS8rN47TIAH38R45Pvrldji9cuEwn52dmVjL39DcXSLgAfzUX58N1ZcvltJt/5trobtzKi7fLQDPx5+x+2KsKmnx2unu/vVQlPjgCg9gien/RVY9PjVrtYIuP8rUR5x+T6SpaL+nH0iZqB6HN+1J7a5hYJ+oknMkDNaKzyfQ/HaqAmzIeoaH7hzCgAha0yAJHTfgA8qsLUmAbAcjJDt2lpFYpXhAz2q5w6Psjd1CbGtGXgtz9SvHEhQCRoGZg6qfGUao1LLJHe148jNWAJqY2kPmHN9Yu6ZeCHX+8CMBscQRGiOn1SuSL30w8OVWwzWsrAjTvrFLbKePs96OPDxBMZxp/2srFZ4vuf/+LTD15koE8lFNDqCjjd0I9jNWBKye+3cgDo4z4uVEZ/KZFhvVBiZW0DsJbcPQPxI5j/0MZOHE+kefnsCfSJYe6nLQN7oxxPZgkFhpgN+qtTaOlGYwYcqwGAWGVETweGOBeyCnY5mbU+b1qxs8ERQoGhfee6TRsZsAT5vL3V/WCpkoG95TI84UMb8HDv701SuWJDH47eC91a22C9UEIIa6lM5YrcS20C1nw3peTUiUGgcQPrJi1nQEpYvpnltfPPAPtXmfyDMqtr+er0idsYcLQGAOLJdN1x5kAsWz2OJRsLuFvYPqlrl7489NuwjR/fa6t9fcZWr2pNtT75zwOHieM18CjiGnCax8XAol3AtogVVfUffLkLQqcD03ZLYSe01eHolXmtXOw5IwUzplQM6/U6BtDXyu/zC3POGmhK3R8cEhEGZoCXgGMHmz6aBpoixdClr0KmkFFhEkXI80A0vzB3sjvXc3FxcXGKfwFIDEHh8af+wQAAAABJRU5ErkJggg==">
-                                <span>Загрузить в WORD</span></a>
+                        {% endfor %}
+
+                        <div class="d-row d-tab-logos d-tab-{{authors.id}}">
+                            <h2 class="d-section-title">{{authors.title}}</h2>
+                                {{authors.text|safe}}
+
                         </div>
-                        </div>
-                        <div class="d-tab-logos d-hidden d-tab-2">
-                            <h2 class="d-section-title">Процесс рецензирования</h2>
-                                <p class="d-section-descr">
-                            Рецензирование является обязательным этапом в оценке статей и принятии решения об их публикации. Все рукописи проходят следующие этапы обработки: На этапе формальной экспертизы выпускающий редактор рассматривает рукопись и оценивает ее соответствие тематике и общим требованиям журнала (наличие сопроводительных документов, необходимых метаданных, корректность оформления рукописи, качество иллюстративного материала). На этом этапе все статьи проверяются на наличие некорректных заимствований и самоцитирования с помощью ресурса Антиплагиат. На этапе содержательной экспертизы все статьи проходят обязательное «двойное слепое» рецензирование (рецензентам не раскрывается имя автора, а автору не сообщаются имена рецензентов). Редактор направляет статью на рецензирование специалистам по профилю исследования. При необходимости редколлегия обращается к сторонним специалистам, обладающим знаниями в соответствующей области.
-                        </p>
-                        </div>
+
                     </div>
                     <div class="d-carousel-logos d-col d-col-12 d-hide-pc">
                         <div class="d-section-descr d-tab-logos d-tab-0">

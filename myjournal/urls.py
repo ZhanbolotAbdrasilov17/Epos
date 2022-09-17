@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ] + i18n_patterns(
     path('i18n/', include("django.conf.urls.i18n")),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path("", include("main.urls")),
 
     prefix_default_language=False,

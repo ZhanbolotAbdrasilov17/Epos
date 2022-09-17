@@ -2,7 +2,6 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
-
 class Logo(models.Model):
     logo = models.ImageField(upload_to='logo', blank=True, null=True, verbose_name='Логотип')
 
@@ -12,6 +11,7 @@ class Logo(models.Model):
     class Meta:
         verbose_name_plural = 'Логотип'
         verbose_name = 'Логотип'
+
 
 class Statistic(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название статистики', blank=True, null=True)
@@ -58,7 +58,6 @@ class Articles(models.Model):
         verbose_name_plural = 'Статьи'
         verbose_name = 'Статья'
 
-
 class News(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название новости')
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания новости')
@@ -71,6 +70,7 @@ class News(models.Model):
     class Meta:
         verbose_name_plural = 'Новости'
         verbose_name = 'Новость'
+
 
 class JournalsFiles(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название текста')
@@ -150,7 +150,7 @@ class Partners(models.Model):
         verbose_name = 'Партнёры'
 
 
-class AuthorCategory(models.Model):
+class ForAuthorCategory(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название категории')
 
     def __str__(self):
@@ -161,18 +161,31 @@ class AuthorCategory(models.Model):
         verbose_name_plural = 'Авторам - Категория'
 
 
-class Authors(models.Model):
-    category = models.ForeignKey(AuthorCategory, on_delete=models.DO_NOTHING, verbose_name='Категория',
+class ForAuthor(models.Model):
+    category = models.ForeignKey(ForAuthorCategory, on_delete=models.DO_NOTHING, verbose_name='Категория',
                                  related_name='author_category')
     title = models.CharField(max_length=200, verbose_name='Оглавление')
-    text = models.TextField(verbose_name="Текст")
+    text = RichTextField(verbose_name="Текст", blank=True, null=True)
+    pdf = models.FileField(blank=True, null=True, upload_to='files')
+    word = models.FileField(blank=True, null=True, upload_to='files')
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = 'Авторам'
-        verbose_name_plural = 'Авторам'
+        verbose_name = 'Авторам - Описание'
+        verbose_name_plural = 'Авторам - Описание'
+
+
+class ForAuthorText(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Заголовок")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Авторам - Заголовок'
+        verbose_name_plural = 'Авторам - Заголовок'
 
 
 class ImagesContent(models.Model):
@@ -196,15 +209,23 @@ class MainTagline(models.Model):
         verbose_name_plural = 'Слова в главной странице'
         verbose_name = 'Слова в главной странице'
 
-class AboutJournalTagline(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+class AboutJournalCircleTagline(models.Model):
+    title1 = models.CharField(max_length=200, verbose_name='Текст1', blank=True, null=True)
+    title2 = models.CharField(max_length=200, verbose_name='Текст2', blank=True, null=True)
+    title3 = models.CharField(max_length=200, verbose_name='Текст3', blank=True, null=True)
+    title4 = models.CharField(max_length=200, verbose_name='Текст4', blank=True, null=True)
+    title5 = models.CharField(max_length=200, verbose_name='Текст5', blank=True, null=True)
+    title6 = models.CharField(max_length=200, verbose_name='Текст6', blank=True, null=True)
+    title7 = models.CharField(max_length=200, verbose_name='Текст7', blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return "Слова на планете странице о журнале"
 
     class Meta:
-        verbose_name_plural = 'Слова на странице о журнале'
-        verbose_name = 'Слова на странице о журнале'
+        verbose_name_plural = 'Слова на планете странице о журнале'
+        verbose_name = 'Слова на планете странице о журнале'
+
 
 class ArticlesTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
@@ -216,6 +237,7 @@ class ArticlesTagline(models.Model):
         verbose_name_plural = 'Слова на странице выпусках'
         verbose_name = 'Слова на странице выпусках'
 
+
 class NewsTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
 
@@ -225,8 +247,6 @@ class NewsTagline(models.Model):
     class Meta:
         verbose_name_plural = 'Слова на странице новостях'
         verbose_name = 'Слова на странице новостях'
-
-
 
 
 class BlueTagline(models.Model):
@@ -260,6 +280,7 @@ class NewsCircleTaglineOne(models.Model):
     class Meta:
         verbose_name_plural = 'Круг1 в выпусках'
         verbose_name = 'Круг1 в выпусках'
+
 
 class NewsCircleTaglineTwo(models.Model):
     title = models.CharField(max_length=200, verbose_name='Слово', blank=True, null=True)
@@ -347,12 +368,27 @@ class Lizer(models.Model):
 
 class AboutJournalLowPart(models.Model):
     title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
-    text = models.TextField()
+    text = RichTextField(blank=True, null=True, verbose_name='Описание')
     image = image = models.ImageField(null=True, blank=True, upload_to="content")
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Описание о журнале в нижней части'
-        verbose_name = 'Описание о журнале в нижней части'
+        verbose_name_plural = 'О журнале'
+        verbose_name = 'О журнале'
+
+
+class Mail(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    email = models.CharField(max_length=100, verbose_name='Почта')
+    phone = models.CharField(max_length=100, verbose_name='Телефон')
+    text = models.TextField(verbose_name='Текст')
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name_plural = 'Обращения клиентов'
+        verbose_name = 'Обращение клиентов'

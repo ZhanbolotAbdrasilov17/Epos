@@ -1,8 +1,17 @@
 {% load i18n%}
 
 <div class="d-col d-col-12">
-    <form action="{% url 'appeal' %}" method="post" class="d-frm-contacts d-white" id="form" novalidate="novalidate">
-        <input name="file" class="form-control" hidden name="csrfmiddlewaretoken" type="file" multiple="" value={{token}}/>
+    						{% if messages %}
+                        {% for message in messages %}
+                        <h1 align="center" style="color: green;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+						{% endfor %}
+						{% else %}
+						{% endif %}
+    <form action="{% url 'mail_create' %}" method="post" class="d-frm-contacts d-white" id="form" novalidate="novalidate">
+        {% csrf_token %}
+          {% for field in form %}
+          {{ field.error }}
+          {% endfor %}
         <fieldset class="d-frm-contacts-info drop-area">
             <ul>
                 <li>
@@ -37,13 +46,8 @@
 
                   </g>
                 </svg>
-                    <span class="d-frm-contacts-txt"
-                    >Если хотите добавить к сообщению файлы, перетащите их сюда
-                  или загрузите со</span
-                    >
-                    <a href="javascript:" class="d-frm-upload"
-                    >своего компьютера.</a
-                    >
+
+
                 </li>
 
 
@@ -90,38 +94,17 @@
                                 height="29px"
                                 viewBox="473.5 326.1 50 32"
                                 enable-background="new 473.5 326.1 50 32"
-                                xml:space="preserve"
+                                xml:space="preserve">
 
-                  </svg>
+                        </svg>
                     </button>
                 </li>
             </ul>
         </fieldset>
     </form>
-    <div
-            class="d-frm-contacts-response"
-            id="form-success"
-            style="display: none"
-    >
-        <div class="d-ib d-hb">
-            <div class="h2 d-ttu">Ваше сообщение отправлено</div>
-            <div class="d-frm-contacts-txt">
-                Мы ответим вам в&nbsp;течении 10 минут.
-                <a href="javascript:" class="form-repeat">Отправить еще одно</a>.
-            </div>
-        </div>
-    </div>
-    <div
-            class="d-frm-contacts-response d-frm-contacts-failed"
-            id="form-failure"
-            style="display: none"
-    >
-        <div class="d-ib d-hb">
-            <div class="h2 d-ttu">Ваше сообщение не отправлено</div>
-            <div class="d-frm-contacts-txt">
-                Что-то пошло не&nbsp;так :(
-                <a href="javascript:" class="form-repeat">Попробовать еще раз</a>.
-            </div>
-        </div>
-    </div>
+
+
+
+
+
 </div>

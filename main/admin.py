@@ -13,14 +13,23 @@ admin.site.register(Lizer)
 admin.site.register(Content)
 admin.site.register(LizerCategory)
 
-@admin.register(AuthorCategory)
-class AuthorCategoryAdminList(TranslationAdmin):
+
+@admin.register(Mail)
+class MailAdminList(admin.ModelAdmin):
     pass
 
-@admin.register(Authors)
-class AuthorsAdminList(TranslationAdmin):
+
+@admin.register(ForAuthorCategory)
+class ForAuthorCategoryAdminList(TranslationAdmin):
     pass
 
+@admin.register(ForAuthor)
+class ForAuthorAdminList(TranslationAdmin):
+    pass
+
+@admin.register(ForAuthorText)
+class ForAuthorTextAdminList(TranslationAdmin):
+    pass
 
 @admin.register(Partner)
 class PartnerAdminList(TranslationAdmin):
@@ -66,8 +75,8 @@ class RedTaglineAdminList(TranslationAdmin):
     pass
 
 
-@admin.register(AboutJournalTagline)
-class AboutJournalTaglineAdminList(TranslationAdmin):
+@admin.register(AboutJournalCircleTagline)
+class AboutJournalCircleTaglineAdminList(TranslationAdmin):
     pass
 
 @admin.register(ArticlesTagline)

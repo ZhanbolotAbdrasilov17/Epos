@@ -17,9 +17,19 @@ class ArticlesTranslation(TranslationOptions):
 class NewsTranslation(TranslationOptions):
     fields = ('title', 'text',)
 
-@register(Authors)
-class AuthorsTranslation(TranslationOptions):
+
+@register(ForAuthorText)
+class ForAuthorTextTranslation(TranslationOptions):
+    fields = ('title', )
+
+@register(ForAuthor)
+class ForAuthorTranslation(TranslationOptions):
     fields = ('title', 'text',)
+
+@register(ForAuthorCategory)
+class ForAuthorCategoryTranslation(TranslationOptions):
+    fields = ('title', )
+
 
 @register(ImagesContent)
 class ImageContentTranslation(TranslationOptions):
@@ -56,9 +66,9 @@ class BlueTaglineTranslation(TranslationOptions):
 class RedTaglineTranslation(TranslationOptions):
     fields = ('title',)
 
-@register(AboutJournalTagline)
+@register(AboutJournalCircleTagline)
 class AboutJournalTaglineTranslation(TranslationOptions):
-    fields = ('title',)
+    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7' )
 
 @register(ArticlesTagline)
 class ArticlesTaglineTranslation(TranslationOptions):
@@ -81,9 +91,6 @@ class VideoContentTranslation(TranslationOptions):
 class JournalsFilesTranslation(TranslationOptions):
     fields = ('title', 'text', )
 
-@register(AuthorCategory)
-class AuthorCategoryTranslation(TranslationOptions):
-    fields = ('title', )
 
 @register(AboutJournalLowPart)
 class AboutJournalLowPartTranslation(TranslationOptions):

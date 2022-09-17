@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'ckeditor',
+    'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -130,6 +133,8 @@ LOCALE_PATHS = [
 
 STATIC_URL = '/static/'
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -142,8 +147,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = 'smtp.bk.ru'
+EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mazzzek@bk.ru'
-EMAIL_HOST_PASSWORD = 'jvnqgboigs3Kjk6CDAfe'
+EMAIL_HOST_USER = 'send_mail_asoi@mail.ru'
+EMAIL_HOST_PASSWORD = '73KuZX5nVZZQU1zRsKhy'
 EMAIL_USE_TLS = True

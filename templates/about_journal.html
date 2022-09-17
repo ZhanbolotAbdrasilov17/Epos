@@ -13,30 +13,33 @@
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
-                    <div class="h2 d-ttu d-animate d-fade">{{ fourthline.title }}
+                    <div class="h2 d-ttu d-animate d-fade">{{ c.title }}
                     </div>
+                    {% for ct in circle_text %}
                     <div class="d-circle d-circle-0 d-ttu d-animate d-fade">
                         <span class="d-crcl-sm-0"><b class="d-animate d-fade d-delay-2"><i
-                                    class="d-hover">{{ fifthline.title }}</i></b></span>
+                                    class="d-hover">{{ ct.title1 }}</i></b></span>
                         <span class="d-crcl-sm-1"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">{{ sixthline.title }}</i></b></span>
+                                class="d-hover">{{ ct.title2 }}</i></b></span>
                         <span class="d-crcl-sm-2"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">{{ seventhline.title }}</i></b></span>
+                                class="d-hover">{{ ct.title3 }}</i></b></span>
                         <span class="d-crcl-sm-3"><b class="d-animate d-fade d-delay-2"><i
 
-                                class="d-hover">{{ eightline.title }}</i></b></span>
-                        <span class="d-crcl-sm-1" style="transform: translate(83px, -130px); width: 25px; height: 25px"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ nineteenthline.title }}</i></b></span>
-                        <span class="d-crcl-sm-0" style="transform: translate(-156px, -15px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ twentythline.title }}</i></b></span>
-                        <span class="d-crcl-sm-2" style="transform: translate(143px, 66px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ twentyonethline.title }}</i></b></span>
+                                class="d-hover">{{ ct.title4 }}</i></b></span>
+                        <span class="d-crcl-sm-1" style="transform: translate(83px, -130px); width: 25px; height: 25px"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ ct.title5 }}</i></b></span>
+                        <span class="d-crcl-sm-0" style="transform: translate(-156px, -15px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ ct.title6 }}</i></b></span>
+                        <span class="d-crcl-sm-2" style="transform: translate(143px, 66px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ ct.title7 }}</i></b></span>
 
                                 </i></b></span>
                         <span class="d-crcl-sm-1" style="transform: translate(83px, -130px); width: 25px; height: 25px"><b class="d-animate d-fade d-delay-2"><i class="d-hover"></i></b></span>
                         <span class="d-crcl-sm-0" style="transform: translate(-156px, -15px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover"></i></b></span>
                         <span class="d-crcl-sm-2" style="transform: translate(143px, 66px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover"></i></b></span>
                     </div>
+                    {% endfor %}
                     <div class="d-circle d-circle-1 d-animate d-fade"></div>
                 </div>
             </div>
+        </div>
 
     </section>
 
@@ -713,7 +716,7 @@
                             <img style="width:100%; margin-bottom: 10px" src="{{l.image.url}}">
                         </div>
                         <p style="color: #fff">
-                            {{l.text}}
+                            {{l.text|safe}}
                         </p>
                     </div>
                 </div>

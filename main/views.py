@@ -1,10 +1,15 @@
+from django.conf.global_settings import EMAIL_HOST
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.middleware.csrf import get_token
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views import View
 from django.views.generic import DetailView
 from django.conf import settings
+
+from .forms import MailForm
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
 
@@ -55,12 +60,13 @@ def about_journal(request):
     twentythline = MainTagline.objects.all()[10]
     twentyonethline = MainTagline.objects.all()[11]
     low_part = AboutJournalLowPart.objects.all()
+    circle_text = AboutJournalCircleTagline.objects.all()
 
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
                "fourthline": fourthline, "fifthline": fifthline, "sixthline":sixthline,
-               "seventhline":seventhline, "eightline":eightline, "nineteenthline":nineteenthline,
-               "twentythline":twentythline, "twentyonethline":twentyonethline,
-               "low_part":low_part, }
+               "seventhline":seventhline, "eightline":eightline, "nineteenthline": nineteenthline,
+               "twentythline":twentythline, "twentyonethline": twentyonethline,
+               "low_part": low_part, "circle_text": circle_text, }
 
     return render(request, "about_journal.html", context)
 
@@ -119,12 +125,41 @@ class ArticleArchivedDetail(DetailView):
 
 
 def for_authors(request):
-    category = AuthorCategory.objects.all()
-    authors = Authors.objects.all()
-    context = {"authors": authors, 'category': category}
+    title = ForAuthorText.objects.all()
+    authors = ForAuthor.objects.get(id=1)
+    category_authors = ForAuthorCategory.objects.all()
+    category = ForAuthorCategory.objects.all()[1:]
+    first_category = ForAuthorCategory.objects.all()[0]
+    context = {"authors": authors, 'category': category, "title": title, 'first_category': first_category,
+               'category_authors': category_authors}
     return render(request, "for_authors.html", context)
 
 
 def article_article_releases(request):
     return render(request, "article-releases-detail.html", )
 
+
+class MailCreateView(View):
+    @staticmethod
+    def post(request, *args, **kwargs):
+        form = MailForm(request.POST)
+        if form.is_valid():
+            form.save()
+            last_sender = Mail.objects.first()
+            message = f'Имя: {last_sender.name}\n' \
+                      f'Почта: {last_sender.email}\n' \
+                      f'Телефон: {last_sender.phone}\n' \
+                      f'Текст: {last_sender.text}'
+
+            send_mail(
+                f'{last_sender.name} {last_sender.email}',
+                message,
+                'send_mail_asoi@mail.ru',
+                ['itpythonzhanbolot@gmail.com'],
+                fail_silently=False,
+            )
+
+            messages.add_message(request, messages.SUCCESS, 'Письмо отправлено!')
+            return HttpResponseRedirect(redirect_to=reverse_lazy('contacts'))
+
+        messages.add_message(request, messages.ERROR, 'Ошибка отправки данных.')
