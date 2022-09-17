@@ -27,31 +27,8 @@ class Statistic(models.Model):
         verbose_name = 'Главная - Статистика'
 
 
-class Categories(models.Model):
-    category_name = models.CharField(max_length=200, verbose_name='Название категории')
-
-    def __str__(self):
-        return self.category_name
-
-    class Meta:
-        verbose_name_plural = 'Категории'
-        verbose_name = 'категория'
-
-
-class CategoriesForArchieved(models.Model):
-    category_name = models.CharField(max_length=200, verbose_name='Название категории')
-
-    def __str__(self):
-        return self.category_name
-
-    class Meta:
-        verbose_name_plural = 'Категории для архивных статей'
-        verbose_name = 'Категория для архивной статьи'
-
-
 class ArticlesArchive(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название статьи')
-    category_name = models.ForeignKey(CategoriesForArchieved, on_delete=models.CASCADE, related_name="Категории")
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
@@ -68,7 +45,6 @@ class ArticlesArchive(models.Model):
 
 class Articles(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название статьи')
-    category_name = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name="Категории")
     date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата создания статьи')
     text = models.TextField(verbose_name="Текст")
     image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
@@ -95,6 +71,20 @@ class News(models.Model):
     class Meta:
         verbose_name_plural = 'Новости'
         verbose_name = 'Новость'
+
+class JournalsFiles(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Название текста')
+    text = models.TextField(verbose_name="Текст")
+    image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
+    pdf = models.FileField()
+    word = models.FileField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Документация для авторов'
+        verbose_name = 'Документация для авторов'
 
 
 class PartnerCategory(models.Model):
@@ -203,8 +193,41 @@ class MainTagline(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Галерея Слоган'
-        verbose_name = 'Галерея Слоган'
+        verbose_name_plural = 'Слова в главной странице'
+        verbose_name = 'Слова в главной странице'
+
+class AboutJournalTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слова на странице о журнале'
+        verbose_name = 'Слова на странице о журнале'
+
+class ArticlesTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слова на странице выпусках'
+        verbose_name = 'Слова на странице выпусках'
+
+class NewsTagline(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Слова на странице новостях'
+        verbose_name = 'Слова на странице новостях'
+
+
+
 
 class BlueTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
@@ -286,6 +309,19 @@ class Content(models.Model):
         ordering = ['name']
 
 
+class VideoContent(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Название_видео", blank=True, null=True)
+    video = models.CharField(max_length=100, verbose_name="Ссылка", blank=True, null=True)
+    image = models.ImageField(null=True, blank=True, upload_to="content")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Видео_Контент'
+        ordering = ['title']
+
+
 class LizerCategory(models.Model):
     title = models.CharField(max_length=100, verbose_name='Эквалайзер Категория')
 
@@ -307,3 +343,16 @@ class Lizer(models.Model):
     class Meta:
         verbose_name_plural = 'Эквалайзер'
         verbose_name = 'Эквалайзер'
+
+
+class AboutJournalLowPart(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
+    text = models.TextField()
+    image = image = models.ImageField(null=True, blank=True, upload_to="content")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Описание о журнале в нижней части'
+        verbose_name = 'Описание о журнале в нижней части'

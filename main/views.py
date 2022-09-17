@@ -54,11 +54,13 @@ def about_journal(request):
     nineteenthline = MainTagline.objects.all()[9]
     twentythline = MainTagline.objects.all()[10]
     twentyonethline = MainTagline.objects.all()[11]
+    low_part = AboutJournalLowPart.objects.all()
 
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
                "fourthline": fourthline, "fifthline": fifthline, "sixthline":sixthline,
                "seventhline":seventhline, "eightline":eightline, "nineteenthline":nineteenthline,
-               "twentythline":twentythline, "twentyonethline":twentyonethline }
+               "twentythline":twentythline, "twentyonethline":twentyonethline,
+               "low_part":low_part, }
 
     return render(request, "about_journal.html", context)
 

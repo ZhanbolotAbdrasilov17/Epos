@@ -56,10 +56,35 @@ class BlueTaglineTranslation(TranslationOptions):
 class RedTaglineTranslation(TranslationOptions):
     fields = ('title',)
 
+@register(AboutJournalTagline)
+class AboutJournalTaglineTranslation(TranslationOptions):
+    fields = ('title',)
 
+@register(ArticlesTagline)
+class ArticlesTaglineTranslation(TranslationOptions):
+    fields = ('title',)
+
+@register(NewsTagline)
+class NewsTaglineTranslation(TranslationOptions):
+    fields = ('title',)
 
 
 @register(Employees)
 class EmployeesTranslation(TranslationOptions):
     fields = ('name', 'text')
 
+@register(VideoContent)
+class VideoContentTranslation(TranslationOptions):
+    fields = ('title', 'video',)
+
+@register(JournalsFiles)
+class JournalsFilesTranslation(TranslationOptions):
+    fields = ('title', 'text', )
+
+@register(AuthorCategory)
+class AuthorCategoryTranslation(TranslationOptions):
+    fields = ('title', )
+
+@register(AboutJournalLowPart)
+class AboutJournalLowPartTranslation(TranslationOptions):
+    fields = ('title', 'text', )
