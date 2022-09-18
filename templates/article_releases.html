@@ -15,8 +15,9 @@
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                             <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                <a href="{% url 'article' article.pk %}">
                                 <img class=" lazyloaded" width="100%" alt="{{article.title}}"
-                                     src="{{ article.image.url }}">
+                                     src="{{ article.image.url }}"></a>
                             </div>
                             <div class="d-person-txt" style="padding: 0 5px">
                                 <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;"
@@ -45,16 +46,7 @@
                     <div class="d-circle d-circle-0 d-ttu d-animate d-fade">
                         <span class="d-crcl-sm-0"><b class="d-animate d-fade d-delay-2"><i
                                     class="d-hover">{{ fifthline.title }}</i></b></span>
-                        <span class="d-crcl-sm-1"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">{{ sixthline.title }}</i></b></span>
-                        <span class="d-crcl-sm-2"><b class="d-animate d-fade d-delay-2"><i
-                                class="d-hover">{{ seventhline.title }}</i></b></span>
-                        <span class="d-crcl-sm-3"><b class="d-animate d-fade d-delay-2"><i
 
-                                class="d-hover">{{ eightline.title }}</i></b></span>
-                        <span class="d-crcl-sm-1" style="transform: translate(83px, -130px); width: 25px; height: 25px"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ nineteenthline.title }}</i></b></span>
-                        <span class="d-crcl-sm-0" style="transform: translate(-156px, -15px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ twentythline.title }}</i></b></span>
-                        <span class="d-crcl-sm-2" style="transform: translate(143px, 66px)"><b class="d-animate d-fade d-delay-2"><i class="d-hover">{{ twentyonethline.title }}</i></b></span>
 
                                 </i></b></span>
                         <span class="d-crcl-sm-1" style="transform: translate(83px, -130px); width: 25px; height: 25px"><b class="d-animate d-fade d-delay-2"><i class="d-hover"></i></b></span>
@@ -175,41 +167,55 @@
                     <div></div>
                 </div>
                 <div class="d-col d-col-12">
+                    {% for s in article_page %}
+                        <div class="h1 d-ttu d-white d-animate d-rise">{{s.statistic_title|safe}}</div>
+                        <div class="h2 h0 d-ib d-ttu d-animate d-fade d-delay-1">{{s.statistic_pre_title|safe}}
+                        </div>
+                    {% endfor %}
                     <nav class="d-nav-charts d-nav-tabs d-ib h3 d-ttu d-animate d-fade d-delay-1">
                         <ul>
-                            <li class="d-current">aic</li>
-                            <li>qsoft</li>
+                            {% for b in article_page %}
+                            <li class="d-current">{{b.button_blue}}</li>
+
+                            <li>{{b.button_red}}</li>
+                            {% endfor %}
+
                         </ul>
                     </nav>
                 </div>
                 <div class="d-col d-col-4 d-col-xs-12">
+                    {% for s in article_page %}
+                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{{s.statistic_text|safe}}
+                        </div>
+                    {% endfor %}
+                    {% for n in article_page %}
                     <div class="d-counter-a d-animate d-fadein">
-                        <div class="d-count d-font d-counted2" data-count="{{number1.title}}">0</div>
-                        <div class="d-count d-fl d-font d-counted2" data-count="{{number2.title}}">0</div>
-                        <div class="d-white d-xl">{{text1.title}}</div>
+                        <div class="d-count d-font d-counted2" data-count="{{n.number_blue1}}">0</div>
+                        <div class="d-count d-fl d-font d-counted2" data-count="{{n.number_blue2}}">0</div>
                     </div>
                     <div class="d-counter-q d-animate2 d-fadeout">
-                        <div class="d-count d-font d-counted2" data-count="{{number3.title}}">0</div>
-                        <div class="d-count d-fl d-font d-counted2" data-count="{{number4.title}}">0</div>
-                        <div class="d-white d-xl">{{text2.title}}</div>
+                        <div class="d-count d-font d-counted2" data-count="{{n.number_red1}}">0</div>
+                        <div class="d-count d-fl d-font d-counted2" data-count="{{n.number_red2}}">0</div>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="d-ccharts" id="d-ccharts">
                     <div class="d-cchart d-cchart-a d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate d-fade d-delay-1">
-                            {% for c in circle1%}
                             <ul>
+                                {% for c in circle1%}
+
                                 <li><i class="d-hover">{{ c.title }}</i></li>
 
+                                {% endfor %}
+
                             </ul>
-                            {% endfor %}
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-a-0"></div>
                         <div class="d-cchart-i d-cchart-i-1" id="d-cchart-a-1"></div>
                         <div class="d-cchart-i d-cchart-i-2" id="d-cchart-a-2"></div>
                         <div class="d-cchart-i d-cchart-i-3" id="d-cchart-a-3"></div>
-                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
-                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
+
                         <div class="d-cchart-i d-cchart-i-0 d-cchart-i-o" id="d-cchart-a-5"></div>
                         <div class="d-cchart-i d-cchart-i-1 d-cchart-i-o" id="d-cchart-a-6"></div>
                         <div class="d-cchart-i d-cchart-i-2 d-cchart-i-o" id="d-cchart-a-7"></div>
@@ -218,12 +224,14 @@
                     </div>
                     <div class="d-cchart d-cchart-q d-animate">
                         <nav class="d-nav-employees d-tar d-ttu d-xs d-animate2 d-fade d-delay-1">
-                            {% for c in circle2%}
                             <ul>
+                                {% for c in circle2%}
+
                                 <li><i class="d-hover">{{ c.title }}</i></li>
 
+                                {% endfor %}
+
                             </ul>
-                            {% endfor %}
                         </nav>
                         <div class="d-cchart-i d-cchart-i-0" id="d-cchart-q-0"></div>
                         <div class="d-cchart-i d-cchart-i-1" id="d-cchart-q-1"></div>
@@ -243,15 +251,18 @@
 
     <section class="d-section-7 d-animbox" id="d-section-7">
         <div class="d-grid">
-            <div class="h1 d-ttu d-white d-animate d-rise">Архивные статьи</div>
+            {% for a in article_page %}
+            <div class="h1 d-ttu d-white d-animate d-rise">{{a.archived_title}}</div>
+            {% endfor %}
             <div class="container swiper-container">
                 <div class="swiper-wrapper" style="position:relative; z-index:334;">
                     {% for article in articles_archived %}
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
                             <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                <a href="{% url 'article_archived' article.pk %}">
                                 <img class=" lazyloaded" width="100%" alt="{{article.title}}"
-                                     src="{{ article.image.url }}">
+                                     src="{{ article.image.url }}"></a>
                             </div>
                             <div class="d-person-txt" style="padding: 0 5px">
                                 <a href="{% url 'article_archived' article.pk %}"><p style="margin-bottom: 0.5em;"

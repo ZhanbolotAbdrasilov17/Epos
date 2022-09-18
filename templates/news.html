@@ -15,19 +15,20 @@
             <div class="d-grid news-slider">
                 <div class="container swiper-container3" style="overflow: hidden">
                     <div class="swiper-wrapper" style="position:relative; z-index:334;">
-                        {% for article in news %}
+                        {% for n in news %}
                         <div class="swiper-slide">
                             <article class="d-animate d-fade">
                                 <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                                    <img class=" lazyloaded" width="100%" alt="{{article.title}}"
-                                         src="{{ article.image.url }}">
+                                    <a href="{% url 'news' n.pk %}">
+                                    <img class=" lazyloaded" width="100%" alt="{{n.title}}"
+                                         src="{{ n.image.url }}"></a>
                                 </div>
                                 <div class="d-person-txt" style="padding: 0 5px">
-                                    <a href="{% url 'article' article.pk %}"><p style="margin-bottom: 0.5em;"
+                                    <a href="{% url 'news' n.pk %}"><p style="margin-bottom: 0.5em;"
                                                                                 class="d-l d-white d-ttu">
-                                        {{article.title}}
+                                        {{n.title}}
                                     </p></a>
-                                    {{article.text|truncatechars:200}}
+                                    {{n.text|truncatechars:200}}
                                 </div>
                             </article>
                         </div>
@@ -279,33 +280,20 @@
                 </div>
                 <div class="d-col d-col-12 video-wrap">
                     <div class="owl-carousel">
+                        {% for v in video_content %}
                         <div class="item">
+                            <a target="_blank" href="{{v.video}}">
                             <div
                                     class="youtube lazy"
-                                    id="mIROSc9FTFA"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
+                                    data-bg="{{v.image.url}}"
                                     style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
+                                <div class="play"></div>
                             </div>
+                                </a>
                         </div>
-                        <div class="item">
-                            <div
-                                    class="youtube lazy"
-                                    id="SACHTA8XPKo"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
-                                    style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
-                            </div>
-                            <p class="video--title">Как построить веб-студию, работающую без собственника</p>
-                        </div>
-                        <div class="item">
-                            <div
-                                    class="youtube lazy"
-                                    id="Yaj10VjGtAA"
-                                    data-bg="http://i.ytimg.com/vi_webp/mIROSc9FTFA/sddefault.webp"
-                                    style=" width: 100%; background-size: cover;padding-bottom: 56.25%;">
-                            </div>
-                            <p class="video--title">Как организовать продажи веб-студии</p>
-                        </div>
-                    </div
+                        {% endfor %}
+
+                    </div>
                 </div>
             </div>
         </div>

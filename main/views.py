@@ -20,21 +20,19 @@ def home(request):
     category_1 = PartnerCategory.objects.get(id=1)
     category_2 = PartnerCategory.objects.get(id=2)
     category_3 = PartnerCategory.objects.get(id=3)
-    tagline = MainTagline.objects.all()[0]
-    firstline = MainTagline.objects.all()[1]
-    secondline = MainTagline.objects.all()[2]
-    thirdline = MainTagline.objects.all()[3]
+
     employees = Employees.objects.all()
     content = Content.objects.all()
     social_media = SocialMedia.objects.all()
     bluelines = BlueTagline.objects.all()
     redlines = RedTagline.objects.all()
+    homepage_content_words = MainTagline.objects.all()
+    logo = Logo.objects.get(id=1)
 
     context = {"partners":partners, 'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-               'category':category, "content":content, "tagline":tagline, "firstline":firstline,
-               "secondline":secondline, "thirdline":thirdline, "employees":employees, 'social_media': social_media,
-               "bluelines":bluelines, "redlines":redlines,
-               }
+               'category':category, "content":content, "employees":employees, 'social_media': social_media,
+               "bluelines":bluelines, "redlines":redlines, "homepage_content_words": homepage_content_words,
+               "logo": logo, }
     return render(request, "home.html", context)
 
 
@@ -51,37 +49,35 @@ def about_journal(request):
     statistic_1 = Statistic.objects.get(id=4)
     statistic_2 = Statistic.objects.get(id=2)
     statistic_3 = Statistic.objects.get(id=3)
-    fourthline = MainTagline.objects.all()[4]
-    fifthline = MainTagline.objects.all()[5]
-    sixthline = MainTagline.objects.all()[6]
-    seventhline = MainTagline.objects.all()[7]
-    eightline = MainTagline.objects.all()[8]
-    nineteenthline = MainTagline.objects.all()[9]
-    twentythline = MainTagline.objects.all()[10]
-    twentyonethline = MainTagline.objects.all()[11]
+
     low_part = AboutJournalLowPart.objects.all()
     circle_text = AboutJournalCircleTagline.objects.all()
+    social_media = SocialMedia.objects.all()
+
 
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
-               "fourthline": fourthline, "fifthline": fifthline, "sixthline":sixthline,
-               "seventhline":seventhline, "eightline":eightline, "nineteenthline": nineteenthline,
-               "twentythline":twentythline, "twentyonethline": twentyonethline,
-               "low_part": low_part, "circle_text": circle_text, }
+
+               "low_part": low_part, "circle_text": circle_text, "social_media": social_media, }
 
     return render(request, "about_journal.html", context)
 
 
 def contacts(request):
-    return render(request, "contacts.html", )
+    social_media = SocialMedia.objects.all()
+    context = {"social_media": social_media, }
+    return render(request, "contacts.html", context )
 
 
 def news(request):
     news = News.objects.all()
-    context = {"news":news}
+    social_media = SocialMedia.objects.all()
+    video_content = VideoContent.objects.all()
+
+    context = {"news": news, "social_media": social_media, "video_content": video_content, }
     return render(request, "news.html", context)
 
 class NewsDetail(DetailView):
-    model = Articles
+    model = News
     template_name = "news-detail.html"
     context_object_name = 'news'
     pk_url_kwarg = 'news_id'
@@ -95,19 +91,17 @@ class NewsDetail(DetailView):
 def article_releases(request):
     articles = Articles.objects.all()
     articles_archived = ArticlesArchive.objects.all()
-    number1 = MainTagline.objects.all()[22]
-    number2 = MainTagline.objects.all()[23]
-    number3 = MainTagline.objects.all()[24]
-    number4 = MainTagline.objects.all()[25]
-    text1 = MainTagline.objects.all()[26]
-    text2 = MainTagline.objects.all()[27]
     circle1 = NewsCircleTaglineOne.objects.all()
     circle2 = NewsCircleTaglineTwo.objects.all()
     gallery = ImagesContent.objects.all()
-    context = {"articles":articles, "articles_archived":articles_archived,
-                "number1":number1, "number2":number2, "number3":number3, "number4":number4,
-               "text1":text1, "text2":text2, "gallery":gallery, "circle1":circle1, "circle2":circle2,}
-    return render(request, "article_releases.html", context )
+    social_media = SocialMedia.objects.all()
+    circle_text = AboutJournalCircleTagline.objects.all()
+    article_page = ArticlePage.objects.all()
+
+    context = {"articles": articles, "articles_archived": articles_archived,
+            "gallery": gallery, "circle1": circle1, "circle2": circle2, "social_media": social_media,
+               "circle_text": circle_text, "article_page": article_page, }
+    return render(request, "article_releases.html", context, )
 
 
 class ArticleDetail(DetailView):
@@ -116,12 +110,22 @@ class ArticleDetail(DetailView):
     context_object_name = 'articles'
     pk_url_kwarg = 'article_id'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['social_media'] = SocialMedia.objects.all()
+        return context
+
 
 class ArticleArchivedDetail(DetailView):
     model = ArticlesArchive
     template_name = "article-archived.html"
     context_object_name = 'articles_archived'
     pk_url_kwarg = 'article_archived_id'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['social_media'] = SocialMedia.objects.all()
+        return context
 
 
 def for_authors(request):
@@ -130,19 +134,17 @@ def for_authors(request):
     category_authors = ForAuthorCategory.objects.all()
     category = ForAuthorCategory.objects.all()[1:]
     first_category = ForAuthorCategory.objects.all()[0]
+    social_media = SocialMedia.objects.all()
     context = {"authors": authors, 'category': category, "title": title, 'first_category': first_category,
-               'category_authors': category_authors}
+               'category_authors': category_authors, "social_media": social_media, }
     return render(request, "for_authors.html", context)
-
-
-def article_article_releases(request):
-    return render(request, "article-releases-detail.html", )
 
 
 class MailCreateView(View):
     @staticmethod
     def post(request, *args, **kwargs):
         form = MailForm(request.POST)
+
         if form.is_valid():
             form.save()
             last_sender = Mail.objects.first()

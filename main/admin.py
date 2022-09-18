@@ -12,7 +12,7 @@ admin.site.register(Employees)
 admin.site.register(Lizer)
 admin.site.register(Content)
 admin.site.register(LizerCategory)
-
+admin.site.register(Logo)
 
 @admin.register(Mail)
 class MailAdminList(admin.ModelAdmin):
@@ -98,4 +98,9 @@ class JournalsFilesTaglineAdminList(TranslationAdmin):
 
 @admin.register(AboutJournalLowPart)
 class AboutJournalLowPartTaglineAdminList(TranslationAdmin):
+    pass
+
+
+@admin.register(ArticlePage)
+class ArticlePageTaglineAdminList(TranslationAdmin):
     pass

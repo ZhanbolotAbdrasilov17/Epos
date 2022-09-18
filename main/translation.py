@@ -45,7 +45,7 @@ class PartnerTranslation(TranslationOptions):
 
 @register(MainTagline)
 class MainTaglineTranslation(TranslationOptions):
-    fields = ('title',)
+    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7', 'title8', 'title9', 'title10',)
 
 @register(NewsCircleTaglineOne)
 class NewsCircleTaglineOneTranslation(TranslationOptions):
@@ -68,7 +68,7 @@ class RedTaglineTranslation(TranslationOptions):
 
 @register(AboutJournalCircleTagline)
 class AboutJournalTaglineTranslation(TranslationOptions):
-    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7' )
+    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7',  )
 
 @register(ArticlesTagline)
 class ArticlesTaglineTranslation(TranslationOptions):
@@ -85,7 +85,7 @@ class EmployeesTranslation(TranslationOptions):
 
 @register(VideoContent)
 class VideoContentTranslation(TranslationOptions):
-    fields = ('title', 'video',)
+    fields = ('title', )
 
 @register(JournalsFiles)
 class JournalsFilesTranslation(TranslationOptions):
@@ -94,4 +94,9 @@ class JournalsFilesTranslation(TranslationOptions):
 
 @register(AboutJournalLowPart)
 class AboutJournalLowPartTranslation(TranslationOptions):
-    fields = ('title', 'text', )
+    fields = ('title', 'text', 'statistic_title', )
+
+
+@register(ArticlePage)
+class ArticlePageTranslation(TranslationOptions):
+    fields = ('statistic_title', 'statistic_pre_title', 'statistic_text', 'button_blue', 'button_red', 'archived_title', )

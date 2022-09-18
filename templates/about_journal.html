@@ -48,13 +48,15 @@
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
                     <div class="h1 d-ttu d-white d-animate d-rise"></div>
-                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{% trans 'Лидер большинства профессиональных и рейтингов СМИ Кыргызстана' %}<br/>
+                    {% for s in low_part%}
+                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{{s.statistic_title|safe}}<br/>
                     </div>
+                    {% endfor %}
                     <nav class="d-nav-view d-blue h3 d-ttu d-animate d-fade">
                         <ul>
                             <li><a href=""
                                    onclick="trackOutboundLink('http://www.aic.ru/showreel/'); return false;"
-                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans 'Подробнее' %}</a>
+                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>Manas</a>
                             </li>
                             <li><a href="http://www.aic.ru/work/site/"
                                    onclick="trackOutboundLink('http://www.aic.ru/work/site/'); return false;"
