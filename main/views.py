@@ -64,8 +64,9 @@ def about_journal(request):
 
 def contacts(request):
     social_media = SocialMedia.objects.all()
-    context = {"social_media": social_media, }
-    return render(request, "contacts.html", context )
+    contact = Contacts.objects.all()
+    context = {"social_media": social_media, "contact": contact, }
+    return render(request, "contacts.html", context)
 
 
 def news(request):

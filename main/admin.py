@@ -104,3 +104,8 @@ class AboutJournalLowPartTaglineAdminList(TranslationAdmin):
 @admin.register(ArticlePage)
 class ArticlePageTaglineAdminList(TranslationAdmin):
     pass
+
+
+@admin.register(Contacts)
+class ContactsAdminList(TranslationAdmin):
+    pass

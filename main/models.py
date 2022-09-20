@@ -443,3 +443,16 @@ class Mail(models.Model):
     class Meta:
         verbose_name_plural = 'Обращения клиентов'
         verbose_name = 'Обращение клиентов'
+
+
+class Contacts(models.Model):
+    address = RichTextField(blank=True, null=True, verbose_name='Адресс')
+    phone_number = RichTextField(blank=True, null=True, verbose_name='Номера')
+    mail = RichTextField(blank=True, null=True, verbose_name='Почта')
+
+    def __str__(self):
+        return 'Полные контакты'
+
+    class Meta:
+        verbose_name_plural = 'Контакты'
+        verbose_name = 'Контакты'

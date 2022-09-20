@@ -5,6 +5,24 @@
 
 <div id="d-content">
 
+        <section class="d-section-8 d-dark d-animbox d-animated" style="min-height: unset; padding-top: 0">
+        <div class="d-grid">
+            <div>
+                {% for l in low_part %}
+                    <div class="d-section-descr" style="letter-spacing:2px;color:black;">
+                        <div class="d-section-descr-content">
+                            <img style="width:100%; margin-bottom: 10px" src="{{l.image.url}}">
+                        </div>
+                        <p style="color: #fff">
+                            {{l.text|safe}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor%}
+        </div>
+    </section>
+
+
     <section style="padding-top:150px;" class="d-section-0 d-dark d-animbox" id="d-section-0">
         <div class="mask1"></div>
         <div class="d-moon d-moon-a2q d-hide-pc"><b></b><i></i>
@@ -707,22 +725,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="d-section-8 d-dark d-animbox d-animated" style="min-height: unset; padding-top: 0">
-        <div class="d-grid">
-            <div>
-                {% for l in low_part %}
-                    <div class="d-section-descr" style="letter-spacing:2px;color:black;">
-                        <div class="d-section-descr-content">
-                            <img style="width:100%; margin-bottom: 10px" src="{{l.image.url}}">
-                        </div>
-                        <p style="color: #fff">
-                            {{l.text|safe}}
-                        </p>
-                    </div>
-                </div>
-            {% endfor%}
         </div>
     </section>
 

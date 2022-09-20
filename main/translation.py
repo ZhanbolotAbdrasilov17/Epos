@@ -99,4 +99,8 @@ class AboutJournalLowPartTranslation(TranslationOptions):
 
 @register(ArticlePage)
 class ArticlePageTranslation(TranslationOptions):
-    fields = ('statistic_title', 'statistic_pre_title', 'statistic_text', 'button_blue', 'button_red', 'archived_title', )
+    fields = ('statistic_title', 'statistic_pre_title', 'statistic_text', 'button_blue', 'button_red', 'archived_title',)
+
+@register(Contacts)
+class ContactsTranslation(TranslationOptions):
+    fields = ('address', 'phone_number', 'mail', )
