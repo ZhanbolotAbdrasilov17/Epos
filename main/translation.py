@@ -42,7 +42,8 @@ class PartnerTranslation(TranslationOptions):
 
 @register(MainTagline)
 class MainTaglineTranslation(TranslationOptions):
-    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7', 'title8', 'title9', 'title10',)
+    fields = ('title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7', 'title8', 'title9', 'title10',
+              'title11',)
 
 @register(NewsCircleTaglineOne)
 class NewsCircleTaglineOneTranslation(TranslationOptions):

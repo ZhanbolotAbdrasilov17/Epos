@@ -417,8 +417,10 @@
     <section class="d-section-9 d-animbox" id="d-section-9">
         <div class="d-grid">
             <div class="d-col d-col-12 d-col-xs-12">
-                <div class="h1 d-ttu d-tar d-white d-animate d-rise" style="font-size:50px;">{% trans 'Мнения экспертов рынка' %}
+                {% for o in homepage_content_words %}
+                <div class="h1 d-ttu d-tar d-white d-animate d-rise" style="font-size:50px;">{{o.title11}}
                 </div>
+                {% endfor %}
                 <div class='d-swipe-note d-hide-pc d-cb d-xl'>
                 </div>
             </div>

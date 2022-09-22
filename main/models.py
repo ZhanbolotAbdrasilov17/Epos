@@ -207,6 +207,7 @@ class MainTagline(models.Model):
     title8 = models.CharField(max_length=200, verbose_name='Название картинок', blank=True, null=True)
     title9 = models.CharField(max_length=200, verbose_name='Название афиши', blank=True, null=True)
     title10 = RichTextField(verbose_name='Название отправки сообщения', blank=True, null=True)
+    title11 = models.CharField(max_length=200, verbose_name='Мнения экспертов', blank=True, null=True)
 
     def __str__(self):
         return "Главная страница контент"
