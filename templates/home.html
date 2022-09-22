@@ -6,26 +6,12 @@
     <div class="d-moon d-moon-0 d-hide-pc"></div>
     <div class="d-grid d-animbox">
         <img src="{{ logo.logo.url}}" class="d-h-logo" width="277" height="72" alt="logo"
-             />
-            {% for h in homepage_content_words %}
+        />
+        {% for h in homepage_content_words %}
         <div class="d-slogan h1 d-ttu d-white d-animate d-rise">{{h.title1}}</div>
-            {% endfor %}
+        {% endfor %}
 
         <div class="d-swipe-note d-hide-pc d-cb">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                 y="0px" width="55px" height="37px" viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30"
-                 xml:space="preserve"><switch>
-                        <g i:extraneous="self">
-                            <g>
-                                <polygon
-                                        points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"></polygon>
-                                <g>
-                                    <path d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"></path>
-                                    <path d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </switch></svg>
         </div>
     </div>
     <div class="d-bgd d-bgd-0"></div>
@@ -71,13 +57,15 @@
             <div class="d-row">
                 <div class="d-col d-col-4 d-col-xs-12">
                     <div class="h1 d-ttu d-white d-animate d-rise"></div>
-                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{% trans 'Лидер большинства профессиональных рейтингов СМИ Кыргызстана' %}<br/>
+                    <div class="d-section-descr d-dark d-xl d-animate d-fade">{% trans 'Лидер большинства
+                        профессиональных рейтингов СМИ Кыргызстана' %}<br/>
                     </div>
                     <nav class="d-nav-view d-blue h3 d-ttu d-animate d-fade">
                         <ul>
                             <li><a href=""
                                    onclick="trackOutboundLink('http://www.aic.ru/showreel/'); return false;"
-                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans 'Подробнее' %}</a>
+                                   target="_blank" class="d-hover"><i class="fa fa-external-link d-hover"></i>{% trans
+                                'Подробнее' %}</a>
                             </li>
                             <li><a href="http://www.aic.ru/work/site/"
                                    onclick="trackOutboundLink('http://www.aic.ru/work/site/'); return false;"
@@ -89,27 +77,13 @@
                 </div>
                 <div class="d-col d-col-8 d-col-xs-12 d-white d-xl">
                     <div class='d-swipe-note d-hide-pc d-cb'>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
-                             viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
-                                    <g i:extraneous="self">
-                                        <g>
-                                            <polygon
-                                                    points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
-                                            <g>
-                                                <path
-                                                        d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
-                                                <path
-                                                        d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </switch></svg>
                     </div>
                     <div class="d-feats-wrap">
                         <div class="d-feats d-cb d-animate d-fade">
                             <article>
-                                <div class="d-count d-blue d-ha d-font d-counted" data-count="{{statistic_1.statistic}}">0</div>
+                                <div class="d-count d-blue d-ha d-font d-counted"
+                                     data-count="{{statistic_1.statistic}}">0
+                                </div>
                                 <div class="d-count-descr">{{statistic_1.title}}</div>
                                 <div class="d-feat-pos d-feat-pos-blue d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
@@ -119,7 +93,8 @@
                                 </div>
                             </article>
                             <article>
-                                <div class="d-count d-blue d-font d-counted" data-count="{{statistic_2.statistic}}">0</div>
+                                <div class="d-count d-blue d-font d-counted" data-count="{{statistic_2.statistic}}">0
+                                </div>
                                 <div class="d-count-descr">{{statistic_2.title}}</div>
                                 <div class="d-feat-pos d-feat-pos-blue d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
@@ -129,7 +104,8 @@
                                 </div>
                             </article>
                             <article>
-                                <div class="d-count d-blue d-font d-counted" data-count="{{statistic_3.statistic}}">0</div>
+                                <div class="d-count d-blue d-font d-counted" data-count="{{statistic_3.statistic}}">0
+                                </div>
                                 <div class="d-count-descr">{{statistic_3.title}}</div>
                                 <div class="d-feat-pos d-feat-pos-pink d-ha d-hb">
                                     <div class="d-ha d-font"><span class="d-pr d-ha d-hb d-counted"
@@ -188,54 +164,38 @@
                     <div class="h1 d-ttu d-white d-rise d-animate"><br/><span
                             class="d-blue d-ha d-arr d-arr-pink">{{h.title4}}</span><span
                             class="d-pink d-hb d-arr d-arr-blue">{{h.title5}}</span></div>
-                                        {% endfor %}
+                    {% endfor %}
 
                     <div class='d-swipe-note d-hide-pc d-cb d-xl'>
 
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
-                             viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
-                                    <g i:extraneous="self">
-                                        <g>
-                                            <polygon
-                                                    points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
-                                            <g>
-                                                <path
-                                                        d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
-                                                <path
-                                                        d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </switch></svg>
                     </div>
                     <div class="d-scroll-wrap">
-                            <div class="d-scroll">
-                                <div class="d-cycle d-ttu d-xs">
-                                    <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
-                                        {% for b in bluelines %}
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">{{ b.title }}</i></span>
-                                        {% endfor%}
-                                        <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2">aic &gt;&gt;</div>
-                                    </div>
-                                    <div class="d-cycle-m d-animate d-fade d-delay-3">
-                                        <div class="d-ha d-hb"></div>
-                                        <div class="d-ha d-hb"></div>
-                                        <div class="d-ha d-hb"></div>
-                                        <div class="d-ha d-hb"></div>
-                                    </div>
-                                    <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
-                                        {% for r in redlines %}
+                        <div class="d-scroll">
+                            <div class="d-cycle d-ttu d-xs">
+                                <div class="d-cycle-i d-cycle-a d-animate d-rise-l d-delay-1">
+                                    {% for b in bluelines %}
+                                    <span class="d-hb d-animate d-fade d-delay-2"><i
+                                            class="d-hover">{{ b.title }}</i></span>
+                                    {% endfor%}
+                                    <div class="d-blue d-s d-ttu d-animate d-fade d-delay-2">aic &gt;&gt;</div>
+                                </div>
+                                <div class="d-cycle-m d-animate d-fade d-delay-3">
+                                    <div class="d-ha d-hb"></div>
+                                    <div class="d-ha d-hb"></div>
+                                    <div class="d-ha d-hb"></div>
+                                    <div class="d-ha d-hb"></div>
+                                </div>
+                                <div class="d-cycle-i d-cycle-q d-animate d-rise-r d-delay-1">
+                                    {% for r in redlines %}
 
-                                        <span class="d-hb d-animate d-fade d-delay-2"><i
-                                                class="d-hover">{{r.title}}</i></span>
-                                        {% endfor%}
-                                        <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2">qsoft &gt;&gt;</div>
-                                    </div>
+                                    <span class="d-hb d-animate d-fade d-delay-2"><i
+                                            class="d-hover">{{r.title}}</i></span>
+                                    {% endfor%}
+                                    <div class="d-pink d-s d-ttu d-animate d-fade d-delay-2">qsoft &gt;&gt;</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,7 +204,7 @@
 
     <section class="d-section-5 d-ha d-animbox" id="d-section-5">
         <div class="d-grid">
-             {% for h in homepage_content_words%}
+            {% for h in homepage_content_words%}
             <div class="d-row">
                 <div class="d-col d-col-5 d-col-xs-12 d-tac d-tal-xs d-animate d-fade">
                     <div class="h1 d-font2 d-ttu d-white"><span class="d-ha d-arr d-arr-pink">{{h.title6}}</span><span
@@ -310,8 +270,7 @@
                         <div class="d-cchart-i d-cchart-i-1" id="d-cchart-a-1"></div>
                         <div class="d-cchart-i d-cchart-i-2" id="d-cchart-a-2"></div>
                         <div class="d-cchart-i d-cchart-i-3" id="d-cchart-a-3"></div>
-                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
-                        <div class="d-cchart-i d-cchart-i-4" id="d-cchart-a-4"></div>
+
                         <div class="d-cchart-i d-cchart-i-0 d-cchart-i-o" id="d-cchart-a-5"></div>
                         <div class="d-cchart-i d-cchart-i-1 d-cchart-i-o" id="d-cchart-a-6"></div>
                         <div class="d-cchart-i d-cchart-i-2 d-cchart-i-o" id="d-cchart-a-7"></div>
@@ -391,29 +350,13 @@
             <div class="d-row">
                 <div class="d-col d-col-12 d-animate d-fade d-delay-05">
                     <div class='d-swipe-note d-hide-pc d-cb d-xl'>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
-                             viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
-                                    <g i:extraneous="self">
-                                        <g>
-                                            <polygon
-                                                    points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
-                                            <g>
-                                                <path
-                                                        d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
-                                                <path
-                                                        d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </switch></svg>
                     </div>
                     <div class="d-scroll-wrap">
                         <div class="d-scroll">
                             <nav class="d-nav-logos d-nav-tabs h3 d-ttu">
                                 <ul>
                                     <li class="d-current" data-tab="d-tab-0">Все</li>
-                                        {% for p in category %}
+                                    {% for p in category %}
                                     <li data-tab="d-tab-{{p.id}}">{{ p.title}}</li>
                                     {% endfor %}
                                 </ul>
@@ -422,28 +365,47 @@
                     </div>
 
                 </div>
-                    <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
-                                                {% for c in category %}
-                        <div style="display: none" class="d-row d-tab-logos d-tab-{{c.id}}">
-                            {% for p in c.category_partners.all %}
-                            <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177" height="40" alt="" title="" class="d-hover lazy"/>
-                            </div>
-                            {% endfor %}
-
+                <div class="d-col d-col-11 d-col-xs-12 d-animate d-fade d-delay-05 d-hide-xs">
+                    {% for c in category %}
+                    <div style="display: none" class="d-row d-tab-logos d-tab-{{c.id}}">
+                        {% for p in c.category_partners.all %}
+                        <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="100%" height="100%" alt=""
+                                                        title="" class="d-hover lazy"/>
                         </div>
-                                        {% endfor %}
-
-                        <div class="d-row d-tab-logos d-tab-0">
-                            {% for p in partners %}
-                            <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="177" height="40" alt="" title="" class="d-hover lazy"/>
-                            </div>
-                            {% endfor %}
-
-                        </div>
-
-
+                        {% endfor %}
 
                     </div>
+                    {% endfor %}
+
+                    <div class="d-row d-tab-logos d-tab-0">
+                        {% for p in partners %}
+                        <div class="d-col d-col-4"><img data-src="{{p.image.url}}" width="100%" height="100%" alt=""
+                                                        title="" class="d-hover lazy"/>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+
+                </div>
+                <div class="d-carousel-logos d-col d-col-12 d-hide-pc">
+                        <div class="d-row d-tab-logos d-tab-0">
+                            {% for p in partners %}
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="{{p.image.url}}" width="100%" height="100%" alt="" title=""/></div>
+                            {% endfor %}
+                        </div>
+                                        {% for c in category %}
+
+                        <div class="d-row d-tab-logos d-tab-{{c.id}}">
+                                                    {% for p in c.category_partners.all %}
+
+                            <div class="d-col d-col-xs-6"><img class="lazy" data-src="{{p.image.url}}" width="100%" height="100%" alt="" title=""/></div>
+                            {% endfor %}
+                        </div>
+                             {% endfor %}
+
+                    </div>
+
 
 
             </div>
@@ -455,24 +417,9 @@
     <section class="d-section-9 d-animbox" id="d-section-9">
         <div class="d-grid">
             <div class="d-col d-col-12 d-col-xs-12">
-                <div class="h1 d-ttu d-tar d-white d-animate d-rise" style="font-size:50px;">{% trans 'Мнения экспертов рынка' %}</div>
+                <div class="h1 d-ttu d-tar d-white d-animate d-rise" style="font-size:50px;">{% trans 'Мнения экспертов рынка' %}
+                </div>
                 <div class='d-swipe-note d-hide-pc d-cb d-xl'>
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px" height="37px"
-                         viewBox="0 0 45.002 30" enable-background="new 0 0 45.002 30" xml:space="preserve"><switch>
-                                <g i:extraneous="self">
-                                    <g>
-                                        <polygon
-                                                points="4,20 6.562,20 3.361,16 10,16 10,14 3.361,14 6.562,10 4,10 0,15.001"/>
-                                        <g>
-                                            <path
-                                                    d="M16.002,16c-0.553,0-1-0.448-1-1c0-8.271,6.729-15,15-15s15,6.729,15,14.999c0,0.552-0.449,1-1,1c-0.553,0-1-0.448-1-1 C43.002,7.831,37.17,2,30.002,2s-13,5.831-13,13C17.002,15.552,16.553,16,16.002,16"/>
-                                            <path
-                                                    d="M29.982,19.989c-6.018,0-5.127-7.311-5.127-7.311s1.027-2.315,5.127-2.315c4.102,0,5.17,2.315,5.17,2.315 S35.998,19.989,29.982,19.989 M30.002,8c-6.285,0-8.115,5.679-8.115,19.004v0.6C24.229,29.114,27.008,30,30.002,30 c2.992,0,5.773-0.887,8.113-2.396v-0.6C38.115,13.679,36.285,8,30.002,8"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </switch></svg>
                 </div>
             </div>
             <div class="container swiper-container2" style="overflow: hidden">
@@ -480,26 +427,28 @@
                     {% for e in employees %}
                     <div class="swiper-slide">
                         <article class="d-animate d-fade">
-                        <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
-                            <img class="lazy" src="{{e.image.url}}" width="100%" alt="12"/>
-                        </div>
-                        <div class="d-person-txt" style="padding: 0 5px">
-                            <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">{{ e.name }}<br/><span class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
-                            </p>
-                            {{ e.text}}
-                        </div>
-                    </article>
+                            <div style="border: 1px solid #fff; margin-bottom: 2em;" class="d-person-img">
+                                <img class="lazy" src="{{e.image.url}}" width="100%" alt="12"/>
+                            </div>
+                            <div class="d-person-txt" style="padding: 0 5px">
+                                <p style="margin-bottom: 0.5em;" class="d-l d-white d-ttu">{{ e.name }}<br/><span
+                                        class="d-blue" style="margin-bottom: 0.5em;">Сотрудник<br/></span>
+                                </p>
+                                {{ e.text|safe }}
+                            </div>
+                        </article>
                     </div>
-                   {% endfor%}
+                    {% endfor%}
                 </div>
-               <div style="z-index: 335" class="swiper-button-next swiper-button-white"></div>
-                <div style="z-index: 335" class="swiper-button-prev swiper-button-white"></div>
+
+                <div style="z-index: 335;" class="swiper-button-next swiper-button-white add-stiles"></div>
+                <div style="z-index: 335;" class="swiper-button-prev swiper-button-white add-stiles"></div>
             </div>
         </div>
         <div class="d-bgd d-bgd-9"></div>
     </section>
-<!--{% for i in gallery%} url({{i.file.url}}) {% endfor %}-->
-    <section class="d-section-11 d-animbox d-animated" id="d-section-11">
+    <!--{% for i in gallery%} url({{i.file.url}}) {% endfor %}-->
+    <section style="margin-top: 100px;" class="d-section-11 d-animbox d-animated" id="d-section-11">
         <div class="d-grid">
             <div class="d-row">
                 {% for h in homepage_content_words %}
@@ -524,7 +473,7 @@
         </div>
         <div class="d-bgd d-bgd-11"></div>
     </section>
-       <section class="d-section-10 d-animbox" id="d-section-10">
+    <section class="d-section-10 d-animbox" id="d-section-10">
         <div class="d-grid">
             <div class="d-row">
                 <div class="d-col d-col-12">

@@ -39,7 +39,7 @@
                             <h2 class="d-section-title">{{ news.date }}</h2>
                                 <p class="d-section-descr" style="letter-spacing:2px;color:black;">
                                     <img style="width:30%; float:left; margin:0 15px 15px 0" src="{{ news.image.url }}">
-                        {{ news.text}}
+                        {{ news.text|safe}}
                         </p>
                         </div>
                     <div class="d-carousel-logos d-col d-col-12 d-hide-pc">

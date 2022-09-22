@@ -3268,7 +3268,16 @@ button[type='submit']:disabled {
     margin-top: 21px;
   }
 }
+
+.add-stiles{
+top: 200px;
+}
+
 @media (max-device-width: 640px) {
+    .add-stiles{
+    top: 550px !important;
+    }
+
   .honors {
     height: 14em;
     margin: 0 -15px -1.5em;

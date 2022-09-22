@@ -57,7 +57,8 @@ def about_journal(request):
 
     context = {"statistic_1": statistic_1, "statistic_2": statistic_2, "statistic_3": statistic_3,
 
-               "low_part": low_part, "circle_text": circle_text, "social_media": social_media, }
+               "low_part": low_part, "circle_text": circle_text, "social_media": social_media,
+            }
 
     return render(request, "about_journal.html", context)
 
@@ -94,13 +95,13 @@ def article_releases(request):
     articles_archived = ArticlesArchive.objects.all()
     circle1 = NewsCircleTaglineOne.objects.all()
     circle2 = NewsCircleTaglineTwo.objects.all()
-    gallery = ImagesContent.objects.all()
+
     social_media = SocialMedia.objects.all()
     circle_text = AboutJournalCircleTagline.objects.all()
     article_page = ArticlePage.objects.all()
 
     context = {"articles": articles, "articles_archived": articles_archived,
-            "gallery": gallery, "circle1": circle1, "circle2": circle2, "social_media": social_media,
+             "circle1": circle1, "circle2": circle2, "social_media": social_media,
                "circle_text": circle_text, "article_page": article_page, }
     return render(request, "article_releases.html", context, )
 
@@ -136,8 +137,10 @@ def for_authors(request):
     category = ForAuthorCategory.objects.all()[1:]
     first_category = ForAuthorCategory.objects.all()[0]
     social_media = SocialMedia.objects.all()
+    files = JournalsFiles.objects.all()
+
     context = {"authors": authors, 'category': category, "title": title, 'first_category': first_category,
-               'category_authors': category_authors, "social_media": social_media, }
+               'category_authors': category_authors, "social_media": social_media, "files": files, }
     return render(request, "for_authors.html", context)
 
 

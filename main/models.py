@@ -23,8 +23,8 @@ class Statistic(models.Model):
         return f'{self.id}.  {self.title}'
 
     class Meta:
-        verbose_name_plural = 'Главная - Статистика'
-        verbose_name = 'Главная - Статистика'
+        verbose_name_plural = 'О журнале - Статистика'
+        verbose_name = 'О журнале - Статистика'
 
 
 class ArticlesArchive(models.Model):
@@ -55,8 +55,8 @@ class Articles(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Статьи'
-        verbose_name = 'Статья'
+        verbose_name_plural = 'Выпуски - Статьи'
+        verbose_name = 'Выпуски - Статьи'
 
 class ArticlePage(models.Model):
     statistic_title = RichTextField(verbose_name='Заглавие статистики', blank=True, null=True)
@@ -93,18 +93,15 @@ class News(models.Model):
 
 
 class JournalsFiles(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Название текста')
-    text = models.TextField(verbose_name="Текст")
-    image = models.ImageField(upload_to='project-images', verbose_name='Изображение')
-    pdf = models.FileField()
-    word = models.FileField()
+    pdf = models.FileField(blank=True, null=True)
+    word = models.FileField(blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return 'Файл руководства для авторов'
 
     class Meta:
-        verbose_name_plural = 'Документация для авторов'
-        verbose_name = 'Документация для авторов'
+        verbose_name_plural = 'Авторам - Документы'
+        verbose_name = 'Авторам - Документы'
 
 
 class PartnerCategory(models.Model):
@@ -133,17 +130,6 @@ class Partner(models.Model):
         verbose_name = 'Партнёр'
 
 
-class Gallery(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Имя автора')
-    date = models.CharField(max_length=200, blank=True, null=True, verbose_name='Дата жизни')
-    image = models.ImageField(upload_to='gallery-images', verbose_name='Фото автора')
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Галерея'
-        verbose_name = 'Галерея'
 
 
 class SocialMedia(models.Model):
@@ -208,16 +194,6 @@ class ForAuthorText(models.Model):
         verbose_name_plural = 'Авторам - Заголовок'
 
 
-class ImagesContent(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Картинка", blank=True, null=True)
-    file = models.ImageField(null=True, blank=True, upload_to="work_images")
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Галерея Контент'
-
 
 
 class MainTagline(models.Model):
@@ -236,8 +212,8 @@ class MainTagline(models.Model):
         return "Главная страница контент"
 
     class Meta:
-        verbose_name_plural = 'Слова в главной странице'
-        verbose_name = 'Слова в главной странице'
+        verbose_name_plural = 'Главная - Контент'
+        verbose_name = 'Главная - Контент'
 
 
 class AboutJournalCircleTagline(models.Model):
@@ -277,28 +253,6 @@ class ArticlesCircleTagline(models.Model):
 
 
 
-class ArticlesTagline(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Слова на странице выпусках'
-        verbose_name = 'Слова на странице выпусках'
-
-
-class NewsTagline(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Главный слоган', blank=True, null=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Слова на странице новостях'
-        verbose_name = 'Слова на странице новостях'
-
-
 class BlueTagline(models.Model):
     title = models.CharField(max_length=200, verbose_name='Содержание', blank=True, null=True)
 
@@ -306,8 +260,8 @@ class BlueTagline(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Синие поля главной страницы'
-        verbose_name = 'Синие поля главной страницы'
+        verbose_name_plural = 'Главная - Эквалайзер - Синий'
+        verbose_name = 'Главная - Эквалайзер - Синий'
 
 
 class RedTagline(models.Model):
@@ -317,8 +271,8 @@ class RedTagline(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Красные поля главной страницы'
-        verbose_name = 'Красные поля главной страницы'
+        verbose_name_plural = 'Главная - Эквалайзер - Красный'
+        verbose_name = 'Главная - Эквалайзер - Красный'
 
 
 class NewsCircleTaglineOne(models.Model):
@@ -363,8 +317,8 @@ class Employees(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Сотрудники'
-        verbose_name = 'Сотрудник'
+        verbose_name_plural = 'Мнение экспертов рынка'
+        verbose_name = 'Мнение экспертов рынка'
 
 
 class Content(models.Model):
@@ -389,31 +343,9 @@ class VideoContent(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Новости - Контент'
-        verbose_name = 'Новости - Контент'
+        verbose_name_plural = 'Новости - Видео'
+        verbose_name = 'Новости - Видео'
 
-
-class LizerCategory(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Эквалайзер Категория')
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Эквалайзер - Категория'
-        verbose_name = 'Эквалайзер - Категория'
-
-
-class Lizer(models.Model):
-    category = models.ForeignKey(LizerCategory, on_delete=models.CASCADE, verbose_name='Категория')
-    title = models.CharField(max_length=100, verbose_name='Эквалайзер')
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Эквалайзер'
-        verbose_name = 'Эквалайзер'
 
 
 class AboutJournalLowPart(models.Model):

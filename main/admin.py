@@ -5,14 +5,17 @@ from modeltranslation.admin import TranslationAdmin
 
 
 admin.site.register(Statistic)
-admin.site.register(Gallery)
 admin.site.register(SocialMedia)
-admin.site.register(ImagesContent)
-admin.site.register(Employees)
-admin.site.register(Lizer)
+
 admin.site.register(Content)
-admin.site.register(LizerCategory)
+
 admin.site.register(Logo)
+
+
+@admin.register(Employees)
+class EmployeesAdminList(admin.ModelAdmin):
+    pass
+
 
 @admin.register(Mail)
 class MailAdminList(admin.ModelAdmin):
@@ -79,14 +82,7 @@ class RedTaglineAdminList(TranslationAdmin):
 class AboutJournalCircleTaglineAdminList(TranslationAdmin):
     pass
 
-@admin.register(ArticlesTagline)
-class ArticlesTaglineTaglineAdminList(TranslationAdmin):
-    pass
 
-
-@admin.register(NewsTagline)
-class ArticlesTaglineTaglineAdminList(TranslationAdmin):
-    pass
 
 @admin.register(VideoContent)
 class VideoContentTaglineAdminList(TranslationAdmin):
