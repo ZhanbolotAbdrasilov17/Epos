@@ -136,6 +136,9 @@ class SocialMedia(models.Model):
     instagram = models.CharField(max_length=200, verbose_name='Инстаграм')
     whatsapp = models.CharField(max_length=200, verbose_name='Ватсап')
     facebook = models.CharField(max_length=200, verbose_name='Фейсбук')
+    vk = models.CharField(max_length=200, verbose_name='Вконтакте', blank=True, null=True)
+    twitter = models.CharField(max_length=200, verbose_name='Твиттер', blank=True, null=True)
+
 
     def __str__(self):
         return 'Социальные сети'
